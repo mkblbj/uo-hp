@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import type { Locale } from "../content/siteCopy";
 
 const LOCALE_STORAGE_KEY = "uo-hp-locale";
@@ -8,6 +8,10 @@ const isValidLocale = (value: string | null): value is Locale =>
   value !== null && VALID_LOCALES.includes(value as Locale);
 
 const getLocaleFromSearch = (): Locale | null => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const language = params.get("lang");
 
@@ -15,6 +19,10 @@ const getLocaleFromSearch = (): Locale | null => {
 };
 
 const getInitialLocale = (): Locale => {
+  if (typeof window === "undefined") {
+    return "ja";
+  }
+
   const fromSearch = getLocaleFromSearch();
 
   if (fromSearch) {
@@ -27,38 +35,49 @@ const getInitialLocale = (): Locale => {
 };
 
 export const useLocale = () => {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+  const locale = ref<Locale>(getInitialLocale());
 
-  const updateUrl = useCallback((nextLocale: Locale) => {
+  const updateUrl = (nextLocale: Locale) => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const url = new URL(window.location.href);
     url.searchParams.set("lang", nextLocale);
     window.history.replaceState({}, "", url.toString());
-  }, []);
+  };
 
-  const setLocale = useCallback(
-    (nextLocale: Locale) => {
-      setLocaleState(nextLocale);
-      window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-      updateUrl(nextLocale);
-    },
-    [updateUrl],
-  );
+  const setLocale = (nextLocale: Locale) => {
+    locale.value = nextLocale;
 
-  useEffect(() => {
-    const onPopState = () => {
-      setLocaleState(getInitialLocale());
-    };
+    if (typeof window === "undefined") {
+      return;
+    }
 
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+    updateUrl(nextLocale);
+  };
+
+  const onPopState = () => {
+    locale.value = getInitialLocale();
+  };
+
+  onMounted(() => {
+    locale.value = getInitialLocale();
     window.addEventListener("popstate", onPopState);
+  });
 
-    return () => {
+  onUnmounted(() => {
+    if (typeof window !== "undefined") {
       window.removeEventListener("popstate", onPopState);
-    };
-  }, []);
+    }
+  });
 
-  useEffect(() => {
-    window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-  }, [locale]);
+  watch(locale, (nextLocale) => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+    }
+  });
 
   return {
     locale,

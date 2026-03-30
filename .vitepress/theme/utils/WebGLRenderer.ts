@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-
 const defaultShaderSource = `#version 300 es
 precision highp float;
 out vec4 O;
@@ -74,7 +72,7 @@ type ProgramWithUniforms = WebGLProgram & {
   pointers?: WebGLUniformLocation | null;
 };
 
-class WebGLRenderer {
+export class WebGLRenderer {
   private canvas: HTMLCanvasElement;
   private gl: WebGL2RenderingContext;
   private program: ProgramWithUniforms | null = null;
@@ -142,7 +140,7 @@ void main(){gl_Position=position;}`;
   }
 
   test(source: string) {
-    let result = null;
+    let result: string | null = null;
     const { gl } = this;
     const shader = gl.createShader(gl.FRAGMENT_SHADER)!;
     gl.shaderSource(shader, source);
@@ -230,182 +228,4 @@ void main(){gl_Position=position;}`;
   }
 }
 
-class PointerHandler {
-  private scale: number;
-  private active = false;
-  private pointers = new Map<number, number[]>();
-  private lastCoords = [0, 0];
-  private moves = [0, 0];
-
-  constructor(element: HTMLCanvasElement, scale: number) {
-    this.scale = scale;
-
-    const map = (canvas: HTMLCanvasElement, currentScale: number, x: number, y: number) => [
-      x * currentScale,
-      canvas.height - y * currentScale,
-    ];
-
-    element.addEventListener("pointerdown", (event) => {
-      this.active = true;
-      this.pointers.set(
-        event.pointerId,
-        map(element, this.getScale(), event.clientX, event.clientY),
-      );
-    });
-
-    const clearPointer = (event: PointerEvent) => {
-      if (this.count === 1) {
-        this.lastCoords = this.first;
-      }
-      this.pointers.delete(event.pointerId);
-      this.active = this.pointers.size > 0;
-    };
-
-    element.addEventListener("pointerup", clearPointer);
-    element.addEventListener("pointerleave", clearPointer);
-
-    element.addEventListener("pointermove", (event) => {
-      if (!this.active) {
-        return;
-      }
-      this.lastCoords = [event.clientX, event.clientY];
-      this.pointers.set(
-        event.pointerId,
-        map(element, this.getScale(), event.clientX, event.clientY),
-      );
-      this.moves = [this.moves[0] + event.movementX, this.moves[1] + event.movementY];
-    });
-  }
-
-  getScale() {
-    return this.scale;
-  }
-
-  updateScale(scale: number) {
-    this.scale = scale;
-  }
-
-  get count() {
-    return this.pointers.size;
-  }
-
-  get move() {
-    return this.moves;
-  }
-
-  get coords() {
-    return this.pointers.size > 0
-      ? Array.from(this.pointers.values()).flat()
-      : [0, 0];
-  }
-
-  get first() {
-    return this.pointers.values().next().value ?? this.lastCoords;
-  }
-}
-
-const useShaderBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number | null>(null);
-  const rendererRef = useRef<WebGLRenderer | null>(null);
-  const pointersRef = useRef<PointerHandler | null>(null);
-  const [isSupported, setIsSupported] = useState(false);
-
-  useEffect(() => {
-    const resize = () => {
-      if (!canvasRef.current) {
-        return;
-      }
-
-      const canvas = canvasRef.current;
-      const dpr = Math.max(1, 0.5 * window.devicePixelRatio);
-
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-
-      if (rendererRef.current) {
-        rendererRef.current.updateScale(dpr);
-      }
-      if (pointersRef.current) {
-        pointersRef.current.updateScale(dpr);
-      }
-    };
-
-    const loop = (now: number) => {
-      if (!rendererRef.current || !pointersRef.current) {
-        return;
-      }
-
-      rendererRef.current.updateMouse(pointersRef.current.first);
-      rendererRef.current.updatePointerCount(pointersRef.current.count);
-      rendererRef.current.updatePointerCoords(pointersRef.current.coords);
-      rendererRef.current.updateMove(pointersRef.current.move);
-      rendererRef.current.render(now);
-      animationFrameRef.current = requestAnimationFrame(loop);
-    };
-
-    if (!canvasRef.current) {
-      return;
-    }
-
-    const canvas = canvasRef.current;
-    const dpr = Math.max(1, 0.5 * window.devicePixelRatio);
-
-    const gl = canvas.getContext("webgl2");
-    if (!gl) {
-      setIsSupported(false);
-      return;
-    }
-
-    rendererRef.current = new WebGLRenderer(canvas, dpr);
-    pointersRef.current = new PointerHandler(canvas, dpr);
-
-    rendererRef.current.setup();
-    rendererRef.current.init();
-    resize();
-
-    if (rendererRef.current.test(defaultShaderSource) === null) {
-      rendererRef.current.updateShader(defaultShaderSource);
-      setIsSupported(true);
-    } else {
-      setIsSupported(false);
-    }
-
-    loop(0);
-    window.addEventListener("resize", resize);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      if (rendererRef.current) {
-        rendererRef.current.reset();
-      }
-    };
-  }, []);
-
-  return {
-    canvasRef,
-    isSupported,
-  };
-};
-
-export function ShaderBackground() {
-  const { canvasRef, isSupported } = useShaderBackground();
-
-  return (
-    <div className="shader-background" aria-hidden="true">
-      <div className="shader-fallback">
-        <div className="shader-fallback__grid" />
-        <div className="shader-fallback__orb shader-fallback__orb--primary" />
-        <div className="shader-fallback__orb shader-fallback__orb--secondary" />
-        <div className="shader-fallback__orb shader-fallback__orb--tertiary" />
-      </div>
-      <canvas
-        ref={canvasRef}
-        className={`shader-canvas${isSupported ? " is-active" : ""}`}
-      />
-    </div>
-  );
-}
+export { defaultShaderSource };

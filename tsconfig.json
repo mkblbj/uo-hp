@@ -13,9 +13,7 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "types": ["vite/client"]
+    "noEmit": true
   },
-  "include": ["src"]
+  "include": [".vitepress/**/*.ts", ".vitepress/**/*.d.ts"]
 }
