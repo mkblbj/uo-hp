@@ -143,6 +143,9 @@
 }
 
 .hero-layout .locale-toggle__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 4.25rem;
   padding: 0.6rem 0.9rem;
   border: 0;

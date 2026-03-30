@@ -1,86 +1,98 @@
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { computed } from "vue";
+import { useRoute, withBase } from "vitepress";
 import type { Locale } from "../content/siteCopy";
 
-const LOCALE_STORAGE_KEY = "uo-hp-locale";
+const LEGACY_LANG_PARAM = "lang";
 const VALID_LOCALES: Locale[] = ["ja", "zh", "en"];
-
-const isValidLocale = (value: string | null): value is Locale =>
-  value !== null && VALID_LOCALES.includes(value as Locale);
-
-const getLocaleFromSearch = (): Locale | null => {
-  if (typeof window === "undefined") {
-    return null;
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  const language = params.get("lang");
-
-  return isValidLocale(language) ? language : null;
+const LOCALE_PREFIX: Record<Locale, string> = {
+  ja: "",
+  zh: "/zh",
+  en: "/en",
 };
 
-const getInitialLocale = (): Locale => {
-  if (typeof window === "undefined") {
-    return "ja";
+const isValidLocale = (value: string | null | undefined): value is Locale =>
+  value !== null && VALID_LOCALES.includes(value as Locale);
+
+const normalizePath = (path: string) => {
+  const pathname = path.split(/[?#]/, 1)[0] || "/";
+
+  if (pathname === "/") {
+    return pathname;
   }
 
-  const fromSearch = getLocaleFromSearch();
+  const withLeadingSlash = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  const withoutTrailingSlash = withLeadingSlash.replace(/\/+$/, "");
 
-  if (fromSearch) {
-    return fromSearch;
+  return withoutTrailingSlash ? `${withoutTrailingSlash}/` : "/";
+};
+
+const stripLocalePrefix = (path: string) => {
+  const normalizedPath = normalizePath(path);
+
+  if (normalizedPath === "/zh/" || normalizedPath.startsWith("/zh/")) {
+    const nextPath = normalizedPath.slice("/zh".length);
+    return nextPath || "/";
   }
 
-  const fromStorage = window.localStorage.getItem(LOCALE_STORAGE_KEY);
+  if (normalizedPath === "/en/" || normalizedPath.startsWith("/en/")) {
+    const nextPath = normalizedPath.slice("/en".length);
+    return nextPath || "/";
+  }
 
-  return isValidLocale(fromStorage) ? fromStorage : "ja";
+  return normalizedPath;
+};
+
+export const getLocaleFromPath = (path: string): Locale => {
+  const normalizedPath = normalizePath(path);
+
+  if (normalizedPath === "/zh/" || normalizedPath.startsWith("/zh/")) {
+    return "zh";
+  }
+
+  if (normalizedPath === "/en/" || normalizedPath.startsWith("/en/")) {
+    return "en";
+  }
+
+  return "ja";
+};
+
+export const getLocalePath = (path: string, locale: Locale) => {
+  const basePath = stripLocalePrefix(path);
+  const prefix = LOCALE_PREFIX[locale];
+
+  if (basePath === "/") {
+    return prefix ? `${prefix}/` : "/";
+  }
+
+  return `${prefix}${basePath}`;
+};
+
+export const getLegacyLocaleFromSearch = (search: string) => {
+  const params = new URLSearchParams(search);
+  const locale = params.get(LEGACY_LANG_PARAM);
+
+  return isValidLocale(locale) ? locale : null;
+};
+
+export const removeLegacyLocaleFromSearch = (search: string) => {
+  const params = new URLSearchParams(search);
+  params.delete(LEGACY_LANG_PARAM);
+
+  const nextSearch = params.toString();
+  return nextSearch ? `?${nextSearch}` : "";
 };
 
 export const useLocale = () => {
-  const locale = ref<Locale>(getInitialLocale());
-
-  const updateUrl = (nextLocale: Locale) => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    const url = new URL(window.location.href);
-    url.searchParams.set("lang", nextLocale);
-    window.history.replaceState({}, "", url.toString());
-  };
-
-  const setLocale = (nextLocale: Locale) => {
-    locale.value = nextLocale;
-
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-    updateUrl(nextLocale);
-  };
-
-  const onPopState = () => {
-    locale.value = getInitialLocale();
-  };
-
-  onMounted(() => {
-    locale.value = getInitialLocale();
-    window.addEventListener("popstate", onPopState);
-  });
-
-  onUnmounted(() => {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("popstate", onPopState);
-    }
-  });
-
-  watch(locale, (nextLocale) => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-    }
-  });
+  const route = useRoute();
+  const locale = computed<Locale>(() => getLocaleFromPath(route.path));
+  const localeLinks = computed<Record<Locale, string>>(() => ({
+    ja: withBase(getLocalePath(route.path, "ja")),
+    zh: withBase(getLocalePath(route.path, "zh")),
+    en: withBase(getLocalePath(route.path, "en")),
+  }));
 
   return {
     locale,
-    setLocale,
+    localeLinks,
   };
 };

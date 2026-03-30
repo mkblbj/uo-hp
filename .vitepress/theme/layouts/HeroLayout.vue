@@ -10,7 +10,7 @@ const htmlLanguageByLocale: Record<Locale, string> = {
   en: "en",
 };
 
-const { locale, setLocale } = useLocale();
+const { locale, localeLinks } = useLocale();
 const copy = computed(() => siteCopy[locale.value]);
 
 watchEffect(() => {
@@ -19,6 +19,7 @@ watchEffect(() => {
   }
 
   document.documentElement.lang = htmlLanguageByLocale[locale.value];
+  document.documentElement.dataset.locale = locale.value;
   document.title = copy.value.metaTitle;
 });
 </script>
@@ -28,9 +29,9 @@ watchEffect(() => {
     <div class="page-shell">
       <HeroSection
         :locale="locale"
+        :locale-links="localeLinks"
         :navigation="copy.navigation"
         :hero="copy.hero"
-        @locale-change="setLocale"
       />
     </div>
   </div>

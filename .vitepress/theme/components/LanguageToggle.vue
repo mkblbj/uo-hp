@@ -4,29 +4,26 @@ import type { Locale } from "../content/siteCopy";
 interface LanguageToggleProps {
   activeLocale: Locale;
   label: string;
+  localeLinks: Record<Locale, string>;
   localeNames: Record<Locale, string>;
 }
 
 const props = defineProps<LanguageToggleProps>();
-const emit = defineEmits<{
-  change: [locale: Locale];
-}>();
 
 const locales: Locale[] = ["ja", "zh", "en"];
 </script>
 
 <template>
   <div class="locale-toggle" role="group" :aria-label="props.label">
-    <button
+    <a
       v-for="locale in locales"
       :key="locale"
-      type="button"
+      :href="props.localeLinks[locale]"
       class="locale-toggle__button"
       :class="{ 'is-active': props.activeLocale === locale }"
-      :aria-pressed="props.activeLocale === locale"
-      @click="emit('change', locale)"
+      :aria-current="props.activeLocale === locale ? 'page' : undefined"
     >
       {{ props.localeNames[locale] }}
-    </button>
+    </a>
   </div>
 </template>

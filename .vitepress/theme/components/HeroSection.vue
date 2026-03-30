@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { withBase } from "vitepress";
 import logoMark from "../assets/uo-logo-pure.png";
 import logoWhite from "../assets/uo-logo-white.png";
 import type { Locale, SiteCopy } from "../content/siteCopy";
@@ -7,14 +8,12 @@ import ShaderBackground from "./ShaderBackground.vue";
 
 interface HeroSectionProps {
   locale: Locale;
+  localeLinks: Record<Locale, string>;
   navigation: SiteCopy["navigation"];
   hero: SiteCopy["hero"];
 }
 
 const props = defineProps<HeroSectionProps>();
-const emit = defineEmits<{
-  localeChange: [locale: Locale];
-}>();
 </script>
 
 <template>
@@ -51,8 +50,8 @@ const emit = defineEmits<{
         <LanguageToggle
           :active-locale="props.locale"
           :label="props.navigation.localeSwitchLabel"
+          :locale-links="props.localeLinks"
           :locale-names="props.navigation.localeNames"
-          @change="emit('localeChange', $event)"
         />
       </div>
     </header>
@@ -88,21 +87,8 @@ const emit = defineEmits<{
         </div>
 
         <div class="hero-actions">
-          <a
-            class="button button--primary"
-            :href="props.hero.primaryCtaHref"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {{ props.hero.primaryCta }}
-          </a>
-          <a
-            class="button button--secondary"
-            :href="props.hero.secondaryCtaHref"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {{ props.hero.secondaryCta }}
+          <a class="button button--primary" :href="withBase(props.hero.ctaHref)">
+            {{ props.hero.cta }}
           </a>
         </div>
       </div>

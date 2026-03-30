@@ -18,15 +18,10 @@ export interface SiteCopy {
     headline: string[];
     summary: string;
     metrics: Metric[];
-    primaryCta: string;
-    primaryCtaHref: string;
-    secondaryCta: string;
-    secondaryCtaHref: string;
+    cta: string;
+    ctaHref: string;
   };
 }
-
-const siteHref = "https://www.uoworld.co.jp/";
-const contactHref = "https://www.uoworld.co.jp/contact.html";
 
 export const siteCopy: Record<Locale, SiteCopy> = {
   ja: {
@@ -60,10 +55,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           label: "Japan Base",
         },
       ],
-      primaryCta: "お問い合わせ",
-      primaryCtaHref: contactHref,
-      secondaryCta: "会社サイト",
-      secondaryCtaHref: siteHref,
+      cta: "会社詳細",
+      ctaHref: "/about/",
     },
   },
   zh: {
@@ -97,10 +90,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           label: "日本据点",
         },
       ],
-      primaryCta: "联系我们",
-      primaryCtaHref: contactHref,
-      secondaryCta: "公司主页",
-      secondaryCtaHref: siteHref,
+      cta: "公司详情",
+      ctaHref: "/zh/about/",
     },
   },
   en: {
@@ -134,10 +125,8 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           label: "Japan Base",
         },
       ],
-      primaryCta: "Contact Us",
-      primaryCtaHref: contactHref,
-      secondaryCta: "Company Site",
-      secondaryCtaHref: siteHref,
+      cta: "Company Details",
+      ctaHref: "/en/about/",
     },
   },
 };

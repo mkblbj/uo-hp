@@ -1,13 +1,11 @@
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import HeroLayout from "./layouts/HeroLayout.vue";
+import Layout from "./Layout.vue";
 import "./styles/hero.css";
 
 const theme: Theme = {
   extends: DefaultTheme,
-  enhanceApp({ app }) {
-    app.component("hero", HeroLayout);
-  },
+  Layout,
 };
 
 export default theme;
