@@ -441,7 +441,7 @@
 }
 
 .hero-layout .hero-logo-atmosphere__image {
-  top: 50%;
+  top: 48%;
   left: 50%;
   width: min(86vw, 74rem);
   transform: translate3d(-50%, -50%, 0) rotate(0deg);
