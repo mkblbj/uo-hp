@@ -5,3 +5,4 @@ dist/
 .vitepress/dist/
 .vitepress/.temp/
 .DS_Store
+mcp-shrimp-task-manager/
