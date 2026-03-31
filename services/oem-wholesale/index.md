@@ -1,6 +1,7 @@
 ---
 title: OEM・卸 / 越境連携
 description: OEM、加工、卸、直輸入、中国向け出品を含む法人向け対応領域
+pageClass: service-doc-page
 ---
 
 # OEM・卸 / 越境連携

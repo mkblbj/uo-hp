@@ -1,6 +1,7 @@
 ---
 title: 事業案内
 description: 株式会社UOの事業全体像、主要商品、販売実績、今後の展開
+pageClass: service-doc-page
 ---
 
 # 事業案内

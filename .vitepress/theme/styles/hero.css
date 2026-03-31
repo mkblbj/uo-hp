@@ -233,7 +233,8 @@
   animation: locale-toggle-fade-in 150ms ease-out forwards;
 }
 
-.about-doc-page .vp-doc h1 {
+.about-doc-page .vp-doc h1,
+.service-doc-page .vp-doc h1 {
   color: #185f9f;
 }
 

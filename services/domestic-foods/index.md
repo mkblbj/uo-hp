@@ -1,6 +1,7 @@
 ---
 title: 国内産食品事業
 description: 国内産屋を中心とした国内産食品ネット販売事業
+pageClass: service-doc-page
 ---
 
 # 国内産食品事業

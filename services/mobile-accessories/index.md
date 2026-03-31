@@ -1,6 +1,7 @@
 ---
 title: スマートフォンアクセサリー事業
 description: 松武商店と3911を中心としたスマートフォンアクセサリー販売事業
+pageClass: service-doc-page
 ---
 
 # スマートフォンアクセサリー事業

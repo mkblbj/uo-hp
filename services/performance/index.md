@@ -1,6 +1,7 @@
 ---
 title: 販売実績
 description: 楽天市場を中心とした販売実績と評価指標
+pageClass: service-doc-page
 ---
 
 # 販売実績

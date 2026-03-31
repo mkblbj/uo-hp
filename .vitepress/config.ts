@@ -85,20 +85,38 @@ const config = defineConfig({
         logo: "/uo-logo-pure.png",
         nav: [
           { text: "首页", link: "/zh/" },
-          { text: "公司详情", link: "/zh/about/" },
-          { text: "业务分类", link: "/zh/services/" },
+          { text: "公司信息", link: "/zh/about/" },
+          { text: "业务介绍", link: "/zh/services/" },
         ],
         sidebar: {
           "/zh/about/": [
             {
-              text: "公司详情",
-              items: [{ text: "公司介绍", link: "/zh/about/" }],
+              text: "公司信息",
+              items: [
+                { text: "公司信息首页", link: "/zh/about/" },
+                { text: "公司概要", link: "/zh/about/profile/" },
+                { text: "代表致辞", link: "/zh/about/message/" },
+              ],
             },
           ],
           "/zh/services/": [
             {
-              text: "业务分类",
-              items: [{ text: "服务概览", link: "/zh/services/" }],
+              text: "业务介绍",
+              items: [
+                { text: "业务概览", link: "/zh/services/" },
+                { text: "手机配件业务", link: "/zh/services/mobile-accessories/" },
+                { text: "日本国产食品业务", link: "/zh/services/domestic-foods/" },
+                { text: "OEM、批发 / 跨境协同", link: "/zh/services/oem-wholesale/" },
+              ],
+            },
+            {
+              text: "产品与业绩",
+              items: [
+                { text: "主要产品", link: "/zh/services/products/" },
+                { text: "销售业绩", link: "/zh/services/performance/" },
+                { text: "选择我们的理由", link: "/zh/services/strengths/" },
+                { text: "未来发展", link: "/zh/services/future/" },
+              ],
             },
           ],
         },
@@ -135,13 +153,31 @@ const config = defineConfig({
           "/en/about/": [
             {
               text: "Company",
-              items: [{ text: "Overview", link: "/en/about/" }],
+              items: [
+                { text: "Overview", link: "/en/about/" },
+                { text: "Company Profile", link: "/en/about/profile/" },
+                { text: "Message from the Representative", link: "/en/about/message/" },
+              ],
             },
           ],
           "/en/services/": [
             {
               text: "Services",
-              items: [{ text: "Overview", link: "/en/services/" }],
+              items: [
+                { text: "Overview", link: "/en/services/" },
+                { text: "Smartphone Accessories Business", link: "/en/services/mobile-accessories/" },
+                { text: "Domestic Foods Business", link: "/en/services/domestic-foods/" },
+                { text: "OEM / Wholesale / Cross-border Coordination", link: "/en/services/oem-wholesale/" },
+              ],
+            },
+            {
+              text: "Products & Performance",
+              items: [
+                { text: "Key Products", link: "/en/services/products/" },
+                { text: "Sales Performance", link: "/en/services/performance/" },
+                { text: "Why Customers Choose Us", link: "/en/services/strengths/" },
+                { text: "Future Development", link: "/en/services/future/" },
+              ],
             },
           ],
         },

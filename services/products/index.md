@@ -1,6 +1,7 @@
 ---
 title: 主要商品
 description: スマートフォンアクセサリーの主力商材と対応条件
+pageClass: service-doc-page
 ---
 
 # 主要商品

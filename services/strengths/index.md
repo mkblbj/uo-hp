@@ -1,6 +1,7 @@
 ---
 title: 選ばれる理由
 description: 株式会社UOの販売店が選ばれている3つの理由
+pageClass: service-doc-page
 ---
 
 # 選ばれる理由

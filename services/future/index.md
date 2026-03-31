@@ -1,6 +1,7 @@
 ---
 title: 今後の展開
 description: 株式会社UOの今後の商品展開、AI・IT活用、越境連携の方向性
+pageClass: service-doc-page
 ---
 
 # 今後の展開
