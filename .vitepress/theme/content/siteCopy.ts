@@ -8,7 +8,7 @@ export interface Metric {
 
 export interface SiteCopy {
   metaTitle: string;
-  navigation: {
+  navigation: {           
     brand: string;
     region: string;
     localeSwitchLabel: string;

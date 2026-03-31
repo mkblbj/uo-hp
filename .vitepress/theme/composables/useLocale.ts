@@ -9,6 +9,24 @@ const LOCALE_PREFIX: Record<Locale, string> = {
   zh: "/zh",
   en: "/en",
 };
+const AVAILABLE_PATHS: Record<Locale, Set<string>> = {
+  ja: new Set([
+    "/",
+    "/about/",
+    "/about/profile/",
+    "/about/message/",
+    "/services/",
+    "/services/mobile-accessories/",
+    "/services/domestic-foods/",
+    "/services/oem-wholesale/",
+    "/services/products/",
+    "/services/performance/",
+    "/services/strengths/",
+    "/services/future/",
+  ]),
+  zh: new Set(["/", "/about/", "/services/"]),
+  en: new Set(["/", "/about/", "/services/"]),
+};
 
 const isValidLocale = (value: string | null | undefined): value is Locale =>
   value !== null && VALID_LOCALES.includes(value as Locale);
@@ -57,7 +75,14 @@ export const getLocaleFromPath = (path: string): Locale => {
 };
 
 export const getLocalePath = (path: string, locale: Locale) => {
-  const basePath = stripLocalePrefix(path);
+  const requestedPath = stripLocalePrefix(path);
+  const basePath = AVAILABLE_PATHS[locale].has(requestedPath)
+    ? requestedPath
+    : requestedPath.startsWith("/about/")
+      ? "/about/"
+      : requestedPath.startsWith("/services/")
+        ? "/services/"
+        : "/";
   const prefix = LOCALE_PREFIX[locale];
 
   if (basePath === "/") {

@@ -1,10 +1,18 @@
 import { defineConfig } from "vitepress";
+import timeline from "vitepress-markdown-timeline";
+import { withMermaid } from "vitepress-plugin-mermaid";
 
-export default defineConfig({
+const config = defineConfig({
   lang: "ja",
   title: "株式会社UO",
-  description: "株式会社UOの会社案内、事業分類、市場展開を紹介する情報サイト。",
+  description: "株式会社UOの会社案内サイト。",
   cleanUrls: true,
+  mermaid: {},
+  markdown: {
+    config: (md) => {
+      md.use(timeline);
+    },
+  },
   locales: {
     root: {
       label: "日本語",
@@ -12,22 +20,42 @@ export default defineConfig({
       title: "株式会社UO",
       description: "株式会社UOの会社案内、事業分類、市場展開を紹介する情報サイト。",
       themeConfig: {
+        logo: "/uo-logo-pure.png",
         nav: [
           { text: "ホーム", link: "/" },
-          { text: "会社詳細", link: "/about/" },
-          { text: "事業分類", link: "/services/" },
+          { text: "会社情報", link: "/about/" },
+          { text: "事業案内", link: "/services/" },
+          { text: "販売実績", link: "/services/performance/" },
         ],
         sidebar: {
           "/about/": [
             {
-              text: "会社詳細",
-              items: [{ text: "会社紹介", link: "/about/" }],
+              text: "会社情報",
+              items: [
+                { text: "会社情報トップ", link: "/about/" },
+                { text: "会社概要", link: "/about/profile/" },
+                { text: "代表挨拶", link: "/about/message/" },
+              ],
             },
           ],
           "/services/": [
             {
-              text: "事業分類",
-              items: [{ text: "事業概要", link: "/services/" }],
+              text: "事業案内",
+              items: [
+                { text: "事業概要", link: "/services/" },
+                { text: "スマートフォンアクセサリー事業", link: "/services/mobile-accessories/" },
+                { text: "国内産食品事業", link: "/services/domestic-foods/" },
+                { text: "OEM・卸 / 越境連携", link: "/services/oem-wholesale/" },
+              ],
+            },
+            {
+              text: "商品と実績",
+              items: [
+                { text: "主要商品", link: "/services/products/" },
+                { text: "販売実績", link: "/services/performance/" },
+                { text: "選ばれる理由", link: "/services/strengths/" },
+                { text: "今後の展開", link: "/services/future/" },
+              ],
             },
           ],
         },
@@ -54,6 +82,7 @@ export default defineConfig({
       title: "株式会社UO",
       description: "展示株式会社UO公司介绍、业务分类与市场布局的信息站点。",
       themeConfig: {
+        logo: "/uo-logo-pure.png",
         nav: [
           { text: "首页", link: "/zh/" },
           { text: "公司详情", link: "/zh/about/" },
@@ -96,6 +125,7 @@ export default defineConfig({
       title: "UO Co., Ltd.",
       description: "An information site for UO Co., Ltd. covering company details, service categories, and market positioning.",
       themeConfig: {
+        logo: "/uo-logo-pure.png",
         nav: [
           { text: "Home", link: "/en/" },
           { text: "Company", link: "/en/about/" },
@@ -133,3 +163,5 @@ export default defineConfig({
     },
   },
 });
+
+export default withMermaid(config);

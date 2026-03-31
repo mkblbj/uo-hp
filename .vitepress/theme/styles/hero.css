@@ -233,6 +233,10 @@
   animation: locale-toggle-fade-in 150ms ease-out forwards;
 }
 
+.about-doc-page .vp-doc h1 {
+  color: #185f9f;
+}
+
 .hero-layout .locale-toggle__item {
   display: flex;
   align-items: center;
@@ -1187,4 +1191,74 @@
   .hero-layout .hero-logo-atmosphere__image--core {
     opacity: 0.1;
   }
+}
+
+.about-doc-page .vp-doc .timeline-dot {
+  color: #626b78;
+}
+
+.about-doc-page .vp-doc .timeline-dot::after {
+  background-color: #d8dde5;
+}
+
+.about-doc-page .vp-doc .timeline-dot .timeline-dot-title {
+  color: #0f172a;
+}
+
+.about-doc-page .vp-doc .timeline-dot p {
+  color: #707986;
+  line-height: 1.7;
+}
+
+.about-doc-page .vp-doc .timeline-dot strong {
+  color: #4b5563;
+  font-weight: 700;
+}
+
+html.dark .about-doc-page .vp-doc .timeline-dot {
+  color: rgba(226, 232, 240, 0.82);
+}
+
+html.dark .about-doc-page .vp-doc .timeline-dot::after {
+  background-color: rgba(148, 163, 184, 0.34);
+}
+
+html.dark .about-doc-page .vp-doc .timeline-dot .timeline-dot-title {
+  color: #f8fafc;
+}
+
+html.dark .about-doc-page .vp-doc .timeline-dot p {
+  color: rgba(226, 232, 240, 0.86);
+}
+
+html.dark .about-doc-page .vp-doc .timeline-dot strong {
+  color: #e2e8f0;
+}
+
+.about-doc-page .vp-doc .mermaid {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.about-doc-page .vp-doc .mermaid svg {
+  display: block;
+  width: max(100%, 1240px);
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+}
+
+.about-doc-page .vp-doc .mermaid-scroll-hint {
+  display: block;
+  margin: 0.45rem 0 1.5rem;
+  color: #5b6470;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+html.dark .about-doc-page .vp-doc .mermaid-scroll-hint {
+  color: rgba(226, 232, 240, 0.8);
 }
