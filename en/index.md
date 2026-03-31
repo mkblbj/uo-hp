@@ -1,6 +1,6 @@
 ---
 layout: hero
-title: UO Co., Ltd.
+title: Bringing value closer to everyday life.
 description: UO Co., Ltd. English home page
 navbar: false
 sidebar: false

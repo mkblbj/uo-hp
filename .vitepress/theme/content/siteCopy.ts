@@ -26,7 +26,7 @@ export interface SiteCopy {
 
 export const siteCopy: Record<Locale, SiteCopy> = {
   ja: {
-    metaTitle: "株式会社UO | 日本市場に、価値ある流れを。",
+    metaTitle: "株式会社UO  |  暮らしに寄り添う価値を。 ",
     navigation: {
       brand: "株式会社UO",
       region: "神戸・日本",
@@ -66,7 +66,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
   },
   zh: {
-    metaTitle: "株式会社UO | 立足日本市场，让价值顺畅流动。",
+    metaTitle: "株式会社UO  |  传递贴近生活的价值。  ",
     navigation: {
       brand: "株式会社UO",
       region: "神户・日本",
@@ -106,7 +106,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     },
   },
   en: {
-    metaTitle: "UO Co., Ltd. | Bringing meaningful flow to the Japanese market.",
+    metaTitle: "UO Co., Ltd.  |  Bringing value closer to everyday life.",
     navigation: {
       brand: "株式会社UO",
       region: "Kobe・Japan",

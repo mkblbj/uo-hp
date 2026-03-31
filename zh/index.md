@@ -1,6 +1,6 @@
 ---
 layout: hero
-title: 株式会社UO
+title: 传递贴近生活的价值。
 description: 株式会社UO 中文首页
 navbar: false
 sidebar: false

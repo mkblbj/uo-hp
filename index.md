@@ -1,6 +1,6 @@
 ---
 layout: hero
-title: 株式会社UO
+title: 暮らしに寄り添う価値を。
 description: 株式会社UOのトップページ
 navbar: false
 sidebar: false
