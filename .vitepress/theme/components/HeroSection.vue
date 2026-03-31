@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { withBase } from "vitepress";
 import logoMark from "../assets/uo-logo-pure.png";
-import logoWhite from "../assets/uo-logo-white.png";
 import type { Locale, SiteCopy } from "../content/siteCopy";
 import LanguageToggle from "./LanguageToggle.vue";
 import ShaderBackground from "./ShaderBackground.vue";
@@ -41,7 +40,7 @@ const props = defineProps<HeroSectionProps>();
           href="#top"
           :aria-label="`${props.navigation.brand} ${props.navigation.region}`"
         >
-          <img :src="logoWhite" alt="" class="brand-mark__logo" />
+          <img :src="logoMark" alt="" class="brand-mark__logo" />
           <span class="brand-mark__text">
             <span class="brand-mark__name">{{ props.navigation.brand }}</span>
             <span class="brand-mark__region">{{ props.navigation.region }}</span>
@@ -58,8 +57,6 @@ const props = defineProps<HeroSectionProps>();
 
     <div class="site-frame hero-section__body">
       <div class="hero-copy">
-        <div class="hero-badge">{{ props.hero.badge }}</div>
-
         <div class="hero-headline">
           <p
             v-for="(line, index) in props.hero.headline"
@@ -78,17 +75,39 @@ const props = defineProps<HeroSectionProps>();
         <div class="hero-metrics" aria-label="Company metrics">
           <div
             v-for="metric in props.hero.metrics"
-            :key="`${metric.value}-${metric.label}`"
+            :key="`${metric.value ?? 'tag'}-${metric.label}`"
             class="hero-metrics__item"
+            :class="{
+              'hero-metrics__item--tag': !metric.value,
+              'hero-metrics__item--new': !metric.value && metric.isNew,
+            }"
           >
-            <span class="hero-metrics__value">{{ metric.value }}</span>
+            <span v-if="metric.value" class="hero-metrics__value">{{ metric.value }}</span>
             <span class="hero-metrics__label">{{ metric.label }}</span>
+            <span v-if="!metric.value && metric.isNew" class="hero-metrics__badge">NEW</span>
+            <template v-if="!metric.value">
+              <div class="hero-metrics__stars" aria-hidden="true">
+                <div class="hero-metrics__stars-field" />
+              </div>
+              <div class="hero-metrics__glow" aria-hidden="true">
+                <div class="hero-metrics__circle" />
+                <div class="hero-metrics__circle" />
+              </div>
+            </template>
           </div>
         </div>
 
         <div class="hero-actions">
           <a class="button button--primary" :href="withBase(props.hero.ctaHref)">
-            {{ props.hero.cta }}
+            <span class="button__label">{{ props.hero.cta }}</span>
+            <span class="button__clip" aria-hidden="true">
+              <span class="button__corner button__corner--left-top" />
+              <span class="button__corner button__corner--right-bottom" />
+              <span class="button__corner button__corner--right-top" />
+              <span class="button__corner button__corner--left-bottom" />
+            </span>
+            <span class="button__arrow button__arrow--right" aria-hidden="true" />
+            <span class="button__arrow button__arrow--left" aria-hidden="true" />
           </a>
         </div>
       </div>

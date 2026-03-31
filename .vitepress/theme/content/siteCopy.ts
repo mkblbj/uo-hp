@@ -1,7 +1,8 @@
 export type Locale = "ja" | "zh" | "en";
 
 export interface Metric {
-  value: string;
+  isNew?: boolean;
+  value?: string;
   label: string;
 }
 
@@ -28,34 +29,39 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     metaTitle: "株式会社UO | 日本市場に、価値ある流れを。",
     navigation: {
       brand: "株式会社UO",
-      region: "神戸、日本",
+      region: "神戸・日本",
       localeSwitchLabel: "表示言語を切り替える",
       localeNames: {
         ja: "日本語",
-        zh: "中文",
-        en: "EN",
+        zh: "简体中文",
+        en: "English",
       },
     },
     hero: {
-      badge: "KOBE, JAPAN | EC OPERATION / OEM / CROSS-BORDER TRADE",
-      headline: ["日常使いに、", "非日常の彩りを届けたい。"],
+      badge: "EC運営 / OEM連携 / 越境サプライチェーン",
+      headline: ["暮らしに寄り添う", "価値を。"],
       summary:
-        "神戸を拠点に、スマートフォンアクセサリーで培ったEC運営力を基盤に、OEMと日中供給連携で暮らしに近い商品を届けます。",
+        "EC運営と商品開発の知見を活かし、日常に新しい彩りを届けます。",
       metrics: [
         {
-          value: "2018",
-          label: "設立",
+          label: "EC運営",
         },
         {
-          value: "2.1億円",
-          label: "2024売上",
+          label: "OEM・加工・卸売",
         },
         {
-          value: "Kobe",
-          label: "Japan Base",
+          label: "越境EC",
+        },
+        {
+          label: "食品EC",
+          isNew: true,
+        },
+        {
+          label: "AI・IT活用",
+          isNew: true,
         },
       ],
-      cta: "会社詳細",
+      cta: "会社概要を見る",
       ctaHref: "/about/",
     },
   },
@@ -63,34 +69,39 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     metaTitle: "株式会社UO | 立足日本市场，让价值顺畅流动。",
     navigation: {
       brand: "株式会社UO",
-      region: "神户，日本",
+      region: "神户・日本",
       localeSwitchLabel: "切换显示语言",
       localeNames: {
         ja: "日本語",
-        zh: "中文",
-        en: "EN",
+        zh: "简体中文",
+        en: "English",
       },
     },
     hero: {
       badge: "KOBE, JAPAN | 电商运营 / OEM / 跨境供应链",
-      headline: ["让日常用品，", "拥有非日常的价值。"],
+      headline: ["传递贴近生活的", "价值。"],
       summary:
-        "以神户为据点，UO 依托手机配件领域积累的电商运营能力，通过 OEM 与中日供应协同，把贴近日常生活的商品带到日本市场。",
+        "凭借在电商运营与商品开发方面积累的经验，为日常生活带来新的色彩。",
       metrics: [
         {
-          value: "2018",
-          label: "成立",
+          label: "电商运营",
         },
         {
-          value: "2.1亿日元",
-          label: "2024营收",
+          label: "OEM・加工・批发",
         },
         {
-          value: "Kobe",
-          label: "日本据点",
+          label: "跨境电商",
+        },
+        {
+          label: "食品电商",
+          isNew: true,
+        },
+        {
+          label: "AI・IT 应用",
+          isNew: true,
         },
       ],
-      cta: "公司详情",
+      cta: "查看公司概要",
       ctaHref: "/zh/about/",
     },
   },
@@ -98,34 +109,39 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     metaTitle: "UO Co., Ltd. | Bringing meaningful flow to the Japanese market.",
     navigation: {
       brand: "株式会社UO",
-      region: "Kobe, Japan",
+      region: "Kobe・Japan",
       localeSwitchLabel: "Switch display language",
       localeNames: {
         ja: "日本語",
-        zh: "中文",
-        en: "EN",
+        zh: "简体中文",
+        en: "English",
       },
     },
     hero: {
       badge: "KOBE, JAPAN | EC OPERATION / OEM / CROSS-BORDER TRADE",
-      headline: ["Give everyday items,", "extraordinary value."],
+      headline: ["Bringing value closer", "to everyday life."],
       summary:
-        "Based in Kobe, UO brings everyday products to the Japanese market through e-commerce expertise built in smartphone accessories, supported by OEM production and cross-border supply coordination.",
+        "Drawing on our expertise in e-commerce operations and product development, we bring new color to the everyday.",
       metrics: [
         {
-          value: "2018",
-          label: "Founded",
+          label: "EC Operations",
         },
         {
-          value: "JPY 210M",
-          label: "2024 Revenue",
+          label: "OEM / Processing / Wholesale",
         },
         {
-          value: "Kobe",
-          label: "Japan Base",
+          label: "Cross-Border EC",
+        },
+        {
+          label: "Food EC",
+          isNew: true,
+        },
+        {
+          label: "AI / IT Solutions",
+          isNew: true,
         },
       ],
-      cta: "Company Details",
+      cta: "View Company Overview",
       ctaHref: "/en/about/",
     },
   },
