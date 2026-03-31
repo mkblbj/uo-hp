@@ -1089,10 +1089,6 @@
     padding-top: 8rem;
   }
 
-  .hero-layout .hero-section {
-    contain: layout style paint;
-  }
-
   .hero-layout .hero-badge {
     font-size: 0.74rem;
     letter-spacing: 0.05em;
