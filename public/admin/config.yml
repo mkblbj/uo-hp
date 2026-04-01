@@ -1,0 +1,334 @@
+backend:
+  name: github
+  repo: mkblbj/uo-hp
+  branch: master
+  # 完成 Cloudflare Workers OAuth 配置后再启用。
+  # base_url: https://your-sveltia-auth.workers.dev
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  # ──────────────────────────────────────
+  #  日本語（日语）
+  # ──────────────────────────────────────
+  - name: "ja-about"
+    label: "🇯🇵 会社情報（公司信息）"
+    files:
+      - label: "会社情報トップ（首页）"
+        name: "about-index"
+        file: "about/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "会社概要（公司概要）"
+        name: "about-profile"
+        file: "about/profile/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "代表挨拶（代表致辞）"
+        name: "about-message"
+        file: "about/message/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+  - name: "ja-services"
+    label: "🇯🇵 事業案内（业务介绍）"
+    files:
+      - label: "事業案内トップ（业务概览）"
+        name: "services-index"
+        file: "services/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "スマホアクセサリー事業（手机配件业务）"
+        name: "services-mobile-accessories"
+        file: "services/mobile-accessories/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "国内産食品事業（国产食品业务）"
+        name: "services-domestic-foods"
+        file: "services/domestic-foods/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "OEM・卸/越境連携（OEM/批发/跨境）"
+        name: "services-oem-wholesale"
+        file: "services/oem-wholesale/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "主要商品（主要产品）"
+        name: "services-products"
+        file: "services/products/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "販売実績（销售业绩）"
+        name: "services-performance"
+        file: "services/performance/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "選ばれる理由（选择我们的理由）"
+        name: "services-strengths"
+        file: "services/strengths/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "今後の展開（未来发展）"
+        name: "services-future"
+        file: "services/future/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+  # ──────────────────────────────────────
+  #  中文
+  # ──────────────────────────────────────
+  - name: "zh-about"
+    label: "🇨🇳 公司信息（中文）"
+    files:
+      - label: "公司信息首页"
+        name: "about-index"
+        file: "zh/about/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "公司概要"
+        name: "about-profile"
+        file: "zh/about/profile/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "代表致辞"
+        name: "about-message"
+        file: "zh/about/message/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+  - name: "zh-services"
+    label: "🇨🇳 业务介绍（中文）"
+    files:
+      - label: "业务概览"
+        name: "services-index"
+        file: "zh/services/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "手机配件业务"
+        name: "services-mobile-accessories"
+        file: "zh/services/mobile-accessories/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "日本国产食品业务"
+        name: "services-domestic-foods"
+        file: "zh/services/domestic-foods/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "OEM、批发 / 跨境协同"
+        name: "services-oem-wholesale"
+        file: "zh/services/oem-wholesale/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "主要产品"
+        name: "services-products"
+        file: "zh/services/products/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "销售业绩"
+        name: "services-performance"
+        file: "zh/services/performance/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "选择我们的理由"
+        name: "services-strengths"
+        file: "zh/services/strengths/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+      - label: "未来发展"
+        name: "services-future"
+        file: "zh/services/future/index.md"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "正文内容", name: "body", widget: "markdown" }
+
+  # ──────────────────────────────────────
+  #  English
+  # ──────────────────────────────────────
+  - name: "en-about"
+    label: "🇬🇧 Company (English)"
+    files:
+      - label: "Company Overview"
+        name: "about-index"
+        file: "en/about/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Company Profile"
+        name: "about-profile"
+        file: "en/about/profile/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Message from the Representative"
+        name: "about-message"
+        file: "en/about/message/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "about-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en-services"
+    label: "🇬🇧 Services (English)"
+    files:
+      - label: "Services Overview"
+        name: "services-index"
+        file: "en/services/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Smartphone Accessories Business"
+        name: "services-mobile-accessories"
+        file: "en/services/mobile-accessories/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Domestic Foods Business"
+        name: "services-domestic-foods"
+        file: "en/services/domestic-foods/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "OEM / Wholesale / Cross-border"
+        name: "services-oem-wholesale"
+        file: "en/services/oem-wholesale/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Key Products"
+        name: "services-products"
+        file: "en/services/products/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Sales Performance"
+        name: "services-performance"
+        file: "en/services/performance/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Why Customers Choose Us"
+        name: "services-strengths"
+        file: "en/services/strengths/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Future Development"
+        name: "services-future"
+        file: "en/services/future/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
+          - { label: "Body", name: "body", widget: "markdown" }

@@ -2,15 +2,41 @@ import { defineConfig } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
+const isProductionBuild = process.env.NODE_ENV === "production";
+const siteBase = isProductionBuild ? "/uo-hp/" : "/";
+const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
+
 const config = defineConfig({
+  base: siteBase,
+  vite: {
+    plugins: [
+      {
+        name: "admin-rewrite",
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            const r = req as { url?: string };
+            if (r.url === "/admin") {
+              (res as any).writeHead(301, { Location: "/admin/" });
+              (res as any).end();
+              return;
+            }
+            if (r.url === "/admin/") {
+              r.url = "/admin/index.html";
+            }
+            next();
+          });
+        },
+      },
+    ],
+  },
   lang: "ja",
   title: "株式会社UO",
   description: "株式会社UOの会社案内サイト。",
   head: [
-    ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    ["link", { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }],
-    ["link", { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }],
-    ["link", { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" }],
+    ["link", { rel: "icon", type: "image/x-icon", href: withSiteBase("/favicon.ico") }],
+    ["link", { rel: "icon", type: "image/png", sizes: "32x32", href: withSiteBase("/favicon-32x32.png") }],
+    ["link", { rel: "icon", type: "image/png", sizes: "16x16", href: withSiteBase("/favicon-16x16.png") }],
+    ["link", { rel: "apple-touch-icon", sizes: "180x180", href: withSiteBase("/apple-touch-icon.png") }],
   ],
   cleanUrls: true,
   mermaid: {},
