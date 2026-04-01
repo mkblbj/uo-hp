@@ -2,8 +2,7 @@ backend:
   name: github
   repo: mkblbj/uo-hp
   branch: master
-  # 完成 Cloudflare Workers OAuth 配置后再启用。
-  base_url: https://sveltia-cms-auth.mkblbjus.workers.dev/
+  base_url: https://sveltia-cms-auth.mkblbjus.workers.dev
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
