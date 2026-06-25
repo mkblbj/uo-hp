@@ -2,7 +2,6 @@ import { defineConfig } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
-const isProductionBuild = process.env.NODE_ENV === "production";
 const siteBase = "/";
 const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
 
