@@ -406,6 +406,16 @@
     "secondaryLabel": "OEM・卸の対応範囲",
     "secondaryHref": "/services/oem-wholesale/"
   },
+  "access": {
+    "eyebrow": "ACCESS",
+    "title": "アクセス",
+    "address": "兵庫県神戸市長田区菅原通2-23 No.88ビル2F",
+    "note": "",
+    "coordinates": "34.665003, 135.1580635",
+    "mapUrl": "https://maps.app.goo.gl/UifkGmokR85X1GwX9",
+    "mapLabel": "Google マップで開く",
+    "routeLabel": "ルート検索"
+  },
   "footer": {
     "info": [
       {
@@ -425,7 +435,6 @@
         "value": "神戸市"
       }
     ],
-    "mapUrl": "https://maps.app.goo.gl/UifkGmokR85X1GwX9",
     "mapLabel": "地図を見る",
     "columns": [
       {

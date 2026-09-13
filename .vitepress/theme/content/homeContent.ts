@@ -112,9 +112,22 @@ export interface HomeContent {
     secondaryLabel: string;
     secondaryHref: string;
   };
+  access: {
+    eyebrow: string;
+    title: string;
+    address: string;
+    /** 交通说明（如最近车站），留空则不显示 */
+    note?: string;
+    /** 「纬度, 经度」，从 Google 地图右键复制 */
+    coordinates: string;
+    /** 地址卡片按钮和页脚「地図を見る」共用 */
+    mapUrl?: string;
+    mapLabel: string;
+    routeLabel: string;
+  };
   footer: {
     info: LabelValue[];
-    mapUrl?: string;
+    /** 网址用 access.mapUrl */
     mapLabel: string;
     columns: { title: string; links: LinkItem[] }[];
     shopsTitle: string;

@@ -11,3 +11,13 @@ declare module "*.png" {
 }
 
 declare module "*.css";
+
+declare module "*?inline" {
+  const src: string;
+  export default src;
+}
+
+declare module "*?worker&url" {
+  const src: string;
+  export default src;
+}

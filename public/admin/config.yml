@@ -258,6 +258,19 @@ collections:
               - { label: "表单按钮文字", name: "formLabel", widget: "string" }
               - { label: "次按钮文字", name: "secondaryLabel", widget: "string" }
               - { label: "次按钮链接", name: "secondaryHref", widget: "string" }
+          - label: "ACCESS（地图）"
+            name: "access"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "地址", name: "address", widget: "string" }
+              - { label: "交通说明（留空则不显示）", name: "note", widget: "text", required: false, hint: "例：○○駅から徒歩○分" }
+              - { label: "坐标（纬度, 经度）", name: "coordinates", widget: "string", hint: "在 Google 地图上右键点击公司位置，点菜单第一行的数字即可复制，粘贴到这里。格式不对时地图不显示。" }
+              - { label: "Google 地图网址（留空则不显示按钮）", name: "mapUrl", widget: "string", required: false, hint: "地图旁的按钮和页脚的「地図を見る」共用这个网址" }
+              - { label: "Google 地图按钮文字", name: "mapLabel", widget: "string" }
+              - { label: "路线按钮文字", name: "routeLabel", widget: "string" }
           - label: "页脚"
             name: "footer"
             widget: "object"
@@ -270,8 +283,7 @@ collections:
                 fields:
                   - { label: "项目", name: "label", widget: "string" }
                   - { label: "内容", name: "value", widget: "string" }
-              - { label: "地图网址（留空则不显示）", name: "mapUrl", widget: "string", required: false }
-              - { label: "地图链接文字", name: "mapLabel", widget: "string" }
+              - { label: "地图链接文字（网址在「ACCESS（地图）」里设置）", name: "mapLabel", widget: "string" }
               - label: "链接栏"
                 name: "columns"
                 widget: "list"

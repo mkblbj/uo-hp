@@ -28,6 +28,30 @@ test("the legacy zh/en homepages still load their fonts", () => {
   assert.ok(read("en/index.html").includes(OLD_FONTS));
 });
 
+test("the homepage does not load the map module up front", () => {
+  const upfront = [...read("index.html").matchAll(/<(?:script[^>]*\ssrc|link[^>]*\shref)="\/(assets\/[^"]+\.js)"/g)].map(
+    (match) => new URL(match[1], dist),
+  );
+  assert.ok(upfront.length > 0, "index.html loads no scripts");
+  for (const file of upfront) {
+    const code = readFileSync(file, "utf8");
+    // 地图程序和它的内联样式里都有这个类名，首页自己的代码里没有
+    assert.ok(!code.includes("maplibregl-canvas"), `${file.pathname} carries the map library`);
+  }
+});
+
+test("map styles load with the map module instead of the shared CSS bundle", () => {
+  const hasMapStyles = (file: URL) => /\.maplibregl-map\s*\{/.test(readFileSync(file, "utf8"));
+  const linked = [...read("index.html").matchAll(/href="\/(assets\/[^"]+\.css)"/g)].map((match) => new URL(match[1], dist));
+  assert.ok(linked.length > 0, "index.html links no stylesheet");
+  for (const css of linked) assert.ok(!hasMapStyles(css), `${css.pathname} carries the map styles`);
+  const mapModule = filesUnder(new URL("assets/", dist), ".js").find((file) =>
+    readFileSync(file, "utf8").includes("tiles.openfreemap.org"),
+  );
+  assert.ok(mapModule, "the map module was not emitted");
+  assert.ok(hasMapStyles(mapModule), "the map module does not carry the map styles");
+});
+
 test("inner pages and the shared CSS bundle no longer load Google Fonts", () => {
   for (const page of ["about/index.html", "about/profile/index.html", "services/index.html"]) {
     assert.ok(!read(page).includes("fonts.googleapis.com"), page);

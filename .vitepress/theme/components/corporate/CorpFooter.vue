@@ -8,6 +8,7 @@ import { isExternalUrl, linkAttrs } from "../../utils/linkAttrs";
 defineProps<{
   brand: HomeContent["brand"];
   footer: HomeContent["footer"];
+  mapUrl?: string;
   locale: Locale;
   localeLinks: Record<Locale, string>;
 }>();
@@ -29,7 +30,7 @@ defineProps<{
             <span class="footer__info-label">{{ row.label }}</span>
             <span class="footer__info-value">{{ row.value }}</span>
           </div>
-          <a v-if="footer.mapUrl" class="footer__map" v-bind="linkAttrs(footer.mapUrl)">
+          <a v-if="mapUrl" class="footer__map" v-bind="linkAttrs(mapUrl)">
             {{ footer.mapLabel }}
             <svg class="footer__map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
           </a>

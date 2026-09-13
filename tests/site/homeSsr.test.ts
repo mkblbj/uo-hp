@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { getHomeContent } from "../../.vitepress/theme/content/homeContent.ts";
 import { getHomeUi } from "../../.vitepress/theme/content/homeUi.ts";
+import { directionsUrl, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 
 const file = new URL("../../.vitepress/dist/index.html", import.meta.url);
 const html = existsSync(file) ? readFileSync(file, "utf8") : "";
@@ -197,4 +198,23 @@ test("footer renders columns, shops, the legal line and language links", () => {
   assert.equal(ja.footer.privacyUrl, "");
   assert.ok(!html.includes(escapeHtml(ja.footer.privacyLabel)), "privacy link must stay hidden without a URL");
   assert.ok(html.includes('href="/zh/"') && html.includes('href="/en/"'));
+});
+
+test("access section renders the address card with the map and route links", () => {
+  assert.match(html, /<section[^>]*id="access"/);
+  expectText(ja.access.eyebrow);
+  expectText(ja.access.title);
+  expectText(ja.access.address);
+  assert.ok(ja.access.mapUrl, "the Google Maps URL is set in the CMS");
+  assert.match(html, new RegExp(`href="${escapeRegExp(ja.access.mapUrl)}"[^>]*target="_blank"`));
+  expectText(ja.access.mapLabel);
+  const route = directionsUrl(parseLatLng(ja.access.coordinates), ja.access.address);
+  assert.ok(html.includes(`href="${escapeHtml(route)}"`), route);
+  expectText(ja.access.routeLabel);
+});
+
+test("the footer map link shares the Google Maps URL set under ACCESS", () => {
+  expectText(ja.footer.mapLabel);
+  const links = html.match(new RegExp(`href="${escapeRegExp(ja.access.mapUrl ?? "")}"`, "g")) ?? [];
+  assert.equal(links.length, 2, "the access card and the footer should both link to it");
 });

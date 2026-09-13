@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, statSync } from "node:fs";
 import { getHomeContent } from "../../.vitepress/theme/content/homeContent.ts";
 import { getHomeUi } from "../../.vitepress/theme/content/homeUi.ts";
+import { parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 import { parseCountValue } from "../../.vitepress/theme/utils/countValue.ts";
 
 const repo = new URL("../../", import.meta.url);
@@ -75,4 +76,8 @@ test("every business pillar has the fields the hero panel and cards need", () =>
   for (const pillar of ja.business.pillars) {
     assert.ok(pillar.summary && pillar.body && pillar.chips.length > 0, pillar.title);
   }
+});
+
+test("the access map points at valid coordinates", () => {
+  assert.ok(parseLatLng(ja.access.coordinates), `invalid coordinates: ${ja.access.coordinates}`);
 });

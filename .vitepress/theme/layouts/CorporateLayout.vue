@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from "vue";
+import CorpAccess from "../components/corporate/CorpAccess.vue";
 import CorpBusiness from "../components/corporate/CorpBusiness.vue";
 import CorpCompany from "../components/corporate/CorpCompany.vue";
 import CorpContact from "../components/corporate/CorpContact.vue";
@@ -70,7 +71,15 @@ const onAnchorClick = async (event: MouseEvent) => {
       <CorpCompany :company="content.company" />
       <CorpMessage :message="content.message" />
       <CorpContact :contact="content.contact" :ui="ui" />
+      <!-- 用部署前打开的旧后台页面保存时，access 可能被丢掉：缺了就不显示地图区，而不是让构建失败 -->
+      <CorpAccess v-if="content.access" :access="content.access" :brand-name="content.brand.name" />
     </main>
-    <CorpFooter :brand="content.brand" :footer="content.footer" :locale="locale" :locale-links="localeLinks" />
+    <CorpFooter
+      :brand="content.brand"
+      :footer="content.footer"
+      :map-url="content.access?.mapUrl"
+      :locale="locale"
+      :locale-links="localeLinks"
+    />
   </div>
 </template>

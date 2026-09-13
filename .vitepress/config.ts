@@ -8,6 +8,8 @@ const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
 const config = defineConfig({
   base: siteBase,
   vite: {
+    // 唯一超过 500 kB 的是首页 ACCESS 区按需加载的地图程序（约 1.1 MB，压缩传输约 290 KB）
+    build: { chunkSizeWarningLimit: 1200 },
     plugins: [
       {
         name: "admin-rewrite",
