@@ -24,10 +24,16 @@ const LOCALE_JA: Record<string, string> = {
   "CooperativeGesturesHandler.MobileHelpText": "2本の指で地図を動かせます",
 };
 
+/** 定位点上方的标签：公司名和 LOGO 图片地址 */
+export interface AccessMapPin {
+  label: string;
+  logo: string;
+}
+
 export interface AccessMapOptions {
   container: HTMLElement;
   target: LatLng;
-  label: string;
+  pin: AccessMapPin;
   /** 被地址卡片挡住的边距，每次移动镜头前重新计算 */
   padding: () => PaddingOptions;
   /** 组件卸载时中止，地图随之销毁 */
@@ -42,11 +48,13 @@ export interface AccessMapHandle {
 
 const span = (className: string, text = "") => Object.assign(document.createElement("span"), { className, textContent: text });
 
-const createPin = (label: string) => {
+const createPin = ({ label, logo }: AccessMapPin) => {
   const pin = document.createElement("div");
   pin.className = "access-pin";
   pin.setAttribute("aria-hidden", "true");
-  pin.append(span("access-pin__pulse"), span("access-pin__dot"), span("access-pin__label", label));
+  const tag = span("access-pin__label");
+  tag.append(Object.assign(document.createElement("img"), { className: "access-pin__logo", src: logo, alt: "", width: 18, height: 18 }), label);
+  pin.append(span("access-pin__pulse"), span("access-pin__dot"), tag);
   return pin;
 };
 
@@ -60,7 +68,7 @@ const injectMapStyles = () => {
 const samePadding = (a: PaddingOptions, b: PaddingOptions) =>
   a.top === b.top && a.right === b.right && a.bottom === b.bottom && a.left === b.left;
 
-export const createAccessMap = async ({ container, target, label, padding, signal }: AccessMapOptions): Promise<AccessMapHandle> => {
+export const createAccessMap = async ({ container, target, pin, padding, signal }: AccessMapOptions): Promise<AccessMapHandle> => {
   const response = await fetch(STYLE_URL, { signal });
   if (!response.ok) throw new Error(`map style request failed: ${response.status}`);
   const style = themeMapStyle((await response.json()) as StyleSpecification);
@@ -90,7 +98,7 @@ export const createAccessMap = async ({ container, target, label, padding, signa
   // 控件都放左侧，避开右侧的地址卡片；署名始终展开（免费使用底图的条件）
   map.addControl(new NavigationControl({ showCompass: false }), "top-left");
   map.addControl(new AttributionControl({ compact: false }), "bottom-left");
-  new Marker({ element: createPin(label) }).setLngLat(center).addTo(map);
+  new Marker({ element: createPin(pin) }).setLngLat(center).addTo(map);
   await map.once("load");
 
   let flown = false;

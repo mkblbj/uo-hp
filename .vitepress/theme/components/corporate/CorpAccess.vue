@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import logoMark from "../../assets/uo-logo-pure.png";
 import { useAccessMap } from "../../composables/useAccessMap";
 import type { HomeContent } from "../../content/homeContent";
 import { directionsUrl, parseLatLng } from "../../utils/accessMap";
@@ -13,7 +14,7 @@ const routeUrl = computed(() => directionsUrl(target.value, props.access.address
 const section = ref<HTMLElement | null>(null);
 const container = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
-const { status } = useAccessMap({ section, container, card }, () => target.value, "UO");
+const { status } = useAccessMap({ section, container, card }, () => target.value, { label: props.brandName, logo: logoMark });
 </script>
 
 <template>
@@ -244,15 +245,25 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
   position: absolute;
   bottom: calc(100% + 12px);
   left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   transform: translateX(-50%);
-  padding: 0.3rem 0.65rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.45rem;
   border: 1px solid rgba(111, 169, 222, 0.45);
   background: rgba(5, 9, 13, 0.92);
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   color: #eef6fd;
   white-space: nowrap;
+}
+
+.access :deep(.access-pin__logo) {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 @keyframes access-pulse {

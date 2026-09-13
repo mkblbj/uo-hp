@@ -1,6 +1,6 @@
 import { onBeforeUnmount, onMounted, ref, type Ref } from "vue";
 import type { LatLng } from "../utils/accessMap";
-import type { AccessMapHandle } from "../utils/accessMapClient";
+import type { AccessMapHandle, AccessMapPin } from "../utils/accessMapClient";
 
 export type AccessMapStatus = "idle" | "loading" | "ready" | "failed";
 
@@ -17,7 +17,7 @@ const CARD_BESIDE_MAP = "(min-width: 1021px)";
  * 地图区离视口还有 600px 时才下载地图程序，首屏不受影响；
  * 地图露出三成后再从神户全景飞到公司位置。坐标无效或加载失败时保留占位图。
  */
-export const useAccessMap = ({ section, container, card }: AccessMapElements, target: () => LatLng | null, label: string) => {
+export const useAccessMap = ({ section, container, card }: AccessMapElements, target: () => LatLng | null, pin: AccessMapPin) => {
   const status = ref<AccessMapStatus>("idle");
   const controller = new AbortController();
   const observers: IntersectionObserver[] = [];
@@ -39,7 +39,7 @@ export const useAccessMap = ({ section, container, card }: AccessMapElements, ta
     status.value = "loading";
     try {
       const { createAccessMap } = await import("../utils/accessMapClient");
-      handle = await createAccessMap({ container: element, target: spot, label, padding, signal: controller.signal });
+      handle = await createAccessMap({ container: element, target: spot, pin, padding, signal: controller.signal });
       status.value = "ready";
       if (inView) handle.flyIn();
     } catch (error) {
