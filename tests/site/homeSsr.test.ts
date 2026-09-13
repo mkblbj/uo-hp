@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { getHomeContent } from "../../.vitepress/theme/content/homeContent.ts";
 import { getHomeUi } from "../../.vitepress/theme/content/homeUi.ts";
-import { directionsUrl, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
+import { directionsUrl, mapSearchUrl, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 
 const file = new URL("../../.vitepress/dist/index.html", import.meta.url);
 const html = existsSync(file) ? readFileSync(file, "utf8") : "";
@@ -205,10 +205,11 @@ test("access section renders the address card with the map and route links", () 
   expectText(ja.access.eyebrow);
   expectText(ja.access.title);
   expectText(ja.access.address);
-  assert.ok(ja.access.mapUrl, "the Google Maps URL is set in the CMS");
-  assert.match(html, new RegExp(`href="${escapeRegExp(ja.access.mapUrl)}"[^>]*target="_blank"`));
+  const target = parseLatLng(ja.access.coordinates);
+  const map = mapSearchUrl(target, ja.access.address);
+  assert.match(html, new RegExp(`href="${escapeRegExp(escapeHtml(map))}"[^>]*target="_blank"`), map);
   expectText(ja.access.mapLabel);
-  const route = directionsUrl(parseLatLng(ja.access.coordinates), ja.access.address);
+  const route = directionsUrl(target, ja.access.address);
   assert.ok(html.includes(`href="${escapeHtml(route)}"`), route);
   expectText(ja.access.routeLabel);
 });
@@ -223,8 +224,14 @@ test("access directions render as a list when every line starts with a bullet", 
   }
 });
 
-test("the footer map link shares the Google Maps URL set under ACCESS", () => {
+test("the footer map link opens the same Google Maps location as the access card", () => {
   expectText(ja.footer.mapLabel);
-  const links = html.match(new RegExp(`href="${escapeRegExp(ja.access.mapUrl ?? "")}"`, "g")) ?? [];
+  const map = escapeHtml(mapSearchUrl(parseLatLng(ja.access.coordinates), ja.access.address));
+  const links = html.match(new RegExp(`href="${escapeRegExp(map)}"`, "g")) ?? [];
   assert.equal(links.length, 2, "the access card and the footer should both link to it");
+});
+
+test("no Google Maps short links reach the page, since the iPhone Maps app cannot open them", () => {
+  assert.ok(!html.includes("maps.app.goo.gl"));
+  assert.ok(!html.includes("goo.gl/maps"));
 });

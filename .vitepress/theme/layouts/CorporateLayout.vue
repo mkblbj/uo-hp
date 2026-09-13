@@ -17,10 +17,16 @@ import { useLocale } from "../composables/useLocale";
 import { useRevealOnScroll } from "../composables/useRevealOnScroll";
 import { getHomeContent } from "../content/homeContent";
 import { getHomeUi } from "../content/homeUi";
+import { mapSearchUrl, parseLatLng } from "../utils/accessMap";
 
 const { locale, localeLinks } = useLocale();
 const content = computed(() => getHomeContent(locale.value));
 const ui = computed(() => getHomeUi(locale.value));
+// 页脚「地図を見る」和地图区的按钮打开同一个位置（按后台的坐标生成）
+const footerMapUrl = computed(() => {
+  const access = content.value.access;
+  return access ? mapSearchUrl(parseLatLng(access.coordinates), access.address) : undefined;
+});
 const rootRef = ref<HTMLElement | null>(null);
 
 useRevealOnScroll(rootRef);
@@ -77,7 +83,7 @@ const onAnchorClick = async (event: MouseEvent) => {
     <CorpFooter
       :brand="content.brand"
       :footer="content.footer"
-      :map-url="content.access?.mapUrl"
+      :map-url="footerMapUrl"
       :locale="locale"
       :locale-links="localeLinks"
     />

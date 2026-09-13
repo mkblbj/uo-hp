@@ -118,16 +118,14 @@ export interface HomeContent {
     address: string;
     /** 交通说明（如最近车站），留空则不显示 */
     note?: string;
-    /** 「纬度, 经度」，从 Google 地图右键复制 */
+    /** 「纬度, 经度」，从 Google 地图右键复制；地图定位和 Google 地图、路线两个链接都按它生成 */
     coordinates: string;
-    /** 地址卡片按钮和页脚「地図を見る」共用 */
-    mapUrl?: string;
     mapLabel: string;
     routeLabel: string;
   };
   footer: {
     info: LabelValue[];
-    /** 网址用 access.mapUrl */
+    /** 链接按 access.coordinates 自动生成 */
     mapLabel: string;
     columns: { title: string; links: LinkItem[] }[];
     shopsTitle: string;

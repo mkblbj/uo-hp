@@ -3,12 +3,13 @@ import { computed, ref } from "vue";
 import logoMark from "../../assets/uo-logo-pure.png";
 import { useAccessMap } from "../../composables/useAccessMap";
 import type { HomeContent } from "../../content/homeContent";
-import { directionsUrl, noteItems, parseLatLng } from "../../utils/accessMap";
+import { directionsUrl, mapSearchUrl, noteItems, parseLatLng } from "../../utils/accessMap";
 import { linkAttrs } from "../../utils/linkAttrs";
 
 const props = defineProps<{ access: HomeContent["access"]; brandName: string }>();
 
 const target = computed(() => parseLatLng(props.access.coordinates));
+const mapUrl = computed(() => mapSearchUrl(target.value, props.access.address));
 const routeUrl = computed(() => directionsUrl(target.value, props.access.address));
 const noteList = computed(() => noteItems(props.access.note));
 
@@ -38,7 +39,7 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
           </ul>
           <p v-else-if="access.note" class="access__note">{{ access.note }}</p>
           <div class="access__actions">
-            <a v-if="access.mapUrl" class="access__btn access__btn--primary" v-bind="linkAttrs(access.mapUrl)">
+            <a class="access__btn access__btn--primary" v-bind="linkAttrs(mapUrl)">
               {{ access.mapLabel }}
               <svg class="access__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
             </a>

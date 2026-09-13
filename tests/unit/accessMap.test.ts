@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { directionsUrl, noteItems, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
+import { directionsUrl, mapSearchUrl, noteItems, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 
 const OFFICE = { lat: 34.665003, lng: 135.1580635 };
 
@@ -38,6 +38,20 @@ test("the route link falls back to the address without coordinates", () => {
   assert.equal(`${url.origin}${url.pathname}`, "https://www.google.com/maps/dir/");
   assert.equal(url.searchParams.get("api"), "1");
   assert.equal(url.searchParams.get("destination"), "兵庫県神戸市長田区菅原通2-23 No.88ビル2F");
+});
+
+test("the Google Maps link opens the exact coordinates, in the app or on the web", () => {
+  assert.equal(
+    mapSearchUrl(OFFICE, "兵庫県神戸市長田区菅原通2-23"),
+    "https://www.google.com/maps/search/?api=1&query=34.665003%2C135.1580635",
+  );
+});
+
+test("the Google Maps link falls back to the address without coordinates", () => {
+  const url = new URL(mapSearchUrl(null, "兵庫県神戸市長田区菅原通2-23"));
+  assert.equal(`${url.origin}${url.pathname}`, "https://www.google.com/maps/search/");
+  assert.equal(url.searchParams.get("api"), "1");
+  assert.equal(url.searchParams.get("query"), "兵庫県神戸市長田区菅原通2-23");
 });
 
 test("directions written as bullet lines become list items", () => {
