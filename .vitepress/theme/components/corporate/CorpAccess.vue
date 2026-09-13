@@ -248,6 +248,8 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  /* 标签挂在 16px 宽的定位点上，默认会被挤成最窄宽度，这里按内容撑开 */
+  width: max-content;
   transform: translateX(-50%);
   padding: 0.3rem 0.7rem 0.3rem 0.45rem;
   border: 1px solid rgba(111, 169, 222, 0.45);
@@ -262,8 +264,11 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
 
 .access :deep(.access-pin__logo) {
   display: block;
+  flex: none;
   width: 18px;
   height: 18px;
+  /* 覆盖 VitePress 全局的 img { max-width: 100% }，否则计算标签宽度时 LOGO 会被当成 0 宽 */
+  max-width: none;
 }
 
 @keyframes access-pulse {
