@@ -35,8 +35,9 @@ test("the homepage does not load the map module up front", () => {
   assert.ok(upfront.length > 0, "index.html loads no scripts");
   for (const file of upfront) {
     const code = readFileSync(file, "utf8");
-    // 地图程序和它的内联样式里都有这个类名，首页自己的代码里没有
+    // 地图程序和它的内联样式里都有这个类名，路线数据里有路线服务的网址；首页自己的代码里都没有
     assert.ok(!code.includes("maplibregl-canvas"), `${file.pathname} carries the map library`);
+    assert.ok(!code.includes("routing.openstreetmap.de"), `${file.pathname} carries the route data`);
   }
 });
 

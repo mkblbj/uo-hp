@@ -8,7 +8,8 @@
     "build": "vitepress build",
     "preview": "vitepress preview",
     "test": "node --test tests/unit/*.test.ts",
-    "test:site": "vitepress build && node --test tests/site/*.test.ts"
+    "test:site": "vitepress build && node --test tests/site/*.test.ts",
+    "routes:access": "node scripts/access-routes.mjs"
   },
   "devDependencies": {
     "@braintree/sanitize-url": "^7.1.2",

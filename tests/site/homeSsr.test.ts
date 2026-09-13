@@ -213,6 +213,16 @@ test("access section renders the address card with the map and route links", () 
   expectText(ja.access.routeLabel);
 });
 
+test("access directions render as a list when every line starts with a bullet", () => {
+  const lines = (ja.access.note ?? "").split("\n").map((line) => line.trim()).filter(Boolean);
+  const bullets = lines.length > 0 && lines.every((line) => /^[-・]/.test(line));
+  for (const line of lines) {
+    const text = escapeHtml(bullets ? line.replace(/^[-・]\s*/, "") : line);
+    if (bullets) assert.match(html, new RegExp(`<li[^>]*>${escapeRegExp(text)}</li>`), line);
+    else assert.ok(html.includes(text), line);
+  }
+});
+
 test("the footer map link shares the Google Maps URL set under ACCESS", () => {
   expectText(ja.footer.mapLabel);
   const links = html.match(new RegExp(`href="${escapeRegExp(ja.access.mapUrl ?? "")}"`, "g")) ?? [];

@@ -18,3 +18,10 @@ export const directionsUrl = (target: LatLng | null, address: string): string =>
   const destination = target ? `${target.lat},${target.lng}` : address;
   return `https://www.google.com/maps/dir/?${new URLSearchParams({ api: "1", destination })}`;
 };
+
+/** 交通说明：每行都以「- 」或「・」开头时拆成列表项；否则返回 null，按原文显示 */
+export const noteItems = (note?: string): string[] | null => {
+  const lines = (note ?? "").split("\n").map((line) => line.trim()).filter(Boolean);
+  if (!lines.length || !lines.every((line) => /^[-・]/.test(line))) return null;
+  return lines.map((line) => line.replace(/^[-・]\s*/, ""));
+};

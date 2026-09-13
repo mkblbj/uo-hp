@@ -69,6 +69,7 @@ export const useAccessMap = ({ section, container, card }: AccessMapElements, ta
     });
     observe(container.value, { threshold: 0.3 }, (entry) => {
       inView = entry.intersectionRatio >= 0.29;
+      handle?.setActive(inView);
       if (inView) handle?.flyIn();
     });
     window.addEventListener("resize", onResize, { passive: true });

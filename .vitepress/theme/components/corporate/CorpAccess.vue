@@ -3,13 +3,14 @@ import { computed, ref } from "vue";
 import logoMark from "../../assets/uo-logo-pure.png";
 import { useAccessMap } from "../../composables/useAccessMap";
 import type { HomeContent } from "../../content/homeContent";
-import { directionsUrl, parseLatLng } from "../../utils/accessMap";
+import { directionsUrl, noteItems, parseLatLng } from "../../utils/accessMap";
 import { linkAttrs } from "../../utils/linkAttrs";
 
 const props = defineProps<{ access: HomeContent["access"]; brandName: string }>();
 
 const target = computed(() => parseLatLng(props.access.coordinates));
 const routeUrl = computed(() => directionsUrl(target.value, props.access.address));
+const noteList = computed(() => noteItems(props.access.note));
 
 const section = ref<HTMLElement | null>(null);
 const container = ref<HTMLElement | null>(null);
@@ -32,7 +33,10 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
           <h2 id="access-title" class="access__title">{{ access.title }}</h2>
           <p class="access__name">{{ brandName }}</p>
           <p class="access__address">{{ access.address }}</p>
-          <p v-if="access.note" class="access__note">{{ access.note }}</p>
+          <ul v-if="noteList" class="access__note access__note--list">
+            <li v-for="item in noteList" :key="item">{{ item }}</li>
+          </ul>
+          <p v-else-if="access.note" class="access__note">{{ access.note }}</p>
           <div class="access__actions">
             <a v-if="access.mapUrl" class="access__btn access__btn--primary" v-bind="linkAttrs(access.mapUrl)">
               {{ access.mapLabel }}
@@ -162,6 +166,33 @@ const { status } = useAccessMap({ section, container, card }, () => target.value
   line-height: 1.8;
   color: rgba(248, 243, 235, 0.68);
   white-space: pre-line;
+}
+
+/* 每行以「- 」或「・」开头的交通说明显示成列表，折行时文字对齐 */
+.access__note--list {
+  padding-left: 0;
+  list-style: none;
+  white-space: normal;
+}
+
+.access__note--list li {
+  position: relative;
+  padding-left: 1em;
+}
+
+.access__note--list li + li {
+  margin-top: 0.2rem;
+}
+
+.access__note--list li::before {
+  content: "";
+  position: absolute;
+  top: 0.8em;
+  left: 0.15em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #6fa9de;
 }
 
 .access__actions {
