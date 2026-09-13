@@ -19,7 +19,7 @@ defineProps<{ message: HomeContent["message"] }>();
           <div class="message__signer">
             <span class="message__role">{{ message.role }}</span>
             <span class="message__signature">
-              <img :src="withBase(message.signature)" :alt="message.signatureAlt" width="292" height="112" loading="lazy" decoding="async" />
+              <img :src="withBase(message.signature)" :alt="message.signatureAlt" width="1200" height="297" loading="lazy" decoding="async" />
             </span>
           </div>
           <CorpArrowLink class="message__more" :href="message.linkHref" :label="message.linkLabel" />
@@ -127,17 +127,14 @@ defineProps<{ message: HomeContent["message"] }>();
   align-items: center;
   justify-content: center;
   width: fit-content;
-  padding: 0.5rem 0.9rem;
-  background: #f2f5f8;
-  border: 1px solid rgba(199, 215, 231, 0.2);
+  padding: 0;
 }
 
 .message__signature img {
   display: block;
-  max-width: 150px;
+  max-width: 210px;
   width: 100%;
   height: auto;
-  mix-blend-mode: multiply;
 }
 
 .message .message__more {
