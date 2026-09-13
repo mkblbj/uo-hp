@@ -11,6 +11,292 @@ collections:
   # ──────────────────────────────────────
   #  日本語（日语）
   # ──────────────────────────────────────
+  - name: "ja-home"
+    label: "🇯🇵 トップページ（首页）"
+    files:
+      - label: "トップページ（首页内容）"
+        name: "home"
+        file: "data/home/ja.json"
+        format: "json"
+        fields:
+          - label: "品牌"
+            name: "brand"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "公司名", name: "name", widget: "string" }
+              - { label: "英文副标题", name: "sub", widget: "string" }
+          - label: "导航文字"
+            name: "nav"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "会社情報", name: "company", widget: "string" }
+              - { label: "事業案内", name: "business", widget: "string" }
+              - { label: "販売実績", name: "performance", widget: "string" }
+              - { label: "技術・AI", name: "tech", widget: "string" }
+              - { label: "联系按钮", name: "contact", widget: "string" }
+          - label: "首屏"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题（左）", name: "kicker", widget: "string" }
+              - { label: "小标题（右）", name: "kickerSub", widget: "string" }
+              - { label: "主标题第一行", name: "titleLine", widget: "string" }
+              - { label: "主标题第二行（蓝色）", name: "titleAccent", widget: "string" }
+              - { label: "导语", name: "lead", widget: "text" }
+              - { label: "主按钮文字（跳到联系区）", name: "primaryCta", widget: "string" }
+              - { label: "次按钮文字（跳到事業案内）", name: "secondaryCta", widget: "string" }
+              - label: "数字"
+                name: "stats"
+                widget: "list"
+                summary: "{{fields.value}} {{fields.label}}"
+                fields:
+                  - { label: "数字", name: "value", widget: "string" }
+                  - { label: "说明", name: "label", widget: "string" }
+              - { label: "右侧面板标题", name: "panelTitle", widget: "string" }
+              - { label: "销售渠道标题", name: "channelsTitle", widget: "string" }
+              - label: "销售渠道（横向滚动）"
+                name: "channels"
+                widget: "list"
+                field: { label: "渠道名", name: "channel", widget: "string" }
+          - label: "实力数字"
+            name: "trust"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "数字卡片"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.value}} {{fields.label}}"
+                fields:
+                  - { label: "数字", name: "value", widget: "string", hint: "会自动滚动计数，可写成 16,755 / 4.59 / 100万 / 31位" }
+                  - { label: "说明", name: "label", widget: "string" }
+              - label: "注释"
+                name: "notes"
+                widget: "list"
+                field: { label: "注释", name: "note", widget: "text" }
+          - label: "事業案内"
+            name: "business"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "导语", name: "intro", widget: "text" }
+              - label: "事业"
+                name: "pillars"
+                widget: "list"
+                summary: "{{fields.no}} {{fields.title}}"
+                fields:
+                  - { label: "编号", name: "no", widget: "string" }
+                  - { label: "标签", name: "tag", widget: "string" }
+                  - { label: "名称", name: "title", widget: "string" }
+                  - { label: "一句话简介（首屏右侧面板）", name: "summary", widget: "string" }
+                  - { label: "正文", name: "body", widget: "text" }
+                  - label: "关键词"
+                    name: "chips"
+                    widget: "list"
+                    field: { label: "关键词", name: "chip", widget: "string" }
+                  - { label: "「詳しく見る」链接", name: "href", widget: "string" }
+          - label: "技術・AI"
+            name: "tech"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "正文", name: "body", widget: "text" }
+              - { label: "补充说明", name: "note", widget: "text" }
+              - { label: "链接文字", name: "linkLabel", widget: "string" }
+              - { label: "链接地址", name: "linkHref", widget: "string" }
+              - label: "技术项目"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.code}} {{fields.title}}"
+                fields:
+                  - { label: "代号", name: "code", widget: "string" }
+                  - { label: "名称", name: "title", widget: "string" }
+                  - { label: "说明", name: "desc", widget: "text" }
+          - label: "選ばれる理由"
+            name: "strengths"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "导语", name: "intro", widget: "text" }
+              - label: "理由"
+                name: "reasons"
+                widget: "list"
+                summary: "{{fields.no}} {{fields.title}}"
+                fields:
+                  - { label: "编号", name: "no", widget: "string" }
+                  - { label: "标题", name: "title", widget: "string" }
+                  - { label: "正文", name: "body", widget: "text" }
+              - { label: "特征栏标题", name: "coreTitle", widget: "string" }
+              - label: "特征"
+                name: "core"
+                widget: "list"
+                summary: "{{fields.text}}"
+                fields:
+                  - { label: "内容", name: "text", widget: "string" }
+                  - { label: "分类", name: "category", widget: "string" }
+          - label: "販売実績"
+            name: "performance"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "导语", name: "intro", widget: "text" }
+              - { label: "实绩栏标题", name: "resultsTitle", widget: "string" }
+              - label: "实绩"
+                name: "results"
+                widget: "list"
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { label: "项目", name: "label", widget: "string" }
+                  - { label: "数值", name: "value", widget: "string" }
+              - { label: "注释", name: "note", widget: "text" }
+              - { label: "链接文字", name: "linkLabel", widget: "string" }
+              - { label: "链接地址", name: "linkHref", widget: "string" }
+              - label: "销售渠道分组"
+                name: "channelGroups"
+                widget: "list"
+                summary: "{{fields.platform}}"
+                fields:
+                  - { label: "平台", name: "platform", widget: "string" }
+                  - label: "店铺 / 说明"
+                    name: "shops"
+                    widget: "list"
+                    field: { label: "店铺", name: "shop", widget: "string" }
+              - { label: "合作伙伴栏标题", name: "partnersTitle", widget: "string" }
+              - label: "合作伙伴 LOGO（留空则整块不显示）"
+                name: "partners"
+                widget: "list"
+                required: false
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "LOGO", name: "logo", widget: "image" }
+                  - { label: "名称", name: "name", widget: "string" }
+                  - { label: "链接（可选）", name: "url", widget: "string", required: false }
+          - label: "会社情報・沿革"
+            name: "company"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "导语", name: "intro", widget: "text" }
+              - { label: "基本信息栏标题", name: "profileTitle", widget: "string" }
+              - label: "基本信息"
+                name: "profile"
+                widget: "list"
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { label: "项目", name: "label", widget: "string" }
+                  - { label: "内容", name: "value", widget: "string" }
+              - { label: "详情链接文字", name: "profileLinkLabel", widget: "string" }
+              - { label: "详情链接地址", name: "profileLinkHref", widget: "string" }
+              - { label: "事业体制图", name: "structureImage", widget: "image", hint: "上传前请先压缩，建议 WebP、宽度 1600px 以内" }
+              - { label: "事业体制图说明（alt）", name: "structureAlt", widget: "string" }
+              - { label: "事业体制图注释", name: "structureCaption", widget: "text" }
+              - label: "公司/仓库照片（留空则不显示）"
+                name: "photos"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "照片", name: "image", widget: "image", hint: "建议 16:9，WebP，宽度 1600px 以内" }
+                  - { label: "照片说明（alt）", name: "alt", widget: "string" }
+              - { label: "沿革栏标题", name: "historyTitle", widget: "string" }
+              - { label: "横向滚动提示", name: "historyHint", widget: "string" }
+              - label: "沿革"
+                name: "history"
+                widget: "list"
+                summary: "{{fields.year}} {{fields.title}}"
+                fields:
+                  - { label: "年份", name: "year", widget: "string" }
+                  - { label: "标题", name: "title", widget: "string" }
+                  - { label: "说明", name: "desc", widget: "text" }
+          - label: "代表メッセージ"
+            name: "message"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "引言（可换行）", name: "quote", widget: "text" }
+              - label: "正文段落"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "段落", name: "paragraph", widget: "text" }
+              - { label: "职位", name: "role", widget: "string" }
+              - { label: "签名图片", name: "signature", widget: "image" }
+              - { label: "签名说明（alt）", name: "signatureAlt", widget: "string" }
+              - { label: "全文链接文字", name: "linkLabel", widget: "string" }
+              - { label: "全文链接地址", name: "linkHref", widget: "string" }
+              - { label: "配图", name: "image", widget: "image", hint: "上传前请先压缩，建议 WebP、宽度 1600px 以内" }
+              - { label: "配图说明（alt）", name: "imageAlt", widget: "string" }
+              - { label: "理念栏标题", name: "valuesTitle", widget: "string" }
+              - label: "理念"
+                name: "values"
+                widget: "list"
+                field: { label: "条目", name: "value", widget: "string" }
+          - label: "お問い合わせ"
+            name: "contact"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "小标题", name: "eyebrow", widget: "string" }
+              - { label: "大标题（可换行）", name: "title", widget: "text" }
+              - { label: "说明", name: "body", widget: "text" }
+              - { label: "电话（留空则不显示）", name: "tel", widget: "string", required: false }
+              - { label: "邮箱（留空则不显示）", name: "email", widget: "string", required: false }
+              - { label: "受付時間（留空则不显示）", name: "hours", widget: "string", required: false }
+              - { label: "表单网址（留空则不显示表单按钮）", name: "formUrl", widget: "string", required: false }
+              - { label: "表单按钮文字", name: "formLabel", widget: "string" }
+              - { label: "次按钮文字", name: "secondaryLabel", widget: "string" }
+              - { label: "次按钮链接", name: "secondaryHref", widget: "string" }
+          - label: "页脚"
+            name: "footer"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "公司信息"
+                name: "info"
+                widget: "list"
+                summary: "{{fields.label}}：{{fields.value}}"
+                fields:
+                  - { label: "项目", name: "label", widget: "string" }
+                  - { label: "内容", name: "value", widget: "string" }
+              - { label: "地图网址（留空则不显示）", name: "mapUrl", widget: "string", required: false }
+              - { label: "地图链接文字", name: "mapLabel", widget: "string" }
+              - label: "链接栏"
+                name: "columns"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "栏标题", name: "title", widget: "string" }
+                  - label: "链接"
+                    name: "links"
+                    widget: "list"
+                    summary: "{{fields.label}}"
+                    fields:
+                      - { label: "文字", name: "label", widget: "string" }
+                      - { label: "地址", name: "href", widget: "string" }
+              - { label: "出店店铺栏标题", name: "shopsTitle", widget: "string" }
+              - label: "出店店铺"
+                name: "shops"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "店铺名", name: "label", widget: "string" }
+                  - { label: "店铺网址（留空则显示为普通文字）", name: "url", widget: "string", required: false }
+              - { label: "版权文字", name: "copyright", widget: "string" }
+              - { label: "隐私政策网址（留空则不显示）", name: "privacyUrl", widget: "string", required: false }
+              - { label: "隐私政策链接文字", name: "privacyLabel", widget: "string" }
+
   - name: "ja-about"
     label: "🇯🇵 会社情報（公司信息）"
     files:

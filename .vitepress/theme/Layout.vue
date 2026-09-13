@@ -7,7 +7,7 @@ import {
   getLocalePath,
   removeLegacyLocaleFromSearch,
 } from "./composables/useLocale";
-import MaxKbWidget from "./components/MaxKbWidget.vue";
+import CorporateLayout from "./layouts/CorporateLayout.vue";
 import HeroLayout from "./layouts/HeroLayout.vue";
 
 const { frontmatter } = useData();
@@ -43,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <HeroLayout v-if="frontmatter.layout === 'hero'" />
+  <CorporateLayout v-if="frontmatter.layout === 'corporate'" />
+  <HeroLayout v-else-if="frontmatter.layout === 'hero'" />
   <DefaultTheme.Layout v-else />
-  <MaxKbWidget />
 </template>

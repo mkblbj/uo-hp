@@ -38,6 +38,7 @@ const config = defineConfig({
     ["link", { rel: "apple-touch-icon", sizes: "180x180", href: withSiteBase("/apple-touch-icon.png") }],
   ],
   cleanUrls: true,
+  srcExclude: ["docs/**"],
   mermaid: {},
   markdown: {
     config: (md) => {

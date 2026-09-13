@@ -20,29 +20,42 @@ export const useShaderBackground = () => {
   let pointers: PointerHandler | null = null;
   let mobile = false;
   let frameCount = 0;
+  let isVisible = true;
+  let resizeObserver: ResizeObserver | null = null;
+  let visibilityObserver: IntersectionObserver | null = null;
   let contextLostHandler: (() => void) | null = null;
   let contextRestoredHandler: (() => void) | null = null;
 
   const getDpr = () => {
-    const baseDpr = window.devicePixelRatio;
+    const baseDpr = window.devicePixelRatio || 1;
     return mobile
       ? Math.max(0.75, 0.3 * baseDpr)
       : Math.max(1, 0.5 * baseDpr);
   };
 
+  // 按画布自身的显示尺寸设置绘制缓冲区，避免画布不是整窗大小时画面被拉伸
   const resize = () => {
-    if (!canvasRef.value || typeof window === "undefined") {
+    const canvas = canvasRef.value;
+
+    if (!canvas) {
       return;
     }
 
-    const canvas = canvasRef.value;
     const dpr = getDpr();
+    const rect = canvas.getBoundingClientRect();
 
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
+    canvas.width = Math.max(1, Math.round(rect.width * dpr));
+    canvas.height = Math.max(1, Math.round(rect.height * dpr));
 
     renderer?.updateScale(dpr);
     pointers?.updateScale(dpr);
+  };
+
+  const stop = () => {
+    if (animationFrame !== null) {
+      window.cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
   };
 
   const loop = (now: number) => {
@@ -50,9 +63,10 @@ export const useShaderBackground = () => {
       return;
     }
 
+    animationFrame = window.requestAnimationFrame(loop);
     frameCount++;
+
     if (mobile && frameCount % 2 !== 0) {
-      animationFrame = window.requestAnimationFrame(loop);
       return;
     }
 
@@ -61,7 +75,12 @@ export const useShaderBackground = () => {
     renderer.updatePointerCoords(pointers.coords);
     renderer.updateMove(pointers.move);
     renderer.render(now);
-    animationFrame = window.requestAnimationFrame(loop);
+  };
+
+  const start = () => {
+    if (animationFrame === null && isSupported.value && isVisible) {
+      animationFrame = window.requestAnimationFrame(loop);
+    }
   };
 
   const initShader = () => {
@@ -81,26 +100,22 @@ export const useShaderBackground = () => {
   };
 
   onMounted(() => {
-    if (!canvasRef.value || typeof window === "undefined") {
+    const canvas = canvasRef.value;
+
+    if (!canvas || typeof window === "undefined") {
       return;
     }
 
     mobile = isMobileViewport();
-    const canvas = canvasRef.value;
-    const dpr = getDpr();
-    const gl = canvas.getContext("webgl2");
 
-    if (!gl) {
+    if (!canvas.getContext("webgl2")) {
       isSupported.value = false;
       return;
     }
 
     contextLostHandler = () => {
       isSupported.value = false;
-      if (animationFrame !== null) {
-        window.cancelAnimationFrame(animationFrame);
-        animationFrame = null;
-      }
+      stop();
     };
 
     contextRestoredHandler = () => {
@@ -111,12 +126,13 @@ export const useShaderBackground = () => {
       renderer.init();
       resize();
       initShader();
-      if (isSupported.value) loop(0);
+      start();
     };
 
     canvas.addEventListener("webglcontextlost", contextLostHandler);
     canvas.addEventListener("webglcontextrestored", contextRestoredHandler);
 
+    const dpr = getDpr();
     renderer = new WebGLRenderer(canvas, dpr);
     pointers = new PointerHandler(canvas, dpr);
 
@@ -125,30 +141,38 @@ export const useShaderBackground = () => {
     resize();
     initShader();
 
-    loop(0);
-    window.addEventListener("resize", resize);
+    // 用 typeof 判断而不是 `in window`：后者会让 TS 把 else 分支里的 window 收窄成 never
+    if (typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(() => resize());
+      resizeObserver.observe(canvas);
+    } else {
+      window.addEventListener("resize", resize);
+    }
+
+    // 画布滚出视野就停止渲染，回到视野再继续
+    if (typeof IntersectionObserver !== "undefined") {
+      visibilityObserver = new IntersectionObserver(([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) start();
+        else stop();
+      });
+      visibilityObserver.observe(canvas);
+    }
+
+    start();
   });
 
   onUnmounted(() => {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("resize", resize);
-    }
-
-    if (animationFrame !== null) {
-      window.cancelAnimationFrame(animationFrame);
-    }
+    window.removeEventListener("resize", resize);
+    resizeObserver?.disconnect();
+    visibilityObserver?.disconnect();
+    stop();
 
     if (canvasRef.value) {
       if (contextLostHandler)
-        canvasRef.value.removeEventListener(
-          "webglcontextlost",
-          contextLostHandler,
-        );
+        canvasRef.value.removeEventListener("webglcontextlost", contextLostHandler);
       if (contextRestoredHandler)
-        canvasRef.value.removeEventListener(
-          "webglcontextrestored",
-          contextRestoredHandler,
-        );
+        canvasRef.value.removeEventListener("webglcontextrestored", contextRestoredHandler);
     }
 
     renderer?.reset();

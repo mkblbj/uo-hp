@@ -1,0 +1,167 @@
+/* 企业首页（layout: corporate）的全局样式。所有选择器都限定在 .corp 下，不影响其他页面。 */
+
+html:has(.corp),
+body:has(.corp) {
+  background: #030507;
+}
+
+.corp {
+  position: relative;
+  /* 设计稿用的是 overflow-x: hidden，会让页头的 sticky 失效；clip 不会 */
+  overflow-x: clip;
+  background: #030507;
+  color: #f8f3eb;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.corp ::selection {
+  background: rgba(24, 95, 159, 0.55);
+  color: #fff;
+}
+
+.corp :focus-visible {
+  outline: 2px solid #6fa9de;
+  outline-offset: 2px;
+}
+
+.corp main:focus {
+  outline: none;
+}
+
+/* 锚点跳转后给吸顶页头（约 71px）留出位置 */
+.corp [id] {
+  scroll-margin-top: 72px;
+}
+
+.corp-container {
+  width: min(1440px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.corp-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 99;
+  padding: 0.7rem 1.2rem;
+  background: #185f9f;
+  color: #fff;
+}
+
+.corp-skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.corp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.1rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: #6fa9de;
+}
+
+.corp-eyebrow__line {
+  width: 1.6rem;
+  height: 1px;
+  background: #6fa9de;
+}
+
+.corp-cardlabel {
+  font-family: "Orbitron", "Noto Sans JP", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: rgba(226, 238, 249, 0.96);
+}
+
+.corp[data-rv] .rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.corp[data-rv] .rv.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.corp-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(111, 169, 222, 0.45) rgba(199, 215, 231, 0.08);
+}
+
+.corp-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.corp-scroll::-webkit-scrollbar-track {
+  background: rgba(199, 215, 231, 0.08);
+}
+
+.corp-scroll::-webkit-scrollbar-thumb {
+  background: rgba(111, 169, 222, 0.45);
+}
+
+.corp-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(111, 169, 222, 0.7);
+}
+
+@keyframes corp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes corp-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes corp-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corp *,
+  .corp *::before,
+  .corp *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .corp[data-rv] .rv {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .corp .corp-track {
+    animation: corp-marquee 240s linear infinite !important;
+  }
+}
