@@ -28,10 +28,30 @@ test("the legacy zh/en homepages still load their fonts", () => {
   assert.ok(read("en/index.html").includes(OLD_FONTS));
 });
 
+// 页面一打开就会下载的脚本：<script src> 和 <link rel="modulepreload">
+const upfrontScripts = (page: string) =>
+  [...read(page).matchAll(/<(?:script[^>]*\ssrc|link[^>]*\shref)="\/(assets\/[^"]+\.js)"/g)].map((match) => new URL(match[1], dist));
+
+test("pages without diagrams do not load the diagram library up front", () => {
+  for (const page of ["index.html", "about/index.html", "services/index.html", "zh/index.html"]) {
+    const scripts = upfrontScripts(page);
+    assert.ok(scripts.length > 0, `${page} loads no scripts`);
+    for (const file of scripts) {
+      assert.doesNotMatch(file.pathname, /mermaid|katex|dagre|cytoscape|Diagram-|-definition-/i, `${page} preloads ${file.pathname}`);
+      // Mermaid 核心里的报错文字，用来认出打包进来的图表库
+      assert.ok(!readFileSync(file, "utf8").includes("No diagram type detected"), `${page} loads the Mermaid core via ${file.pathname}`);
+    }
+  }
+});
+
+test("pages with diagrams still render the diagram container", () => {
+  for (const page of ["about/profile/index.html", "zh/about/profile/index.html", "en/about/profile/index.html"]) {
+    assert.match(read(page), /<div[^>]*class="mermaid"/, page);
+  }
+});
+
 test("the homepage does not load the map module up front", () => {
-  const upfront = [...read("index.html").matchAll(/<(?:script[^>]*\ssrc|link[^>]*\shref)="\/(assets\/[^"]+\.js)"/g)].map(
-    (match) => new URL(match[1], dist),
-  );
+  const upfront = upfrontScripts("index.html");
   assert.ok(upfront.length > 0, "index.html loads no scripts");
   for (const file of upfront) {
     const code = readFileSync(file, "utf8");

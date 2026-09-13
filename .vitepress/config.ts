@@ -234,4 +234,15 @@ const config = defineConfig({
   },
 });
 
-export default withMermaid(config);
+// vitepress-plugin-mermaid 默认把图表组件直接写进 VitePress 的入口脚本：每个页面都会下载整个 Mermaid，
+// 还会预加载 30 多个图表文件。这里去掉这一步，改在主题里按需注册（.vitepress/theme/index.ts）
+const site = withMermaid(config);
+const mermaidPlugin = (site.vite?.plugins ?? []).find(
+  (plugin) => typeof plugin === "object" && plugin !== null && "name" in plugin && plugin.name === "vite-plugin-mermaid",
+) as { transform?: unknown } | undefined;
+if (!mermaidPlugin?.transform) {
+  throw new Error("vitepress-plugin-mermaid no longer injects its component as expected; revisit the lazy Mermaid setup in .vitepress/config.ts");
+}
+delete mermaidPlugin.transform;
+
+export default site;
