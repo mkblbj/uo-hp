@@ -34,3 +34,7 @@ export const noteItems = (note?: string): string[] | null => {
   if (!lines.length || !lines.every((line) => /^[-・]/.test(line))) return null;
   return lines.map((line) => line.replace(/^[-・]\s*/, ""));
 };
+
+/** 页脚「地図を見る」：和地图区的按钮打开同一个位置；没有 access 数据时返回 undefined（不显示） */
+export const accessMapUrl = (access?: { coordinates: string; address: string }): string | undefined =>
+  access ? mapSearchUrl(parseLatLng(access.coordinates), access.address) : undefined;

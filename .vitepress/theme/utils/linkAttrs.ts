@@ -8,3 +8,12 @@ export const linkAttrs = (url?: string): Record<string, string> => {
 };
 
 export const isExternalUrl = (url?: string): boolean => Boolean(url && !url.startsWith("/"));
+
+/**
+ * 页头、页脚里的站内导航链接。带「#」的（首页里的区块）加 target="_self"：
+ * VitePress 路由会跳过带 target 的链接，交给浏览器普通跳转，落点由 .corp [id] 的 scroll-margin-top 控制
+ */
+export const navLinkAttrs = (href: string): Record<string, string> => ({
+  href: href.startsWith("/") ? withBase(href) : href,
+  ...(href.includes("#") ? { target: "_self" } : {}),
+});

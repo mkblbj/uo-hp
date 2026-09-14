@@ -3,7 +3,7 @@ import logoMark from "../../assets/uo-logo-pure.png";
 import type { HomeContent } from "../../content/homeContent";
 import { LOCALE_MENU } from "../../content/homeUi";
 import type { Locale } from "../../content/siteCopy";
-import { isExternalUrl, linkAttrs } from "../../utils/linkAttrs";
+import { isExternalUrl, linkAttrs, navLinkAttrs } from "../../utils/linkAttrs";
 
 defineProps<{
   brand: HomeContent["brand"];
@@ -11,6 +11,10 @@ defineProps<{
   mapUrl?: string;
   locale: Locale;
   localeLinks: Record<Locale, string>;
+  /** 首页传 #top；内页传 / */
+  homeHref: string;
+  /** 内页传当前路径，链接栏里指向当前页的链接高亮 */
+  currentPath?: string;
 }>();
 </script>
 
@@ -19,7 +23,7 @@ defineProps<{
     <div class="footer__inner corp-container">
       <div class="footer__top">
         <div>
-          <a class="footer__brand" href="#top" target="_self">
+          <a class="footer__brand" v-bind="navLinkAttrs(homeHref)">
             <img class="footer__logo" :src="logoMark" alt="" width="591" height="591" />
             <span class="footer__brand-text">
               <span class="footer__brand-name">{{ brand.name }}</span>
@@ -37,7 +41,14 @@ defineProps<{
         </div>
         <nav v-for="column in footer.columns" :key="column.title" class="footer__column" :aria-label="column.title">
           <span class="footer__column-title">{{ column.title }}</span>
-          <a v-for="link in column.links" :key="link.href" class="footer__link" v-bind="linkAttrs(link.href)">{{ link.label }}</a>
+          <a
+            v-for="link in column.links"
+            :key="link.href"
+            class="footer__link"
+            :class="{ 'is-current': link.href === currentPath }"
+            v-bind="linkAttrs(link.href)"
+            :aria-current="link.href === currentPath ? 'page' : undefined"
+          >{{ link.label }}</a>
         </nav>
       </div>
 
@@ -187,6 +198,10 @@ defineProps<{
 }
 
 .footer__link:hover {
+  color: #9ec8ec;
+}
+
+.footer__link.is-current {
   color: #9ec8ec;
 }
 

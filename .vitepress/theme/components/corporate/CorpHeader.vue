@@ -1,27 +1,26 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 import logoMark from "../../assets/uo-logo-pure.png";
 import type { HomeContent } from "../../content/homeContent";
 import type { HomeUi } from "../../content/homeUi";
+import type { NavItem } from "../../content/pageNav";
 import type { Locale } from "../../content/siteCopy";
+import { navLinkAttrs } from "../../utils/linkAttrs";
 import CorpLangMenu from "./CorpLangMenu.vue";
 
-const props = defineProps<{
+defineProps<{
   brand: HomeContent["brand"];
-  nav: HomeContent["nav"];
+  navItems: NavItem[];
+  contactLabel: string;
+  /** 首页传 #top、#contact（页内锚点）；内页传 /、/#contact */
+  homeHref: string;
+  contactHref: string;
   ui: HomeUi;
   locale: Locale;
   localeLinks: Record<Locale, string>;
 }>();
 
 const menuOpen = ref(false);
-
-const navItems = computed(() => [
-  { href: "#company", label: props.nav.company },
-  { href: "#business", label: props.nav.business },
-  { href: "#performance", label: props.nav.performance },
-  { href: "#tech", label: props.nav.tech },
-]);
 
 const closeMenu = () => {
   menuOpen.value = false;
@@ -38,7 +37,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 <template>
   <header class="header">
     <div class="header__bar corp-container" data-corp-bar>
-      <a class="header__brand" href="#top" target="_self">
+      <a class="header__brand" v-bind="navLinkAttrs(homeHref)">
         <img class="header__logo" :src="logoMark" alt="" width="591" height="591" />
         <span class="header__brand-text">
           <span class="header__brand-name">{{ brand.name }}</span>
@@ -47,13 +46,20 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
       </a>
 
       <nav class="header__nav" :aria-label="ui.mainNavLabel">
-        <a v-for="item in navItems" :key="item.href" class="header__nav-link" :href="item.href" target="_self">{{ item.label }}</a>
+        <a
+          v-for="item in navItems"
+          :key="item.href"
+          class="header__nav-link"
+          :class="{ 'is-active': item.active }"
+          v-bind="navLinkAttrs(item.href)"
+          :aria-current="item.current ? 'page' : undefined"
+        >{{ item.label }}</a>
       </nav>
 
       <div class="header__actions">
         <CorpLangMenu :active-locale="locale" :links="localeLinks" :label="ui.langLabel" />
-        <a class="header__cta" href="#contact" target="_self">
-          {{ nav.contact }}
+        <a class="header__cta" v-bind="navLinkAttrs(contactHref)">
+          {{ contactLabel }}
           <svg class="header__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </a>
         <button
@@ -71,8 +77,16 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 
     <nav v-show="menuOpen" id="corp-mobile-nav" class="header__mobile" :aria-label="ui.menuLabel">
       <div class="header__mobile-inner corp-container">
-        <a v-for="item in navItems" :key="item.href" class="header__mobile-link" :href="item.href" target="_self" @click="closeMenu">{{ item.label }}</a>
-        <a class="header__mobile-link header__mobile-link--cta" href="#contact" target="_self" @click="closeMenu">{{ nav.contact }}</a>
+        <a
+          v-for="item in navItems"
+          :key="item.href"
+          class="header__mobile-link"
+          :class="{ 'is-active': item.active }"
+          v-bind="navLinkAttrs(item.href)"
+          :aria-current="item.current ? 'page' : undefined"
+          @click="closeMenu"
+        >{{ item.label }}</a>
+        <a class="header__mobile-link header__mobile-link--cta" v-bind="navLinkAttrs(contactHref)" @click="closeMenu">{{ contactLabel }}</a>
       </div>
     </nav>
   </header>
@@ -141,6 +155,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 }
 
 .header__nav-link {
+  position: relative;
   padding: 0.55rem 0.9rem;
   color: rgba(248, 243, 235, 0.82);
   transition: color 0.2s ease, background 0.2s ease;
@@ -149,6 +164,22 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 .header__nav-link:hover {
   color: #fff;
   background: rgba(255, 255, 255, 0.06);
+}
+
+/* 内页：当前所在栏目 */
+.header__nav-link.is-active {
+  color: #fff;
+}
+
+.header__nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: -0.1rem;
+  height: 2px;
+  background: #6fa9de;
+  box-shadow: 0 0 10px rgba(111, 169, 222, 0.7);
 }
 
 .header__actions {
@@ -228,6 +259,11 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
   display: none;
 }
 
+.header__mobile-link.is-active {
+  color: #fff;
+  font-weight: 700;
+}
+
 @media (max-width: 1180px) {
   .header__nav {
     gap: 0;
@@ -236,6 +272,11 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 
   .header__nav-link {
     padding: 0.5rem 0.58rem;
+  }
+
+  .header__nav-link.is-active::after {
+    left: 0.58rem;
+    right: 0.58rem;
   }
 }
 

@@ -17,16 +17,15 @@ import { useLocale } from "../composables/useLocale";
 import { useRevealOnScroll } from "../composables/useRevealOnScroll";
 import { getHomeContent } from "../content/homeContent";
 import { getHomeUi } from "../content/homeUi";
-import { mapSearchUrl, parseLatLng } from "../utils/accessMap";
+import { homeNavItems } from "../content/pageNav";
+import { accessMapUrl } from "../utils/accessMap";
 
 const { locale, localeLinks } = useLocale();
 const content = computed(() => getHomeContent(locale.value));
 const ui = computed(() => getHomeUi(locale.value));
 // 页脚「地図を見る」和地图区的按钮打开同一个位置（按后台的坐标生成）
-const footerMapUrl = computed(() => {
-  const access = content.value.access;
-  return access ? mapSearchUrl(parseLatLng(access.coordinates), access.address) : undefined;
-});
+const footerMapUrl = computed(() => accessMapUrl(content.value.access));
+const navItems = computed(() => homeNavItems(content.value.nav));
 const rootRef = ref<HTMLElement | null>(null);
 
 useRevealOnScroll(rootRef);
@@ -66,7 +65,16 @@ const onAnchorClick = async (event: MouseEvent) => {
 <template>
   <div ref="rootRef" class="corp" @click="onAnchorClick">
     <a class="corp-skip" href="#main" target="_self">{{ ui.skipToContent }}</a>
-    <CorpHeader :brand="content.brand" :nav="content.nav" :ui="ui" :locale="locale" :locale-links="localeLinks" />
+    <CorpHeader
+      :brand="content.brand"
+      :nav-items="navItems"
+      :contact-label="content.nav.contact"
+      home-href="#top"
+      contact-href="#contact"
+      :ui="ui"
+      :locale="locale"
+      :locale-links="localeLinks"
+    />
     <main id="main" tabindex="-1">
       <CorpHero :hero="content.hero" :pillars="content.business.pillars" />
       <CorpTrust :trust="content.trust" />
@@ -86,6 +94,7 @@ const onAnchorClick = async (event: MouseEvent) => {
       :map-url="footerMapUrl"
       :locale="locale"
       :locale-links="localeLinks"
+      home-href="#top"
     />
   </div>
 </template>

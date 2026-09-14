@@ -5,7 +5,10 @@ import type { HomeUi } from "../../content/homeUi";
 import { linkAttrs } from "../../utils/linkAttrs";
 import CorpMultiline from "./CorpMultiline.vue";
 
-const props = defineProps<{ contact: HomeContent["contact"]; ui: HomeUi }>();
+const props = defineProps<{ contact: HomeContent["contact"]; ui: HomeUi; currentPath?: string }>();
+
+// 内页：次按钮指向当前页时不显示（例如在「OEM・卸 / 越境連携」页）；首页不传 currentPath，照常显示
+const showSecondary = computed(() => props.contact.secondaryHref !== props.currentPath);
 
 // 后台填了才显示；电话、邮箱做成可点击链接
 const details = computed(() => {
@@ -28,12 +31,12 @@ const details = computed(() => {
         <p class="contact__eyebrow">{{ contact.eyebrow }}</p>
         <h2 class="contact__title"><CorpMultiline :text="contact.title" /></h2>
         <p class="contact__body">{{ contact.body }}</p>
-        <div class="contact__ctas">
+        <div v-if="contact.formUrl || showSecondary" class="contact__ctas">
           <a v-if="contact.formUrl" class="contact__cta contact__cta--primary" v-bind="linkAttrs(contact.formUrl)">
             {{ contact.formLabel }}
             <svg class="contact__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </a>
-          <a class="contact__cta contact__cta--ghost" v-bind="linkAttrs(contact.secondaryHref)">{{ contact.secondaryLabel }}</a>
+          <a v-if="showSecondary" class="contact__cta contact__cta--ghost" v-bind="linkAttrs(contact.secondaryHref)">{{ contact.secondaryLabel }}</a>
         </div>
         <div v-if="details.length" class="contact__details">
           <div v-for="item in details" :key="item.key" class="contact__detail">

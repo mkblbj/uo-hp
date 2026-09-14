@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { directionsUrl, mapSearchUrl, noteItems, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
+import { accessMapUrl, directionsUrl, mapSearchUrl, noteItems, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 
 const OFFICE = { lat: 34.665003, lng: 135.1580635 };
 
@@ -67,4 +67,9 @@ test("directions without bullets on every line stay as written", () => {
   assert.equal(noteItems("- 兵庫駅より徒歩約10分\n長田駅からも歩けます"), null);
   assert.equal(noteItems(""), null);
   assert.equal(noteItems(undefined), null);
+});
+
+test("the footer map link opens the access coordinates, and disappears without access data", () => {
+  assert.equal(accessMapUrl(undefined), undefined);
+  assert.equal(accessMapUrl({ coordinates: "34.665003, 135.1580635", address: "神戸" }), mapSearchUrl(OFFICE, "神戸"));
 });
