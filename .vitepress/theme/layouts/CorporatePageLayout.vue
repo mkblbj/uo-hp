@@ -4,7 +4,9 @@ import { useData, useRoute } from "vitepress";
 import CorpContact from "../components/corporate/CorpContact.vue";
 import CorpFooter from "../components/corporate/CorpFooter.vue";
 import CorpHeader from "../components/corporate/CorpHeader.vue";
+import CorpPageCards from "../components/corporate/CorpPageCards.vue";
 import CorpPageHero from "../components/corporate/CorpPageHero.vue";
+import CorpPagePager from "../components/corporate/CorpPagePager.vue";
 import CorpPageTabs from "../components/corporate/CorpPageTabs.vue";
 import { useLocale } from "../composables/useLocale";
 import { getHomeContent } from "../content/homeContent";
@@ -52,6 +54,21 @@ const mapUrl = computed(() => accessMapUrl(content.value.access));
       <CorpPageTabs v-if="nav" :tabs="nav.tabs" :label="withSection(ui.tabsLabel)" />
       <div class="corp-page__body corp-container">
         <Content class="corp-prose" />
+        <CorpPageCards
+          v-if="nav?.isSectionTop"
+          :cards="nav.sectionPages"
+          :eyebrow="ui.pagesEyebrow"
+          :title="withSection(ui.pagesTitle)"
+          :more="ui.more"
+        />
+        <CorpPagePager
+          v-else-if="nav"
+          :prev="nav.prev"
+          :next="nav.next"
+          :label="ui.pagerLabel"
+          :prev-label="ui.prev"
+          :next-label="ui.next"
+        />
       </div>
       <CorpContact :contact="content.contact" :ui="ui" :current-path="path" />
     </main>

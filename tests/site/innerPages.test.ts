@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
+import { getHomeContent } from "../../.vitepress/theme/content/homeContent.ts";
 import { JA_SECTIONS, getPageNav } from "../../.vitepress/theme/content/pageNav.ts";
 
 const dist = new URL("../../.vitepress/dist/", import.meta.url);
@@ -108,4 +109,39 @@ test("Chinese and English pages and the 404 page keep the VitePress layout", () 
     assert.ok(!html.includes("corp-page"), file);
   }
   assert.ok(!read("404.html").includes("corp-page"));
+});
+
+test("section tops end with cards for the other pages of the section, described by their page descriptions", () => {
+  for (const top of ["/about/", "/services/"]) {
+    const html = htmlFor(top);
+    const cards = block(html, /<section class="page-cards"/, "section");
+    assert.ok(cards, `${top} has page cards`);
+    assert.ok(!html.includes('class="page-pager'), `${top} has no prev/next`);
+    for (const card of getPageNav(top)!.sectionPages) {
+      assert.ok(hasLink(cards, `href="${card.path}"`, 'class="page-cards__card"'), `${top} card ${card.path}`);
+      assert.ok(cards.includes(escapeHtml(frontmatter(card.path).description)), `${top} shows the description of ${card.path}`);
+    }
+  }
+});
+
+test("other pages end with prev / next links in site order", () => {
+  for (const path of PAGES.filter((item) => !getPageNav(item)!.isSectionTop)) {
+    const nav = getPageNav(path)!;
+    const pager = block(htmlFor(path), /<nav class="page-pager/, "nav");
+    assert.ok(pager, `${path} has prev/next`);
+    if (nav.prev) assert.ok(hasLink(pager, `href="${nav.prev.path}"`), `${path} prev`);
+    if (nav.next) assert.ok(hasLink(pager, `href="${nav.next.path}"`), `${path} next`);
+    assert.equal(pager.includes("page-pager--single"), !(nav.prev && nav.next), `${path} single-link layout`);
+    assert.ok(!htmlFor(path).includes('class="page-cards"'), `${path} has no page cards`);
+  }
+});
+
+test("the contact section is shared with the homepage and hides a button that points at the current page", () => {
+  const { contact } = getHomeContent("ja");
+  const ghost = 'class="contact__cta contact__cta--ghost"';
+  for (const path of PAGES) {
+    const section = block(htmlFor(path), /<section[^>]*id="contact"/, "section");
+    assert.ok(section.includes(escapeHtml(contact.title.split("\n")[0])), `${path} contact title`);
+    assert.equal(hasLink(section, ghost), path !== contact.secondaryHref, `${path} secondary button`);
+  }
 });
