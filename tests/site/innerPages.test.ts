@@ -145,3 +145,27 @@ test("the contact section is shared with the homepage and hides a button that po
     assert.equal(hasLink(section, ghost), path !== contact.secondaryHref, `${path} secondary button`);
   }
 });
+
+test("the company profile table comes from the homepage data, and the diagram is gone", () => {
+  const html = htmlFor("/about/profile/");
+  for (const row of getHomeContent("ja").company.profile) {
+    assert.ok(html.includes(`<td>${escapeHtml(row.label)}</td><td>${escapeHtml(row.value)}</td>`), row.label);
+  }
+  assert.ok(!html.includes('class="mermaid"'), "the simple timeline diagram is gone");
+  assert.equal((html.match(/class="timeline-dot"/g) ?? []).length, 9);
+  assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
+});
+
+test("sales results come from the homepage data; years are not animated", () => {
+  const html = htmlFor("/services/performance/");
+  const { performance } = getHomeContent("ja");
+  for (const result of performance.results) {
+    assert.ok(html.includes(escapeHtml(result.label)), result.label);
+    assert.ok(html.includes(escapeHtml(result.value)), result.value);
+    assert.equal(html.includes(`data-count="${escapeHtml(result.value)}"`), !/^\d{4}年/.test(result.value), result.value);
+  }
+  assert.ok(html.includes(escapeHtml(performance.note)));
+  assert.ok(!html.includes("performance-badges"), "the gold badges are gone");
+  assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
+  assert.ok(read("zh/services/performance/index.html").includes("performance-badges"), "Chinese keeps its badges");
+});

@@ -33,7 +33,7 @@ const upfrontScripts = (page: string) =>
   [...read(page).matchAll(/<(?:script[^>]*\ssrc|link[^>]*\shref)="\/(assets\/[^"]+\.js)"/g)].map((match) => new URL(match[1], dist));
 
 test("pages without diagrams do not load the diagram library up front", () => {
-  for (const page of ["index.html", "about/index.html", "services/index.html", "zh/index.html"]) {
+  for (const page of ["index.html", "about/index.html", "about/profile/index.html", "services/index.html", "zh/index.html"]) {
     const scripts = upfrontScripts(page);
     assert.ok(scripts.length > 0, `${page} loads no scripts`);
     for (const file of scripts) {
@@ -45,7 +45,7 @@ test("pages without diagrams do not load the diagram library up front", () => {
 });
 
 test("pages with diagrams still render the diagram container", () => {
-  for (const page of ["about/profile/index.html", "zh/about/profile/index.html", "en/about/profile/index.html"]) {
+  for (const page of ["zh/about/profile/index.html", "en/about/profile/index.html"]) {
     assert.match(read(page), /<div[^>]*class="mermaid"/, page);
   }
 });
