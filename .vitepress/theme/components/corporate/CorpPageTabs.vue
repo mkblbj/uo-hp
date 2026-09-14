@@ -119,5 +119,12 @@ watch(() => props.tabs.find((tab) => tab.current)?.path, revealCurrent, { flush:
     -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent);
     mask-image: linear-gradient(90deg, #000 80%, transparent);
   }
+
+  /* 渐隐区固定盖住可见区域右侧 20%；列表末尾留同样宽的空白，最后一个页签才能整个滚出渐隐区 */
+  .page-tabs__list::after {
+    content: "";
+    flex: none;
+    width: 20%;
+  }
 }
 </style>
