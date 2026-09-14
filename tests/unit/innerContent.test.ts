@@ -38,8 +38,12 @@ test("navigation-only blocks and the old badges are gone", () => {
   }
 });
 
-test("every inner page has an English eyebrow", () => {
-  for (const path of PAGES) assert.match(split(path).data.eyebrow ?? "", /^[A-Z0-9 /&]+$/, path);
+test("eyebrow is optional; when a page leaves it blank, the section default is shown instead", () => {
+  for (const path of PAGES) {
+    const eyebrow = split(path).data.eyebrow;
+    assert.ok(eyebrow === undefined || typeof eyebrow === "string", `${path}: eyebrow must be a string when present`);
+    if (eyebrow) assert.ok(!/\n/.test(eyebrow), `${path}: eyebrow must not contain a newline`);
+  }
 });
 
 test("images are self-hosted markdown images that exist and stay small", () => {

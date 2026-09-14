@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
 import { getHomeContent } from "../../.vitepress/theme/content/homeContent.ts";
+import { getHomeUi } from "../../.vitepress/theme/content/homeUi.ts";
 import { JA_SECTIONS, getPageNav } from "../../.vitepress/theme/content/pageNav.ts";
 
 const dist = new URL("../../.vitepress/dist/", import.meta.url);
@@ -31,6 +32,20 @@ const hasLink = (html: string, ...attrs: string[]) =>
 const block = (html: string, open: RegExp, tag: string) => {
   const start = html.search(open);
   return start < 0 ? "" : html.slice(start, html.indexOf(`</${tag}>`, start) + tag.length + 3);
+};
+
+/** 取出第一个匹配的元素，按嵌套层数找配对的结束标签（用于里面还有同名标签的元素，例如 .sales 套着多层 <div>） */
+const nestedBlock = (html: string, open: RegExp, tag: string) => {
+  const start = html.search(open);
+  if (start < 0) return "";
+  const tagRe = new RegExp(`<${tag}\\b[^>]*>|</${tag}>`, "g");
+  tagRe.lastIndex = start;
+  let depth = 0;
+  for (let match = tagRe.exec(html); match; match = tagRe.exec(html)) {
+    depth += match[0].startsWith("</") ? -1 : 1;
+    if (depth === 0) return html.slice(start, tagRe.lastIndex);
+  }
+  return "";
 };
 
 test("the site has been built", () => {
@@ -102,13 +117,13 @@ test("the footer marks the current page and its logo goes home", () => {
   assert.ok(hasLink(footer, 'href="/"'));
 });
 
-test("Chinese and English pages and the 404 page keep the VitePress layout", () => {
+test("Chinese and English pages keep the VitePress layout", () => {
   for (const file of ["zh/about/profile/index.html", "en/services/index.html", "zh/services/performance/index.html"]) {
     const html = read(file);
     assert.match(html, /class="VPDoc/, file);
     assert.ok(!html.includes("corp-page"), file);
   }
-  assert.ok(!read("404.html").includes("corp-page"));
+  // 404 页只在浏览器端渲染，构建产物测不到，改用浏览器检查。
 });
 
 test("section tops end with cards for the other pages of the section, described by their page descriptions", () => {
@@ -117,6 +132,9 @@ test("section tops end with cards for the other pages of the section, described 
     const cards = block(html, /<section class="page-cards"/, "section");
     assert.ok(cards, `${top} has page cards`);
     assert.ok(!html.includes('class="page-pager'), `${top} has no prev/next`);
+    const ui = getHomeUi("ja");
+    assert.ok(cards.includes(escapeHtml(ui.pagesEyebrow)), `${top} shows the pages eyebrow`);
+    assert.ok(cards.includes(escapeHtml(ui.pagesTitle.replace("{section}", getPageNav(top)!.section.label))), `${top} shows the section's pages title`);
     for (const card of getPageNav(top)!.sectionPages) {
       assert.ok(hasLink(cards, `href="${card.path}"`, 'class="page-cards__card"'), `${top} card ${card.path}`);
       assert.ok(cards.includes(escapeHtml(frontmatter(card.path).description)), `${top} shows the description of ${card.path}`);
@@ -158,13 +176,16 @@ test("the company profile table comes from the homepage data, and the diagram is
 
 test("sales results come from the homepage data; years are not animated", () => {
   const html = htmlFor("/services/performance/");
+  // label（例如「出店開始」）在正文里也会出现，所以只在 .sales 组件片段内检查，不靠整页 includes 碰巧通过
+  const sales = nestedBlock(html, /<div class="sales"/, "div");
+  assert.ok(sales, "has the sales results block");
   const { performance } = getHomeContent("ja");
   for (const result of performance.results) {
-    assert.ok(html.includes(escapeHtml(result.label)), result.label);
-    assert.ok(html.includes(escapeHtml(result.value)), result.value);
-    assert.equal(html.includes(`data-count="${escapeHtml(result.value)}"`), !/^\d{4}年/.test(result.value), result.value);
+    assert.ok(sales.includes(escapeHtml(result.label)), result.label);
+    assert.ok(sales.includes(escapeHtml(result.value)), result.value);
+    assert.equal(sales.includes(`data-count="${escapeHtml(result.value)}"`), !/^\d{4}年/.test(result.value), result.value);
   }
-  assert.ok(html.includes(escapeHtml(performance.note)));
+  assert.ok(sales.includes(escapeHtml(performance.note)));
   assert.ok(!html.includes("performance-badges"), "the gold badges are gone");
   assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
   assert.ok(read("zh/services/performance/index.html").includes("performance-badges"), "Chinese keeps its badges");

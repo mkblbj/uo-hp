@@ -7,6 +7,8 @@ import { directionsUrl, mapSearchUrl, parseLatLng } from "../../.vitepress/theme
 
 const file = new URL("../../.vitepress/dist/index.html", import.meta.url);
 const html = existsSync(file) ? readFileSync(file, "utf8") : "";
+// 只看真正的 <head>：VitePress 会把各语言的 head 设置写进每个页面 body 里的 __VP_SITE_DATA__，那里出现网址并不会加载字体
+const headHtml = html.slice(0, html.indexOf("</head>"));
 const ja = getHomeContent("ja");
 const ui = getHomeUi("ja");
 
@@ -29,8 +31,8 @@ test("the homepage renders with the corporate layout", () => {
 test("title and description come from index.md, fonts from the Japanese locale settings", () => {
   assert.ok(html.includes("<title>株式会社UO | 暮らしに寄り添う価値を。</title>"));
   assert.ok(html.includes("株式会社UOの会社案内サイト。EC運営、OEM・加工・卸売、食品・グローバル特産品、AI・システム開発、日中貿易。"));
-  assert.ok(html.includes("family=Noto+Sans+JP:wght@300;400;500;700;900"));
-  assert.ok(html.includes("family=Orbitron:wght@400;500;600;700"));
+  assert.ok(headHtml.includes("family=Noto+Sans+JP:wght@300;400;500;700;900"));
+  assert.ok(headHtml.includes("family=Orbitron:wght@400;500;600;700"));
   assert.ok(!html.includes("family=Cormorant+Garamond"));
 });
 
