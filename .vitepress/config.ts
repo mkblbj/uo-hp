@@ -6,6 +6,10 @@ import { corpContainers, corpSections } from "./markdown/corpMarkdown";
 const siteBase = "/";
 const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
 
+// 日文页面（首页和内页）的字体，和首页一直在用的是同一个网址
+const CORP_FONTS_URL =
+  "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700&display=swap";
+
 const config = defineConfig({
   base: siteBase,
   vite: {
@@ -59,54 +63,22 @@ const config = defineConfig({
       lang: "ja",
       title: "株式会社UO",
       description: "株式会社UOの会社案内、事業分類、市場展開を紹介する情報サイト。",
+      // 日文页面用首页的字体。放在语言设置里而不是 transformHead：
+      // 站内从中英文页面跳到日文页面时，VitePress 也会按语言补上这些 head
+      head: [
+        ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+        ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+        ["link", { rel: "stylesheet", href: CORP_FONTS_URL }],
+      ],
       themeConfig: {
         logo: "/uo-logo-pure.png",
+        // 日文页面已改用自己的布局（.vitepress/theme/layouts/），这里的导航只剩 404 页在用
         nav: [
           { text: "ホーム", link: "/" },
           { text: "会社情報", link: "/about/" },
           { text: "事業案内", link: "/services/" },
           { text: "販売実績", link: "/services/performance/" },
         ],
-        sidebar: {
-          "/about/": [
-            {
-              text: "会社情報",
-              items: [
-                { text: "会社情報トップ", link: "/about/" },
-                { text: "会社概要", link: "/about/profile/" },
-                { text: "代表挨拶", link: "/about/message/" },
-              ],
-            },
-          ],
-          "/services/": [
-            {
-              text: "事業案内",
-              items: [
-                { text: "事業概要", link: "/services/" },
-                { text: "スマートフォンアクセサリー事業", link: "/services/mobile-accessories/" },
-                { text: "国内産食品事業", link: "/services/domestic-foods/" },
-                { text: "OEM・卸 / 越境連携", link: "/services/oem-wholesale/" },
-              ],
-            },
-            {
-              text: "商品と実績",
-              items: [
-                { text: "主要商品", link: "/services/products/" },
-                { text: "販売実績", link: "/services/performance/" },
-                { text: "選ばれる理由", link: "/services/strengths/" },
-                { text: "今後の展開", link: "/services/future/" },
-              ],
-            },
-          ],
-        },
-        outline: {
-          level: [2, 3],
-          label: "このページの内容",
-        },
-        docFooter: {
-          prev: "前のページ",
-          next: "次のページ",
-        },
         langMenuLabel: "言語を切り替える",
         returnToTopLabel: "トップに戻る",
         sidebarMenuLabel: "ページナビゲーション",

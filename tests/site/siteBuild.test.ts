@@ -73,9 +73,20 @@ test("map styles load with the map module instead of the shared CSS bundle", () 
   assert.ok(hasMapStyles(mapModule), "the map module does not carry the map styles");
 });
 
-test("inner pages and the shared CSS bundle no longer load Google Fonts", () => {
-  for (const page of ["about/index.html", "about/profile/index.html", "services/index.html"]) {
-    assert.ok(!read(page).includes("fonts.googleapis.com"), page);
+const CORP_FONTS = ["family=Noto+Sans+JP:wght@300;400;500;700;900", "family=Orbitron:wght@400;500;600;700"];
+
+// 只看真正的 <head>：VitePress 会把各语言的 head 设置写进每个页面 body 里的 __VP_SITE_DATA__，那里出现网址并不会加载字体
+const headOf = (page: string) => {
+  const html = read(page);
+  return html.slice(0, html.indexOf("</head>"));
+};
+
+test("Japanese pages load the corporate fonts; Chinese and English inner pages and the shared CSS do not load Google Fonts", () => {
+  for (const page of ["index.html", "about/index.html", "about/profile/index.html", "services/index.html"]) {
+    for (const font of CORP_FONTS) assert.ok(headOf(page).includes(font), `${page} misses ${font}`);
+  }
+  for (const page of ["zh/about/index.html", "en/services/index.html"]) {
+    assert.ok(!headOf(page).includes("fonts.googleapis.com"), page);
   }
   for (const css of filesUnder(new URL("assets/", dist), ".css")) {
     assert.ok(!readFileSync(css, "utf8").includes("fonts.googleapis.com"), css.pathname);

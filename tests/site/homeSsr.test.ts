@@ -26,7 +26,7 @@ test("the homepage renders with the corporate layout", () => {
   expectText(ui.skipToContent);
 });
 
-test("title, description and fonts come from index.md", () => {
+test("title and description come from index.md, fonts from the Japanese locale settings", () => {
   assert.ok(html.includes("<title>株式会社UO | 暮らしに寄り添う価値を。</title>"));
   assert.ok(html.includes("株式会社UOの会社案内サイト。EC運営、OEM・加工・卸売、食品・グローバル特産品、AI・システム開発、日中貿易。"));
   assert.ok(html.includes("family=Noto+Sans+JP:wght@300;400;500;700;900"));

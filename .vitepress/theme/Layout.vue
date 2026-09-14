@@ -6,12 +6,15 @@ import {
   getLegacyLocaleFromSearch,
   getLocalePath,
   removeLegacyLocaleFromSearch,
+  useLocale,
 } from "./composables/useLocale";
 import CorporateLayout from "./layouts/CorporateLayout.vue";
+import CorporatePageLayout from "./layouts/CorporatePageLayout.vue";
 import HeroLayout from "./layouts/HeroLayout.vue";
 
-const { frontmatter } = useData();
+const { frontmatter, page } = useData();
 const route = useRoute();
+const { locale } = useLocale();
 
 onMounted(() => {
   if (!inBrowser) {
@@ -45,5 +48,7 @@ onMounted(() => {
 <template>
   <CorporateLayout v-if="frontmatter.layout === 'corporate'" />
   <HeroLayout v-else-if="frontmatter.layout === 'hero'" />
+  <!-- 404.html 只构建一次、却会用于任何不存在的网址（包括 /zh/…），所以 404 不按语言选布局，保持 VitePress 默认样式 -->
+  <CorporatePageLayout v-else-if="locale === 'ja' && !page.isNotFound" />
   <DefaultTheme.Layout v-else />
 </template>
