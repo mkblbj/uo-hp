@@ -6,11 +6,11 @@ import type { PageTab } from "../../content/pageNav";
 const props = defineProps<{ tabs: PageTab[]; label: string }>();
 const listRef = ref<HTMLElement | null>(null);
 
-// 手机上页签是横向滚动的：把当前页的页签滚到看得见的位置（站内切换页面后也执行）
+// 手机上页签是横向滚动的：把当前页签的文字滚到和内容左边缘对齐（第一个页签的文字就在这个位置），站内切换页面后也执行
 const revealCurrent = () => {
   const list = listRef.value;
   const current = list?.querySelector<HTMLElement>(".is-current");
-  if (list && current) list.scrollLeft = Math.max(0, current.offsetLeft - 24);
+  if (list && current) list.scrollLeft = Math.max(0, current.offsetLeft + parseFloat(getComputedStyle(current).paddingLeft));
 };
 
 onMounted(revealCurrent);
