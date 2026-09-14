@@ -1,12 +1,11 @@
 ---
 title: 今後の展開
 description: 株式会社UOの今後の商品展開、AI・IT活用、越境連携の方向性
+eyebrow: FUTURE
 pageClass: service-doc-page
 ---
 
-# 今後の展開
-
-![今後の展開イメージ](https://pic.x-yue.top/i/2026/03/31/r25e1x.png)
+![今後の展開イメージ](/uploads/pages/services/future.webp)
 
 <!--
 生成画像プロンプト:
@@ -15,13 +14,6 @@ A premium corporate website visual for a Japanese company future strategy page, 
 
 株式会社UOは、楽天市場やAmazonで培った**EC運営ノウハウ**をもとに、取り扱いカテゴリの拡大と、日中間を含む事業連携の強化を進めていく方針です。  
 今後は既存事業の延長として、**AI・IT活用によるEC運営支援**や、**業務支援エージェントの開発**にも取り組み、事業基盤のさらなる強化を目指していきます。
-
-::: info このページでわかること
-- 今後拡大を見込んでいる商品領域
-- EC運営を支えるAI・IT活用の方向性
-- 業務支援エージェント開発の考え方
-- 日中連携を含めた今後の事業拡張
-:::
 
 ## 商品領域の拡大
 
@@ -53,8 +45,3 @@ A premium corporate website visual for a Japanese company future strategy page, 
 
 株式会社UOでは、国内販売だけでなく、**中国側との受発注や出品連携**も視野に入れた事業拡張を進めています。  
 今後も、商品領域の拡大とあわせて、**日中連携を含む事業基盤の強化**を進めていく方針です。
-## 関連ページ
-
-- [国内産食品事業](../domestic-foods/)
-- [OEM・卸 / 越境連携](../oem-wholesale/)
-- [事業案内](../)

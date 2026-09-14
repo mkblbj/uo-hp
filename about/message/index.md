@@ -1,14 +1,13 @@
 ---
 title: 代表挨拶
 description: 株式会社UO 代表取締役からのメッセージ
+eyebrow: MESSAGE
 pageClass: about-doc-page
 ---
 
-# 代表**のご挨拶**
-
 > **_日常使いのアイテムに、非日常のエッセンスをお届けしたい。_**
 
-![代表挨拶イメージ](https://pic.x-yue.top/i/2026/03/31/lqiusp.png)
+![代表挨拶イメージ](/uploads/home/message.webp)
 
 <!--
 生成画像プロンプト:
@@ -36,12 +35,7 @@ A refined lifestyle-oriented corporate visual for a Japanese company, featuring 
 - 販売現場で培った知見を、次の商品開発や事業展開へつなげること
 :::
 
-<div style="margin-top: 2rem; text-align: right;">
-  <p style="margin: 0 0 0.4rem; color: var(--vp-c-text-2);">代表取締役</p>
-  <img
-    src="https://pic.x-yue.top/i/2026/03/31/lop42q.png"
-    alt="王克兢 署名"
-    style="display: inline-block; max-width: 180px; width: 100%; height: auto;"
-  >
-  <!-- <p style="margin: 0.4rem 0 0; font-weight: 600;">王 克兢</p> -->
-</div>
+::: signature
+代表取締役
+![王克兢 署名](/uploads/home/signature.png)
+:::

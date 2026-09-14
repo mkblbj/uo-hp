@@ -1,12 +1,11 @@
 ---
 title: OEM・卸 / 越境連携
 description: OEM、加工、卸、直輸入、中国向け出品を含む法人向け対応領域
+eyebrow: OEM / WHOLESALE
 pageClass: service-doc-page
 ---
 
-# OEM・卸 / 越境連携
-
-![OEM・卸・越境連携イメージ](https://pic.x-yue.top/i/2026/03/31/qz4xfy.png)
+![OEM・卸・越境連携イメージ](/uploads/pages/services/oem-wholesale.webp)
 
 <!--
 生成画像プロンプト:
@@ -15,13 +14,6 @@ A premium corporate website visual for a Japanese B2B business service page, sho
 
 株式会社UOは、自社EC運営で蓄積してきた知見をもとに、**法人向けのOEM・加工・卸販売・越境連携**にも対応しています。  
 販売現場を持つ事業者として、商品企画から加工、納品、その後の販売運用までを**現実的な運用目線**で設計できることが、当社の強みです。
-
-::: info このページでわかること
-- OEM・卸 / 越境連携の対応範囲
-- 対応体制と基本条件
-- 株式会社UOが提供できる支援内容
-- どのような相談に向いているか
-:::
 
 ## 対応領域
 
@@ -52,9 +44,3 @@ A premium corporate website visual for a Japanese B2B business service page, sho
 - 小ロットから市場反応を見ながら導入したい
 - 日本市場向けに多機種対応や新機種対応を進めたい
 - 中国側との連携や出品を含めた運用を相談したい
-
-## 関連ページ
-
-- [主要商品](../products/)
-- [スマートフォンアクセサリー事業](../mobile-accessories/)
-- [事業案内](../)

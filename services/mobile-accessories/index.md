@@ -1,10 +1,9 @@
 ---
 title: スマートフォンアクセサリー事業
 description: 松武商店と3911を中心としたスマートフォンアクセサリー販売事業
+eyebrow: SMARTPHONE ACCESSORIES
 pageClass: service-doc-page
 ---
-
-# スマートフォンアクセサリー事業
 
 <!--
 生成画像プロンプト:
@@ -14,13 +13,6 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 株式会社UOの事業基盤となっているのが、**スマートフォンアクセサリー事業**です。  
 楽天市場の **「松武商店」** と **「3911」** を主力店舗として、スマートフォン周辺グッズの販売と、オリジナルアイテムの開発を進めてきました。  
 販売現場で蓄積してきた運営ノウハウは、現在のOEM・卸販売や越境連携にもつながる重要な基盤となっています。
-
-::: info この事業でわかること
-- スマートフォンアクセサリー事業の位置づけ
-- 主な取り扱いアイテム
-- 販売チャネルと主力店舗
-- この事業を通じて培った強み
-:::
 
 ## 事業の特徴
 
@@ -48,7 +40,7 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 
 ### [松武商店（楽天市場）](https://www.rakuten.co.jp/matsutake1816/)
 
-![松武商店イメージ](https://pic.x-yue.top/i/2026/03/31/pbv1an.png)
+![松武商店イメージ](/uploads/pages/services/shop-matsutake.webp)
 
 <!--
 这里建议优先使用真实截图
@@ -64,7 +56,7 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 
 ### 3911（[楽天市場](https://www.rakuten.co.jp/uo3911/) / [メルカリ](https://jp.mercari.com/shops/profile/DKnSGBVY6VP22ckTF3h444) / Qoo10 / au PAY マーケット）
 
-![3911イメージ](https://pic.x-yue.top/i/2026/03/31/pg0pcg.png)
+![3911イメージ](/uploads/pages/services/shop-3911.webp)
 
 > *複数チャネルで展開している主力店舗として、販売導線の拡張と商品展開の広がりを支えています。  
 楽天市場を基盤にしながら、メルカリ、Qoo10、au PAY マーケットでも同一名称で運営し、接点を広げています。*
@@ -76,9 +68,3 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 - 商品ページ運営やレビュー改善のノウハウ
 - **加工から販売までをつなぐ一気通貫の体制**
 - OEM・卸販売や越境連携へ展開できる実務基盤
-
-## 関連ページ
-
-- [主要商品](../products/)
-- [販売実績](../performance/)
-- [選ばれる理由](../strengths/)

@@ -316,27 +316,30 @@ collections:
         file: "about/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "会社概要（公司概要）"
         name: "about-profile"
         file: "about/profile/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "代表挨拶（代表致辞）"
         name: "about-message"
         file: "about/message/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "about-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
   - name: "ja-services"
     label: "🇯🇵 事業案内（业务介绍）"
@@ -346,72 +349,80 @@ collections:
         file: "services/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "スマホアクセサリー事業（手机配件业务）"
         name: "services-mobile-accessories"
         file: "services/mobile-accessories/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "国内産食品事業（国产食品业务）"
         name: "services-domestic-foods"
         file: "services/domestic-foods/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "OEM・卸/越境連携（OEM/批发/跨境）"
         name: "services-oem-wholesale"
         file: "services/oem-wholesale/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "主要商品（主要产品）"
         name: "services-products"
         file: "services/products/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "販売実績（销售业绩）"
         name: "services-performance"
         file: "services/performance/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "選ばれる理由（选择我们的理由）"
         name: "services-strengths"
         file: "services/strengths/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
       - label: "今後の展開（未来发展）"
         name: "services-future"
         file: "services/future/index.md"
         fields:
           - { label: "标题", name: "title", widget: "string" }
-          - { label: "页面描述", name: "description", widget: "string" }
+          - { label: "页面描述", name: "description", widget: "string", hint: "显示在页面大标题下方，也用作栏目首页卡片的说明和搜索引擎的页面摘要" }
+          - { label: "英文小标题", name: "eyebrow", widget: "string", required: false, hint: "显示在页面大标题上方，例如 COMPANY PROFILE；留空时显示栏目默认值（COMPANY / BUSINESS）" }
           - { label: "页面样式", name: "pageClass", widget: "hidden", default: "service-doc-page" }
-          - { label: "正文内容", name: "body", widget: "markdown" }
+          - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
   # ──────────────────────────────────────
   #  中文

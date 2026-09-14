@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { parse } from "yaml";
 import ja from "../../data/home/ja.json" with { type: "json" };
+import { JA_SECTIONS } from "../../.vitepress/theme/content/pageNav.ts";
 
 interface CmsField {
   name: string;
@@ -95,4 +96,31 @@ test("the validator catches undeclared keys and missing required values", () => 
     "sample.extra: not declared in the CMS config (the CMS may drop it on save)",
     "sample.b: required but empty",
   ]);
+});
+
+const innerEntries = config.collections
+  .filter((collection) => collection.name === "ja-about" || collection.name === "ja-services")
+  .flatMap((collection) => collection.files ?? []);
+
+test("every Japanese inner page is registered in the CMS", () => {
+  const expected = JA_SECTIONS.flatMap((section) => section.groups.flat().map((page) => `${page.path.slice(1)}index.md`));
+  assert.deepEqual(innerEntries.map((entry) => entry.file).sort(), [...expected].sort());
+});
+
+test("every frontmatter key of the Japanese inner pages is declared in the CMS", () => {
+  for (const entry of innerEntries) {
+    const source = readFileSync(new URL(`../../${entry.file}`, import.meta.url), "utf8");
+    const data = parse(/^---\n([\s\S]*?)\n---/.exec(source)?.[1] ?? "") as Record<string, unknown>;
+    const declared = new Set(entry.fields.map((field) => field.name));
+    for (const key of Object.keys(data)) {
+      assert.ok(declared.has(key), `${entry.file}: "${key}" is not declared in the CMS config (the CMS may drop it on save)`);
+    }
+    for (const name of ["title", "description", "eyebrow", "pageClass", "body"]) assert.ok(declared.has(name), `${entry.file}: ${name}`);
+  }
+});
+
+test("the shared-data blocks stay in their pages", () => {
+  const read = (file: string) => readFileSync(new URL(`../../${file}`, import.meta.url), "utf8");
+  assert.match(read("about/profile/index.md"), /^::: company-profile$/m);
+  assert.match(read("services/performance/index.md"), /^::: sales-results$/m);
 });

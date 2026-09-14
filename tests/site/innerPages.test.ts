@@ -169,3 +169,28 @@ test("sales results come from the homepage data; years are not animated", () => 
   assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
   assert.ok(read("zh/services/performance/index.html").includes("performance-badges"), "Chinese keeps its badges");
 });
+
+test("inner pages no longer show external images, markdown titles or navigation-only blocks", () => {
+  for (const path of PAGES) {
+    const html = htmlFor(path);
+    assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, `${path} has exactly one h1`);
+    for (const host of ["pic.x-yue.top", "image.rakuten.co.jp"]) assert.ok(!html.includes(host), `${path} uses ${host}`);
+    for (const text of ["このページでわかること", "この事業でわかること", "このセクションでわかること", "関連ページ", "読み進め方"]) {
+      assert.ok(!html.includes(text), `${path}: ${text}`);
+    }
+  }
+});
+
+test("the business overview shows its four pillars as linked cards", () => {
+  const cards = block(htmlFor("/services/"), /<div class="corp-cards"/, "ul");
+  for (const href of ["./mobile-accessories/", "./domestic-foods/", "./future/", "./oem-wholesale/"]) {
+    assert.ok(hasLink(cards, `href="${href}"`), href);
+  }
+});
+
+test("the representative message uses local images, a signature block and no default TIP title", () => {
+  const html = htmlFor("/about/message/");
+  assert.ok(html.includes('src="/uploads/home/message.webp"'));
+  assert.match(html, /<div class="corp-signature">[\s\S]*?src="\/uploads\/home\/signature\.png"/);
+  assert.ok(!html.includes(">TIP</p>"));
+});

@@ -1,12 +1,11 @@
 ---
 title: 国内産食品事業
 description: 国内産屋を中心とした国内産食品ネット販売事業
+eyebrow: DOMESTIC FOODS
 pageClass: service-doc-page
 ---
 
-# 国内産食品事業
-
-![国内産食品事業イメージ](https://pic.x-yue.top/i/2026/03/31/pjvncx.png)
+![国内産食品事業イメージ](/uploads/pages/services/domestic-foods.webp)
 
 <!--
 生成画像プロンプト:
@@ -16,13 +15,6 @@ A premium corporate website visual for a Japanese domestic foods business, elega
 国内産食品事業は、株式会社UOが**新たな柱として育てている事業**です。  
 日本国内の農産物や食品の価値を見直し、消費者へ丁寧に届けることを目的に、**「国内産屋」** を中心として展開しています。  
 スマートフォンアクセサリー事業で培った**EC運営力**を土台に、食品分野においても新たな販売基盤づくりを進めています。
-
-::: info この事業でわかること
-- 国内産食品事業の位置づけ
-- 事業コンセプトと進捗
-- 取扱品目と今後の展開
-- 国内産屋の役割
-:::
 
 ## 事業コンセプト
 
@@ -67,9 +59,3 @@ A premium corporate website visual for a Japanese domestic foods business, elega
 
 スマートフォンアクセサリー事業で培ってきた**販売運営力**を活かし、食品カテゴリにおいても、**商品理解、訴求設計、継続購入**につながる運営体制を整えていきます。  
 今後は、取扱品目の拡充だけでなく、ブランドとしての見せ方や販売体験の向上も進めていく予定です。
-
-## 関連ページ
-
-- [事業案内](../)
-- [今後の展開](../future/)
-- [会社情報](/about/)
