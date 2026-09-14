@@ -54,7 +54,7 @@ const items = computed(() =>
   font-family: "Orbitron", sans-serif;
   font-size: 0.62rem;
   letter-spacing: 0.2em;
-  line-height: 1;
+  line-height: 1.5;
   color: #6fa9de;
 }
 
@@ -68,11 +68,13 @@ const items = computed(() =>
   text-wrap: balance;
 }
 
+/* 和正文小节的内容栏一样最宽 54rem */
 .page-cards__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   min-width: 0;
+  max-width: 54rem;
   background: rgba(199, 215, 231, 0.12);
   border: 1px solid rgba(199, 215, 231, 0.12);
 }
@@ -105,11 +107,12 @@ const items = computed(() =>
   color: #fff;
 }
 
+/* 字号、行高、颜色和示意图实际显示的一致（示意图里 .sec__body p 盖过了 .pcard__desc） */
 .page-cards__desc {
-  font-size: 0.8rem;
+  font-size: 0.97rem;
   font-weight: 300;
-  line-height: 1.8;
-  color: rgba(248, 243, 235, 0.68);
+  line-height: 2;
+  color: rgba(248, 243, 235, 0.8);
 }
 
 .page-cards__more {
@@ -141,6 +144,13 @@ const items = computed(() =>
 
 .page-cards__card:last-child:nth-child(3n + 2) {
   grid-column: span 2;
+}
+
+/* 和正文小节一样，窄一些的电脑屏幕上左栏稍微加宽 */
+@media (max-width: 1020px) {
+  .page-cards {
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 760px) {

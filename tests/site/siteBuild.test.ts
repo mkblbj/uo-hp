@@ -92,3 +92,9 @@ test("Japanese pages load the corporate fonts; Chinese and English inner pages a
     assert.ok(!readFileSync(css, "utf8").includes("fonts.googleapis.com"), css.pathname);
   }
 });
+
+test("the inner page prose stylesheet ships with the site", () => {
+  const css = filesUnder(new URL("assets/", dist), ".css").map((file) => readFileSync(file, "utf8")).join("\n");
+  assert.match(css, /\.corp-prose \.corp-sec\{/);
+  assert.match(css, /\.corp-prose \.timeline-dot:{1,2}before\{/);
+});

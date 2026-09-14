@@ -1,0 +1,612 @@
+/*
+ * 日文内页正文（Markdown 渲染结果）的排版，所有选择器都以 .corp-prose 开头。
+ * 结构由 .vitepress/markdown/corpMarkdown.ts 生成：
+ *   .corp-intro   第一个 ## 之前的导语区
+ *   .corp-sec     每个 ## 一节：.corp-sec__head（编号 + 小节标题）| .corp-sec__body（内容）
+ * VitePress 默认主题的基础样式对全站生效（中英文页面还在用），这里每种元素都明确写出样式，不依赖默认值。
+ * 数值来自示意图 docs/superpowers/specs/2026-09-13-inner-pages/inner-page.html、special-pages.html。
+ */
+
+.corp-prose {
+  font-size: 0.97rem;
+  line-height: 2;
+  color: rgba(248, 243, 235, 0.8);
+}
+
+/* ── 导语区：放在右栏，和各小节的内容对齐 ── */
+
+.corp-prose .corp-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+  column-gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  padding: clamp(2.6rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid rgba(199, 215, 231, 0.08);
+}
+
+.corp-prose .corp-intro > * {
+  grid-column: 2;
+  max-width: 54rem;
+  margin: 0;
+}
+
+.corp-prose .corp-intro > * + * {
+  margin-top: 1.3rem;
+}
+
+.corp-prose .corp-intro > p {
+  font-size: 1.06rem;
+  font-weight: 300;
+  line-height: 2.05;
+  color: rgba(248, 243, 235, 0.88);
+}
+
+/* 导语区有图片时（代表挨拶、国内産食品、OEM・卸、選ばれる理由、今後の展開）：左边文字，右边第一张图，滚动时吸顶 */
+.corp-prose .corp-intro:has(> p > img) {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.corp-prose .corp-intro:has(> p > img) > * {
+  grid-column: 1;
+  max-width: none;
+}
+
+/* 行号用 span 占满足够多的行；不用 row-gap（空行会叠出空白），间距全靠 margin */
+.corp-prose .corp-intro:has(> p > img) > p:has(> img):not(p:has(> img) ~ p) {
+  grid-column: 2;
+  grid-row: 1 / span 40;
+  position: sticky;
+  top: 96px;
+  margin-top: 0;
+}
+
+/* 图片是导语区第一个元素时，紧跟着的文字排在左栏第一行，不需要上边距 */
+.corp-prose .corp-intro:has(> p > img) > p:first-child:has(> img) + * {
+  margin-top: 0;
+}
+
+/* 导语区以引用开头（代表挨拶）：首页「代表メッセージ」同款的大号斜体引言，后面的段落用正文字号。
+   按示意图自然换行，不用 text-wrap: balance */
+.corp-prose .corp-intro > blockquote:first-child {
+  padding: 0;
+  border: 0;
+  font-size: clamp(1.35rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.65;
+  color: #fff;
+}
+
+.corp-prose .corp-intro > blockquote:first-child p,
+.corp-prose .corp-intro > blockquote:first-child strong,
+.corp-prose .corp-intro > blockquote:first-child em {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.corp-prose .corp-intro:has(> blockquote:first-child) > p {
+  font-size: 0.95rem;
+  line-height: 2.05;
+  color: rgba(248, 243, 235, 0.8);
+}
+
+.corp-prose .corp-intro:has(> blockquote:first-child) > p + p {
+  margin-top: 1.1rem;
+}
+
+/* ── 小节：左边编号 + 小节标题（电脑端吸顶），右边内容 ── */
+
+.corp-prose .corp-sec {
+  display: grid;
+  grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(2.6rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid rgba(199, 215, 231, 0.08);
+}
+
+/* 正文直接从小节开始（没有导语区，例如会社概要）时，和示意图一样在页签下面多留一点空 */
+.corp-prose .corp-sec:first-child {
+  margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+.corp-prose .corp-sec__head-inner {
+  position: sticky;
+  top: 96px;
+}
+
+.corp-prose .corp-sec__no {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  color: #6fa9de;
+}
+
+.corp-prose .corp-sec h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.corp-prose .corp-sec__body {
+  min-width: 0;
+  max-width: 54rem;
+}
+
+.corp-prose .corp-sec__body > * {
+  margin: 0;
+}
+
+.corp-prose .corp-sec__body > * + * {
+  margin-top: 1.5rem;
+}
+
+/* VitePress 给标题生成的「#」链接不显示（id 保留，可以直接链接到小节） */
+.corp-prose .header-anchor {
+  display: none;
+}
+
+/* ── 文字 ── */
+
+.corp-prose p {
+  color: rgba(248, 243, 235, 0.8);
+}
+
+.corp-prose strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.corp-prose em {
+  font-style: italic;
+}
+
+.corp-prose a {
+  color: #6fa9de;
+  text-decoration: underline;
+  text-decoration-color: rgba(111, 169, 222, 0.4);
+  text-underline-offset: 0.25em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.corp-prose a:hover {
+  color: #9ec8ec;
+  text-decoration-color: currentColor;
+}
+
+.corp-prose .corp-sec__body > h3 {
+  margin-top: 2.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.corp-prose .corp-sec__body > h3:first-child {
+  margin-top: 0;
+}
+
+/* ── 列表：首页同款发光蓝色小方块 ── */
+
+.corp-prose ul,
+.corp-prose ol {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.corp-prose li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: rgba(248, 243, 235, 0.84);
+}
+
+.corp-prose li > p {
+  margin: 0;
+}
+
+.corp-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 5px;
+  height: 5px;
+  background: #6fa9de;
+  box-shadow: 0 0 8px rgba(111, 169, 222, 0.8);
+}
+
+.corp-prose ol {
+  counter-reset: corp-ol;
+}
+
+.corp-prose ol > li {
+  counter-increment: corp-ol;
+  padding-left: 2rem;
+}
+
+.corp-prose ol > li::before {
+  content: counter(corp-ol, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #6fa9de;
+}
+
+/* ── 表格：首页「基本情報」卡片样式（Markdown 表格和 CorpProfileTable 共用） ── */
+
+.corp-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(199, 215, 231, 0.12);
+  background: #050809;
+}
+
+.corp-prose th {
+  padding: 0.95rem 1.4rem;
+  border-bottom: 1px solid rgba(199, 215, 231, 0.1);
+  background: rgba(24, 95, 159, 0.1);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-align: left;
+  color: rgba(226, 238, 249, 0.96);
+}
+
+.corp-prose td {
+  padding: 0.9rem 1.4rem;
+  border-bottom: 1px solid rgba(199, 215, 231, 0.07);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  vertical-align: top;
+  color: rgba(248, 243, 235, 0.9);
+}
+
+.corp-prose td:first-child {
+  width: 11rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: rgba(175, 208, 238, 0.9);
+}
+
+.corp-prose tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── 引用：店铺介绍等 ── */
+
+.corp-prose blockquote {
+  padding: 0.2rem 0 0.2rem 1.3rem;
+  border-left: 2px solid #185f9f;
+}
+
+.corp-prose blockquote p {
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.95;
+  color: rgba(248, 243, 235, 0.72);
+}
+
+/* ── 图片：细边框深色底的图框，宽度占满所在栏 ── */
+
+.corp-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(199, 215, 231, 0.12);
+  background: #050809;
+  opacity: 0.92;
+}
+
+/* ── 提示框（::: info / ::: tip 等）：首页「CORE STRENGTHS」面板样式 ── */
+
+/* 去掉 VitePress 默认提示框的内边距、圆角、字号和文字颜色 */
+.corp-prose .custom-block {
+  padding: 0;
+  border: 1px solid rgba(199, 215, 231, 0.12);
+  border-radius: 0;
+  background: #050809;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.corp-prose .custom-block-title {
+  margin: 0;
+  padding: 0.95rem 1.4rem;
+  border-bottom: 1px solid rgba(199, 215, 231, 0.1);
+  background: rgba(24, 95, 159, 0.1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  color: rgba(226, 238, 249, 0.96);
+}
+
+.corp-prose .custom-block > p:not(.custom-block-title) {
+  margin: 0;
+  padding: 1.1rem 1.4rem;
+}
+
+/* 提示框里的列表排成格子；4 项及以上时电脑端两列 */
+.corp-prose .custom-block > ul {
+  gap: 1px;
+  margin: 0;
+  background: rgba(199, 215, 231, 0.1);
+}
+
+.corp-prose .custom-block > ul > li {
+  padding: 1.05rem 1.3rem 1.05rem 2.4rem;
+  background: #050809;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.corp-prose .custom-block > ul > li::before {
+  left: 1.3rem;
+  top: 1.55rem;
+}
+
+.corp-prose .custom-block > ul:has(> li:nth-child(4)) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.corp-prose .custom-block > ul:has(> li:nth-child(4)) > li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* ── 时间线（::: timeline 年份）：覆盖 vitepress-markdown-timeline 自带的样式 ── */
+
+/* 字号、行高和说明文字一致，每行的高度才不会被正文的 2 倍行高撑大 */
+.corp-prose .timeline-dot {
+  position: relative;
+  padding: 0 0 1.7rem 1.9rem;
+  border-left: 1px solid rgba(199, 215, 231, 0.16);
+  font-size: 0.86rem;
+  line-height: 1.9;
+  color: rgba(248, 243, 235, 0.7);
+}
+
+/* 时间线和前面的内容之间多留一点空 */
+.corp-prose .corp-sec__body > :not(.timeline-dot) + .timeline-dot {
+  margin-top: 2rem;
+}
+
+/* 各项之间不留外边距，左边的竖线才能连成一条 */
+.corp-prose .corp-sec__body > .timeline-dot + .timeline-dot {
+  margin-top: 0;
+}
+
+/* 最后一项下面不留空，竖线停在最后一行文字下面 */
+.corp-prose .timeline-dot:not(:has(+ .timeline-dot)) {
+  padding-bottom: 0.2rem;
+}
+
+.corp-prose .timeline-dot::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0.62rem;
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 0;
+  background: #6fa9de;
+  box-shadow: 0 0 10px rgba(111, 169, 222, 0.9);
+  transform: none;
+}
+
+.corp-prose .timeline-dot::after {
+  display: none;
+}
+
+.corp-prose .timeline-dot .timeline-dot-title {
+  display: inline-block;
+  margin-right: 0.9rem;
+  font-family: "Orbitron", "Noto Sans JP", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: #6fa9de;
+}
+
+.corp-prose .timeline-dot p {
+  display: inline;
+  font-size: 0.86rem;
+  line-height: 1.9;
+  color: rgba(248, 243, 235, 0.7);
+}
+
+/* 每项开头的粗体（原点、蓄積…）和年份在同一行，说明文字换到下一行 */
+.corp-prose .timeline-dot p strong {
+  font-size: 0.93rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.corp-prose .timeline-dot p strong::after {
+  content: "\A";
+  white-space: pre;
+}
+
+/* ── ::: cards：事業案内トップ的四大事业卡片（首页事業案内卡片样式） ── */
+
+.corp-prose .corp-cards > ul {
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(199, 215, 231, 0.12);
+  border: 1px solid rgba(199, 215, 231, 0.12);
+  counter-reset: corp-card;
+}
+
+/* 说明文字的字号、行高、颜色和示意图实际显示的一致（示意图里 .sec__body p 盖过了 .card__body） */
+.corp-prose .corp-cards > ul > li {
+  counter-increment: corp-card;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 2.6vw, 2.2rem);
+  background: #050809;
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 2;
+  color: rgba(248, 243, 235, 0.8);
+}
+
+.corp-prose .corp-cards > ul > li::before {
+  content: counter(corp-card, decimal-leading-zero);
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(111, 169, 222, 0.32);
+}
+
+.corp-prose .corp-cards > ul > li > a:first-child,
+.corp-prose .corp-cards > ul > li > strong:first-child {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 标题后面的细线箭头：和示意图、页面卡片用同一个图标，颜色取 background */
+.corp-prose .corp-cards > ul > li > a:first-child::after {
+  content: "";
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-left: 0.55rem;
+  background: #6fa9de;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.corp-prose .corp-cards > ul > li > a:first-child:hover {
+  color: #9ec8ec;
+}
+
+/* ── ::: signature：代表挨拶结尾的签名，右对齐 ── */
+
+.corp-prose .corp-sec__body > .corp-signature {
+  margin-top: 2.4rem;
+}
+
+.corp-prose .corp-signature > p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  color: rgba(175, 208, 238, 0.9);
+}
+
+.corp-prose .corp-signature img {
+  width: 210px;
+  max-width: 100%;
+  border: 0;
+  background: none;
+  opacity: 1;
+}
+
+/* ── 分隔线（现在的日文内页没有，留给以后后台里加的内容） ── */
+
+.corp-prose hr {
+  height: 0;
+  margin: 2.4rem 0;
+  border: 0;
+  border-top: 1px solid rgba(199, 215, 231, 0.1);
+}
+
+@media (max-width: 1020px) {
+  /* 和示意图一样，窄一些的电脑屏幕上左栏稍微加宽（有图片的导语区不受影响） */
+  .corp-prose .corp-intro,
+  .corp-prose .corp-sec {
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+  }
+
+  .corp-prose .corp-cards > ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 手机：两栏变单栏，按原来的顺序上下排 ── */
+
+@media (max-width: 760px) {
+  /* 有图片的导语区要单独写：上面的 :has() 选择器优先级更高，不写会一直是两栏 */
+  .corp-prose .corp-intro,
+  .corp-prose .corp-intro:has(> p > img),
+  .corp-prose .corp-sec {
+    grid-template-columns: 1fr;
+  }
+
+  .corp-prose .corp-sec {
+    gap: 1.3rem;
+  }
+
+  .corp-prose .corp-intro > *,
+  .corp-prose .corp-intro:has(> p > img) > * {
+    grid-column: 1;
+  }
+
+  .corp-prose .corp-intro:has(> p > img) > p:has(> img):not(p:has(> img) ~ p) {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+  }
+
+  .corp-prose .corp-intro:has(> p > img) > p:has(> img):not(p:has(> img) ~ p):not(:first-child) {
+    margin-top: 1.3rem;
+  }
+
+  .corp-prose .corp-intro:has(> p > img) > p:first-child:has(> img) + * {
+    margin-top: 1.3rem;
+  }
+
+  .corp-prose .corp-sec__head-inner {
+    position: static;
+  }
+
+  .corp-prose td:first-child {
+    width: 7.2rem;
+  }
+
+  .corp-prose th,
+  .corp-prose td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .corp-prose .custom-block > ul:has(> li:nth-child(4)) {
+    grid-template-columns: 1fr;
+  }
+
+  .corp-prose .custom-block > ul:has(> li:nth-child(4)) > li:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}

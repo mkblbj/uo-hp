@@ -7,6 +7,7 @@ import CorpProfileTable from "./components/corporate/CorpProfileTable.vue";
 import CorpSalesResults from "./components/corporate/CorpSalesResults.vue";
 import "./styles/hero.css";
 import "./styles/corporate.css";
+import "./styles/corporate-prose.css";
 import "vitepress-markdown-timeline/dist/theme/index.css";
 
 const theme: Theme = {
