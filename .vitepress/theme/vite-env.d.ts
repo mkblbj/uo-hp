@@ -21,3 +21,6 @@ declare module "*?worker&url" {
   const src: string;
   export default src;
 }
+
+// markdown-it-container 没有自带类型，只在 .vitepress/markdown/corpMarkdown.ts 里用
+declare module "markdown-it-container";

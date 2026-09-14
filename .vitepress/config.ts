@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
 import { withMermaid } from "vitepress-plugin-mermaid";
+import { corpContainers, corpSections } from "./markdown/corpMarkdown";
 
 const siteBase = "/";
 const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
@@ -43,8 +44,13 @@ const config = defineConfig({
   srcExclude: ["docs/**"],
   mermaid: {},
   markdown: {
+    // Markdown 图片加 loading="lazy"（中英文页面也生效，只影响加载时机，外观不变）
+    image: { lazyLoading: true },
     config: (md) => {
       md.use(timeline);
+      // 日文内页的正文结构和 ::: 区块，见 .vitepress/markdown/corpMarkdown.ts
+      corpContainers(md);
+      corpSections(md);
     },
   },
   locales: {
