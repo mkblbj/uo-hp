@@ -112,6 +112,10 @@ export const normalizePath = (path: string): string => {
   return pathname.endsWith("/") ? pathname : `${pathname}/`;
 };
 
+/** 是否指向同一页：后台填链接时可能少写结尾斜杠、带 #，字符串直接比较会悄悄失效，统一走 normalizePath 再比较 */
+export const isSamePage = (href: string | undefined, currentPath: string | undefined): boolean =>
+  Boolean(href) && Boolean(currentPath) && normalizePath(href!) === normalizePath(currentPath!);
+
 /** 按路径算出内页导航；不在清单里的页面（首页、中英文页面等）返回 null */
 export const getPageNav = (rawPath: string): PageNav | null => {
   const path = normalizePath(rawPath);

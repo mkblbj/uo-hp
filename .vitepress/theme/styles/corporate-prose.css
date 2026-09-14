@@ -316,14 +316,36 @@
 
 /* ── 提示框（::: info / ::: tip 等）：首页「CORE STRENGTHS」面板样式 ── */
 
-/* 去掉 VitePress 默认提示框的内边距、圆角、字号和文字颜色 */
-.corp-prose .custom-block {
+/* 去掉 VitePress 默认提示框的内边距、圆角、字号和文字颜色。
+   选择器多加一层元素限定（:is(div, details)）：.custom-block.info 等 VitePress 自带规则优先级同样是 (0,2,0)，
+   不加这层限定就要靠 CSS 引入顺序决出胜负；元素限定把优先级提到 (0,2,1)，不管引入顺序都赢 */
+.corp-prose :is(div, details).custom-block {
   padding: 0;
   border: 1px solid rgba(199, 215, 231, 0.12);
   border-radius: 0;
   background: #050809;
   font-size: inherit;
   line-height: inherit;
+  color: inherit;
+}
+
+/* 提示框里的链接、行内代码：VitePress 的 .custom-block.info a / code 等规则优先级是 (0,2,1)/(0,3,1)，
+   比正文的 .corp-prose a 规则（(0,1,1)/(0,2,1)）高，不管引入顺序都会赢，所以要单独覆盖。
+   链接颜色和正文其他地方一致；行内代码目前正文里没有出现过，这里也不单独造一套颜色，跟随周围文字颜色即可 */
+.corp-prose :is(div, details).custom-block a {
+  color: #6fa9de;
+  text-decoration: underline;
+  text-decoration-color: rgba(111, 169, 222, 0.4);
+  text-underline-offset: 0.25em;
+}
+
+.corp-prose :is(div, details).custom-block a:hover {
+  color: #9ec8ec;
+  text-decoration-color: currentColor;
+}
+
+.corp-prose :is(div, details).custom-block code {
+  background: none;
   color: inherit;
 }
 

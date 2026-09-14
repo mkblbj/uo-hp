@@ -24,7 +24,8 @@ const isCommentOnly = (token: Token) => token.type === "html_block" && /^\s*<!--
  */
 export const corpSections = (md: MarkdownRenderer): void => {
   md.core.ruler.push("corp_sections", (state) => {
-    if (!isJaInnerPage(state.env?.relativePath)) return;
+    // renderInline（行内渲染，例如 eyebrow、卡片说明文字）也会跑 core 规则；行内模式下不拆结构
+    if (state.inlineMode || !isJaInnerPage(state.env?.relativePath)) return;
 
     const html = (content: string) => {
       const token = new state.Token("html_block", "", 0);

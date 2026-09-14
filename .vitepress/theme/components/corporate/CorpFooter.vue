@@ -2,6 +2,7 @@
 import logoMark from "../../assets/uo-logo-pure.png";
 import type { HomeContent } from "../../content/homeContent";
 import { LOCALE_MENU } from "../../content/homeUi";
+import { isSamePage } from "../../content/pageNav";
 import type { Locale } from "../../content/siteCopy";
 import { isExternalUrl, linkAttrs, navLinkAttrs } from "../../utils/linkAttrs";
 
@@ -45,9 +46,9 @@ defineProps<{
             v-for="link in column.links"
             :key="link.href"
             class="footer__link"
-            :class="{ 'is-current': link.href === currentPath }"
+            :class="{ 'is-current': isSamePage(link.href, currentPath) }"
             v-bind="linkAttrs(link.href)"
-            :aria-current="link.href === currentPath ? 'page' : undefined"
+            :aria-current="isSamePage(link.href, currentPath) ? 'page' : undefined"
           >{{ link.label }}</a>
         </nav>
       </div>

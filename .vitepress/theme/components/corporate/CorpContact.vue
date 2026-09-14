@@ -2,13 +2,14 @@
 import { computed } from "vue";
 import type { HomeContent } from "../../content/homeContent";
 import type { HomeUi } from "../../content/homeUi";
+import { isSamePage } from "../../content/pageNav";
 import { linkAttrs } from "../../utils/linkAttrs";
 import CorpMultiline from "./CorpMultiline.vue";
 
 const props = defineProps<{ contact: HomeContent["contact"]; ui: HomeUi; currentPath?: string }>();
 
 // 内页：次按钮指向当前页时不显示（例如在「OEM・卸 / 越境連携」页）；首页不传 currentPath，照常显示
-const showSecondary = computed(() => props.contact.secondaryHref !== props.currentPath);
+const showSecondary = computed(() => !isSamePage(props.contact.secondaryHref, props.currentPath));
 
 // 后台填了才显示；电话、邮箱做成可点击链接
 const details = computed(() => {

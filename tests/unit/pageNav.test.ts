@@ -6,6 +6,7 @@ import {
   getPageNav,
   homeNavItems,
   innerNavItems,
+  isSamePage,
   normalizePath,
   pageCrumbs,
 } from "../../.vitepress/theme/content/pageNav.ts";
@@ -38,6 +39,14 @@ test("paths are normalised before lookup", () => {
   assert.equal(normalizePath("/services/index.html?x=1"), "/services/");
   assert.equal(normalizePath(""), "/");
   assert.equal(getPageNav("/about/profile")?.tabs.find((tab) => tab.current)?.path, "/about/profile/");
+});
+
+test("isSamePage compares hrefs after normalising, so a missing slash or a hash does not break it", () => {
+  assert.equal(isSamePage("/about/profile", "/about/profile/"), true);
+  assert.equal(isSamePage("/about/profile/#x", "/about/profile/"), true);
+  assert.equal(isSamePage("/about/", "/about/profile/"), false);
+  assert.equal(isSamePage("/about/profile/", undefined), false);
+  assert.equal(isSamePage("https://example.com/about/profile/", "/about/profile/"), false);
 });
 
 test("pages outside the site map have no page navigation", () => {

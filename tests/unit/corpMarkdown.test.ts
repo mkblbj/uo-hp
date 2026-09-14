@@ -60,6 +60,12 @@ test("the intro and each top-level ## become numbered sections", () => {
   assert.equal((html.match(/<\/section>/g) ?? []).length, 2);
 });
 
+test("renderInline does not get wrapped in the section structure", () => {
+  const html = md.renderInline("**UO**", { path: `${root}about/index.md`, relativePath: "about/index.md", cleanUrls: true });
+  assert.ok(!html.includes("corp-intro"), "renderInline must not add the intro wrapper");
+  assert.ok(!html.includes("corp-sec"), "renderInline must not add the section wrapper");
+});
+
 test("pages outside the Japanese inner pages are left alone", () => {
   const html = render(SAMPLE, "zh/about/profile/index.md");
   assert.ok(!html.includes("corp-sec") && !html.includes("corp-intro"));
