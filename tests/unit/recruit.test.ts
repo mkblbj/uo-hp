@@ -81,14 +81,17 @@ test("unpublished, invalid and duplicate positions are left out", () => {
   assert.equal(warnings.filter((warning) => warning.endsWith("skipped")).length, 3);
 });
 
-test("the recruit page keeps contact details shared, and they are empty until the admin fills them in", () => {
+test("the recruit page keeps contact details shared across the three languages", () => {
   const { page, warnings } = normalizePage(readJson("data/recruit/page.json"));
   assert.deepEqual(warnings, []);
   for (const locale of ["ja", "zh", "en"] as const) {
-    assert.equal(page[locale].email, "");
-    assert.equal(page[locale].wechatId, "");
-    assert.equal(page[locale].steps.length, 4, locale);
-    assert.equal(page[locale].faq.length, 5, locale);
+    // 邮箱、微信号在后台只填一次（日文），中英文页面显示同一份
+    assert.equal(page[locale].email, page.ja.email, locale);
+    assert.equal(page[locale].wechatId, page.ja.wechatId, locale);
+    // 选考流程、常见问题的条数可以在后台增减，三种语言要一致
+    assert.equal(page[locale].steps.length, page.ja.steps.length, locale);
+    assert.equal(page[locale].faq.length, page.ja.faq.length, locale);
+    assert.ok(page[locale].steps.length > 0 && page[locale].faq.length > 0, locale);
     assert.ok(page[locale].lead && page[locale].locationShort, locale);
   }
 });
