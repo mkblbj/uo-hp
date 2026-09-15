@@ -2,6 +2,10 @@ import { defineConfig } from "vitepress";
 import timeline from "vitepress-markdown-timeline";
 import { withMermaid } from "vitepress-plugin-mermaid";
 import { corpContainers, corpSections } from "./markdown/corpMarkdown";
+import type { PageData } from "vitepress";
+import { loadRecruit, readHomeBasics } from "./recruit/source";
+import { jobPostingJsonLd, jsonLdScript } from "./theme/content/recruitJsonLd";
+import { getRecruitUi } from "./theme/content/recruitUi";
 
 const siteBase = "/";
 const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
@@ -13,6 +17,50 @@ const CORP_ZH_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700&display=swap";
 const CORP_EN_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Orbitron:wght@400;500;600;700&display=swap";
+
+const SITE_URL = "https://www.uoworld.net";
+
+const localeOf = (relativePath: string) => (relativePath.startsWith("zh/") ? "zh" : relativePath.startsWith("en/") ? "en" : "ja");
+
+/**
+ * 招聘页：招聘首页的描述取后台「页面描述」；职位页的标题、描述按职位设置，
+ * 日文职位页另外加 Google 求职搜索用的 JobPosting（同一职位只标一份，中英文页面不加）
+ */
+const recruitPageData = (pageData: PageData) => {
+  const layout = pageData.frontmatter.layout;
+  if (layout !== "recruit" && layout !== "recruit-job") return;
+  const locale = localeOf(pageData.relativePath);
+  const recruit = loadRecruit();
+  if (layout === "recruit") {
+    pageData.description = recruit.page[locale].description || pageData.description;
+    return;
+  }
+  const job = recruit.jobs[locale].find((item) => item.slug === pageData.params?.job);
+  if (!job) return;
+  pageData.title = job.title;
+  pageData.description = job.summary;
+  if (locale !== "ja") return;
+  const ui = getRecruitUi("ja");
+  const home = readHomeBasics("ja");
+  const posting = jobPostingJsonLd({
+    job,
+    labels: {
+      duties: ui.jobSections.duties,
+      requirements: ui.jobSections.requirements,
+      preferred: ui.jobSections.preferred,
+      hours: ui.conditions.hours,
+      holidays: ui.conditions.holidays,
+      salary: ui.conditions.salary,
+      benefits: ui.conditions.benefits,
+      trialPeriod: ui.conditions.trialPeriod,
+      other: ui.conditions.other,
+      pr: ui.jobSections.pr,
+    },
+    organization: { name: home.name, url: `${SITE_URL}/`, logo: `${SITE_URL}/uo-logo-pure.png` },
+    address: home.address,
+  });
+  if (posting) pageData.frontmatter.head = [...(pageData.frontmatter.head ?? []), ["script", { type: "application/ld+json" }, jsonLdScript(posting)]];
+};
 
 const config = defineConfig({
   base: siteBase,
@@ -50,6 +98,9 @@ const config = defineConfig({
   ],
   cleanUrls: true,
   srcExclude: ["docs/**"],
+  // 站点地图：方便搜索引擎（包括 Google 求职搜索）发现新增的职位页
+  sitemap: { hostname: SITE_URL },
+  transformPageData: recruitPageData,
   mermaid: {},
   markdown: {
     // Markdown 图片加 loading="lazy"（中英文页面也生效，只影响加载时机，外观不变）
