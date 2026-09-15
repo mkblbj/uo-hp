@@ -1,6 +1,6 @@
 ---
 title: 手机配件业务
-description: 以松武商店和 3911 为核心的手机配件销售业务
+description: 以 3911 为核心的手机配件销售业务
 eyebrow: SMARTPHONE ACCESSORIES
 pageClass: service-doc-page
 ---
@@ -12,7 +12,7 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 -->
 
 株式会社UO 的业务基础是 **手机配件业务**。
-公司以乐天市场的 **“松武商店”** 与 **“3911”** 为核心店铺，持续开展手机周边产品销售与原创商品开发。
+公司以乐天市场的 **“3911”** 为核心店铺，持续开展手机周边产品销售与原创商品开发。
 在销售一线积累的运营经验，如今也成为 OEM、批发销售与跨境协同的重要基础。
 
 
@@ -34,27 +34,11 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 株式会社UO 通过多个 EC 渠道销售手机配件。
 公司以乐天市场为中心搭建销售基础，同时也将渠道拓展到 Amazon 和平台型电商。
 
-- **乐天市场**：松武商店 / 3911 / 十色生活 / 天海スポーツ / HAGUMI / 松田 / ALLCase
+- **乐天市场**：3911 / 十色生活 / 天海スポーツ / HAGUMI / 松田 / ALLCase
 - **Amazon**：UOWORLD3911 / 幸田良品
 - **Mercari / Qoo10 / au PAY 市场**：均以 3911 名义运营
 
 ## 核心店铺
-
-### [松武商店（乐天市场）](https://www.rakuten.co.jp/matsutake1816/)
-
-![松武商店示意图](/uploads/pages/services/shop-matsutake.webp)
-
-<!--
-这里建议优先使用真实截图
-推荐内容：
-- 店铺首页首屏
-- 或具有代表性的商品陈列页
-- 统一裁切成 16:9 或 4:3
--->
-
-> *作为乐天市场的核心店铺，这里主要经营手机周边产品。
-> 通过多机型适配、定制化响应与原创商品开发，松武商店持续支撑着株式会社UO 的销售基础。*
-
 
 ### 3911（[乐天市场](https://www.rakuten.co.jp/uo3911/) / [Mercari](https://jp.mercari.com/shops/profile/DKnSGBVY6VP22ckTF3h444) / Qoo10 / au PAY 市场）
 

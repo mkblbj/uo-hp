@@ -13,7 +13,7 @@ This page provides an overview of each business area, along with related product
 ## Main Businesses
 
 - [Smartphone Accessories Business](./mobile-accessories/)
-  Our core business, centered on Matsutake Shoten, with strengths in multi-device support, custom-made products, and small-lot handling.
+  Our core business, with strengths in multi-device support, custom-made products, and small-lot handling.
 
 - [Domestic Foods Business](./domestic-foods/)
   A new sales business focused on rediscovering the value of agricultural and processed foods from across Japan and delivering them to consumers.
@@ -27,7 +27,7 @@ This page provides an overview of each business area, along with related product
 UO Co., Ltd. has built its sales foundation across multiple e-commerce channels.
 With the smartphone accessories business at its core, the company operates from both domestic sales in Japan and cross-border coordination.
 
-- **Rakuten Ichiba**: Matsutake Shoten, 3911, 十色生活, 天海スポーツ, HAGUMI, 松田, ALLCase
+- **Rakuten Ichiba**: 3911, 十色生活, 天海スポーツ, HAGUMI, 松田, ALLCase
 - **Amazon**: UOWORLD3911, 幸田良品, 国内産屋
 - **Mercari / Qoo10 / au PAY Market**: all operated under the 3911 name
 - **Cross-border coordination**: also supports product listing for China and production coordination with partners on the Chinese side

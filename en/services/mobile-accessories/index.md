@@ -1,6 +1,6 @@
 ---
 title: Smartphone Accessories Business
-description: Smartphone accessories sales business centered on Matsutake Shoten and 3911
+description: Smartphone accessories sales business centered on 3911
 eyebrow: SMARTPHONE ACCESSORIES
 pageClass: service-doc-page
 ---
@@ -12,7 +12,7 @@ A premium corporate website visual for a Japanese smartphone accessories busines
 -->
 
 The business foundation of UO Co., Ltd. is its **smartphone accessories business**.
-With **"Matsutake Shoten"** and **"3911"** on Rakuten Ichiba as its main storefronts, the company has expanded sales of smartphone accessories and developed original items.
+With **"3911"** on Rakuten Ichiba as its main storefront, the company has expanded sales of smartphone accessories and developed original items.
 The operational know-how accumulated on the sales floor now serves as an important foundation for OEM, wholesale, and cross-border coordination.
 
 
@@ -34,27 +34,11 @@ The operational know-how accumulated on the sales floor now serves as an importa
 UO Co., Ltd. offers smartphone accessories through multiple e-commerce channels.
 While building its sales foundation primarily on Rakuten Ichiba, the company has also expanded to Amazon and marketplace-style platforms.
 
-- **Rakuten Ichiba**: Matsutake Shoten / 3911 / 十色生活 / 天海スポーツ / HAGUMI / 松田 / ALLCase
+- **Rakuten Ichiba**: 3911 / 十色生活 / 天海スポーツ / HAGUMI / 松田 / ALLCase
 - **Amazon**: UOWORLD3911 / 幸田良品
 - **Mercari / Qoo10 / au PAY Market**: all operated under the 3911 name
 
 ## Flagship Stores
-
-### [Matsutake Shoten (Rakuten Ichiba)](https://www.rakuten.co.jp/matsutake1816/)
-
-![Matsutake Shoten image](/uploads/pages/services/shop-matsutake.webp)
-
-<!--
-这里建议优先使用真实截图
-推荐内容：
-- 店铺首页首屏
-- 或具有代表性的商品陈列页
-- 统一裁切成 16:9 或 4:3
--->
-
-> *As a flagship store on Rakuten Ichiba, Matsutake Shoten focuses on smartphone accessories.
-> Through multi-device support, custom-made products, and original item development, it has been a key part of the sales foundation of UO Co., Ltd.*
-
 
 ### 3911 ([Rakuten Ichiba](https://www.rakuten.co.jp/uo3911/) / [Mercari](https://jp.mercari.com/shops/profile/DKnSGBVY6VP22ckTF3h444) / Qoo10 / au PAY Market)
 
