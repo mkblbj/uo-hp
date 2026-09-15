@@ -12,7 +12,7 @@ import {
 } from "../../.vitepress/theme/content/pageNav.ts";
 
 const repo = new URL("../../", import.meta.url);
-const labels = { company: "会社情報", business: "事業案内", performance: "販売実績", tech: "技術・AI" };
+const labels = { company: "会社情報", business: "事業案内", performance: "販売実績", tech: "技術・AI", recruit: "採用情報" };
 const ORDER = [
   "/about/",
   "/about/profile/",
@@ -113,19 +113,20 @@ test("breadcrumbs: home / section / page, and two levels on a section top", () =
   ]);
 });
 
-test("the homepage header keeps its in-page anchors", () => {
+test("the homepage header keeps its in-page anchors and links to the recruit page", () => {
   const items = homeNavItems(labels);
-  assert.deepEqual(items.map((item) => item.href), ["#company", "#business", "#performance", "#tech"]);
-  assert.deepEqual(items.map((item) => item.label), ["会社情報", "事業案内", "販売実績", "技術・AI"]);
+  assert.deepEqual(items.map((item) => item.href), ["#company", "#business", "#performance", "#tech", "/recruit/"]);
+  assert.deepEqual(items.map((item) => item.label), ["会社情報", "事業案内", "販売実績", "技術・AI", "採用情報"]);
   assert.ok(items.every((item) => !item.active && !item.current));
+  assert.equal(homeNavItems(labels, "/zh/recruit/").at(-1)?.href, "/zh/recruit/");
 });
 
 test("inner page headers link to pages, highlight the section and mark the current page", () => {
   const onServices = innerNavItems(labels, "/services/");
-  assert.deepEqual(onServices.map((item) => item.href), ["/about/", "/services/", "/services/performance/", "/#tech"]);
-  assert.deepEqual(onServices.map((item) => item.active), [false, true, false, false]);
-  assert.deepEqual(onServices.map((item) => item.current), [false, true, false, false]);
-  assert.deepEqual(innerNavItems(labels, "/services/performance/").map((item) => item.active), [false, false, true, false]);
+  assert.deepEqual(onServices.map((item) => item.href), ["/about/", "/services/", "/services/performance/", "/#tech", "/recruit/"]);
+  assert.deepEqual(onServices.map((item) => item.active), [false, true, false, false, false]);
+  assert.deepEqual(onServices.map((item) => item.current), [false, true, false, false, false]);
+  assert.deepEqual(innerNavItems(labels, "/services/performance/").map((item) => item.active), [false, false, true, false, false]);
   assert.deepEqual(
     innerNavItems(labels, "/about/profile/").map((item) => [item.active, item.current]),
     [
@@ -133,6 +134,14 @@ test("inner page headers link to pages, highlight the section and mark the curre
       [false, false],
       [false, false],
       [false, false],
+      [false, false],
     ],
   );
+});
+
+test("the recruit link is highlighted on the recruit page and on every position page", () => {
+  assert.deepEqual(innerNavItems(labels, "/recruit/").at(-1), { href: "/recruit/", label: "採用情報", active: true, current: true });
+  assert.deepEqual(innerNavItems(labels, "/recruit/packing-staff/").at(-1), { href: "/recruit/", label: "採用情報", active: true, current: false });
+  assert.equal(innerNavItems(labels, "/en/recruit/ec-designer/").at(-1)?.href, "/en/recruit/");
+  assert.ok(innerNavItems(labels, "/recruit/").slice(0, 4).every((item) => !item.active));
 });

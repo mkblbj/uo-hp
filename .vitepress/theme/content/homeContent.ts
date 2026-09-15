@@ -26,7 +26,7 @@ export interface Pillar {
 
 export interface HomeContent {
   brand: { name: string; sub: string };
-  nav: { company: string; business: string; performance: string; tech: string; contact: string };
+  nav: { company: string; business: string; performance: string; tech: string; recruit: string; contact: string };
   hero: {
     kicker: string;
     kickerSub: string;

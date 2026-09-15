@@ -8,6 +8,7 @@
     "business": "业务介绍",
     "performance": "销售业绩",
     "tech": "技术与 AI",
+    "recruit": "招聘信息",
     "contact": "联系我们"
   },
   "hero": {
@@ -450,6 +451,10 @@
           {
             "label": "代表致辞",
             "href": "/zh/about/message/"
+          },
+          {
+            "label": "招聘信息",
+            "href": "/zh/recruit/"
           }
         ]
       },

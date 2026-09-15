@@ -8,7 +8,7 @@ const LOCALE_PREFIX: Record<Locale, string> = {
   en: "/en",
 };
 
-// 三种语言都有这 12 个页面（首页 + 11 个内页）。以前中英文只列了 3 页，内页切换语言会跳回栏目首页
+// 三种语言都有这 13 个页面（首页 + 11 个内页 + 招聘首页）。以前中英文只列了 3 页，内页切换语言会跳回栏目首页
 const PAGES = [
   "/",
   "/about/",
@@ -22,6 +22,7 @@ const PAGES = [
   "/services/performance/",
   "/services/strengths/",
   "/services/future/",
+  "/recruit/",
 ];
 
 export const AVAILABLE_PATHS: Record<Locale, Set<string>> = {
@@ -78,7 +79,8 @@ export const getLocaleFromPath = (path: string): Locale => {
 
 export const getLocalePath = (path: string, locale: Locale) => {
   const requestedPath = stripLocalePrefix(path);
-  const basePath = AVAILABLE_PATHS[locale].has(requestedPath)
+  // 职位页：每个公开职位三种语言都会生成页面，所以 /recruit/ 下的路径原样对应
+  const basePath = AVAILABLE_PATHS[locale].has(requestedPath) || requestedPath.startsWith("/recruit/")
     ? requestedPath
     : requestedPath.startsWith("/about/")
       ? "/about/"

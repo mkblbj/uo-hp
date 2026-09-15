@@ -8,6 +8,7 @@
     "business": "Services",
     "performance": "Sales Performance",
     "tech": "Technology & AI",
+    "recruit": "Careers",
     "contact": "Contact"
   },
   "hero": {
@@ -450,6 +451,10 @@
           {
             "label": "Message from the Representative",
             "href": "/en/about/message/"
+          },
+          {
+            "label": "Careers",
+            "href": "/en/recruit/"
           }
         ]
       },

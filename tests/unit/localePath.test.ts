@@ -42,6 +42,13 @@ test("the locale comes from the path prefix", () => {
   assert.equal(getLocaleFromPath("/about/profile/"), "ja");
 });
 
+test("the recruit page and every position page switch to the same page in each language", () => {
+  assert.equal(getLocalePath("/recruit/", "zh"), "/zh/recruit/");
+  assert.equal(getLocalePath("/recruit/packing-staff/", "en"), "/en/recruit/packing-staff/");
+  assert.equal(getLocalePath("/zh/recruit/design-manager/", "ja"), "/recruit/design-manager/");
+  assert.equal(getLocalePath("/en/recruit/ec-designer", "zh"), "/zh/recruit/ec-designer/");
+});
+
 test("every listed page exists as a markdown file", () => {
   for (const [locale, paths] of Object.entries(AVAILABLE_PATHS)) {
     const prefix = locale === "ja" ? "" : `${locale}/`;

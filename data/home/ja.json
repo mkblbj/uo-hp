@@ -8,6 +8,7 @@
     "business": "事業案内",
     "performance": "販売実績",
     "tech": "技術・AI",
+    "recruit": "採用情報",
     "contact": "お問い合わせ"
   },
   "hero": {
@@ -450,6 +451,10 @@
           {
             "label": "代表挨拶",
             "href": "/about/message/"
+          },
+          {
+            "label": "採用情報",
+            "href": "/recruit/"
           }
         ]
       },

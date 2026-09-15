@@ -35,7 +35,7 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header--long-labels': locale === 'en' }">
     <div class="header__bar corp-container" data-corp-bar>
       <a class="header__brand" v-bind="navLinkAttrs(homeHref)">
         <img class="header__logo" :src="logoMark" alt="" width="591" height="591" />
@@ -293,6 +293,22 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
 @media (min-width: 881px) {
   .header__mobile {
     display: none;
+  }
+}
+
+/* 英文导航文字长：5 项在 881～959px 宽时放不下（实测要约 935px），提前收进菜单按钮 */
+@media (max-width: 959px) {
+  .header--long-labels .header__nav {
+    display: none;
+  }
+
+  .header--long-labels .header__burger {
+    display: inline-flex;
+  }
+
+  /* 盖过上面「≥881px 不显示手机菜单」；菜单关着时，v-show 写在元素上的 display: none 仍然优先 */
+  .header--long-labels .header__mobile {
+    display: block;
   }
 }
 

@@ -1,7 +1,7 @@
 import type { HomeContent } from "./homeContent";
 
-/** 页头导航 4 项的文字（取首页后台的「导航文字」） */
-export type NavLabels = Pick<HomeContent["nav"], "company" | "business" | "performance" | "tech">;
+/** 页头导航 5 项的文字（取首页后台的「导航文字」） */
+export type NavLabels = Pick<HomeContent["nav"], "company" | "business" | "performance" | "tech" | "recruit">;
 
 export interface NavItem {
   href: string;
@@ -174,19 +174,21 @@ export const pageCrumbs = (nav: PageNav, homeLabel: string, title: string): Crum
   { label: title },
 ];
 
-/** 首页页头：在首页内滚动的锚点（和改版前完全一样） */
-export const homeNavItems = (labels: NavLabels): NavItem[] => [
+/** 首页页头：前四项是在首页内滚动的锚点；採用情報链接到本语言的招聘首页 */
+export const homeNavItems = (labels: NavLabels, recruitHref = "/recruit/"): NavItem[] => [
   { href: "#company", label: labels.company, active: false, current: false },
   { href: "#business", label: labels.business, active: false, current: false },
   { href: "#performance", label: labels.performance, active: false, current: false },
   { href: "#tech", label: labels.tech, active: false, current: false },
+  { href: recruitHref, label: labels.recruit, active: false, current: false },
 ];
 
-/** 内页页头：前三项链接到内页；技術・AI 没有内页，回到首页的对应区块 */
+/** 内页页头：前三项链接到内页；技術・AI 没有内页，回到首页的对应区块；採用情報在招聘首页和各职位页高亮 */
 export const innerNavItems = (labels: NavLabels, rawPath: string): NavItem[] => {
   const path = normalizePath(rawPath);
   const prefix = path.startsWith("/zh/") ? "/zh" : path.startsWith("/en/") ? "/en" : "";
   const headerKey = getPageNav(path)?.headerKey;
+  const recruit = `${prefix}/recruit/`;
   return [
     { href: `${prefix}/about/`, label: labels.company, active: headerKey === "company", current: path === `${prefix}/about/` },
     { href: `${prefix}/services/`, label: labels.business, active: headerKey === "business", current: path === `${prefix}/services/` },
@@ -197,5 +199,6 @@ export const innerNavItems = (labels: NavLabels, rawPath: string): NavItem[] => 
       current: path === `${prefix}/services/performance/`,
     },
     { href: `${prefix}/#tech`, label: labels.tech, active: false, current: false },
+    { href: recruit, label: labels.recruit, active: path.startsWith(recruit), current: path === recruit },
   ];
 };

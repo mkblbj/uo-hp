@@ -19,13 +19,14 @@ import { getHomeContent } from "../content/homeContent";
 import { getHomeUi } from "../content/homeUi";
 import { homeNavItems } from "../content/pageNav";
 import { accessMapUrl } from "../utils/accessMap";
+import { getLocalePath } from "../utils/localePath";
 
 const { locale, localeLinks } = useLocale();
 const content = computed(() => getHomeContent(locale.value));
 const ui = computed(() => getHomeUi(locale.value));
 // 页脚「地図を見る」和地图区的按钮打开同一个位置（按后台的坐标生成）
 const footerMapUrl = computed(() => accessMapUrl(content.value.access));
-const navItems = computed(() => homeNavItems(content.value.nav));
+const navItems = computed(() => homeNavItems(content.value.nav, getLocalePath("/recruit/", locale.value)));
 const rootRef = ref<HTMLElement | null>(null);
 
 useRevealOnScroll(rootRef);
