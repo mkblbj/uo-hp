@@ -5,6 +5,7 @@ import { LOCALE_MENU } from "../../content/homeUi";
 import { isSamePage } from "../../content/pageNav";
 import type { Locale } from "../../content/siteCopy";
 import { isExternalUrl, linkAttrs, navLinkAttrs } from "../../utils/linkAttrs";
+import { navigateToLocale } from "../../utils/localeNavigation";
 
 defineProps<{
   brand: HomeContent["brand"];
@@ -17,6 +18,10 @@ defineProps<{
   /** 内页传当前路径，链接栏里指向当前页的链接高亮 */
   currentPath?: string;
 }>();
+
+const onLocaleClick = (event: MouseEvent, href: string) => {
+  navigateToLocale(event, href);
+};
 </script>
 
 <template>
@@ -82,6 +87,7 @@ defineProps<{
             :class="{ 'is-active': item.locale === locale }"
             :href="localeLinks[item.locale]"
             :aria-current="item.locale === locale ? 'page' : undefined"
+            @click="onLocaleClick($event, localeLinks[item.locale])"
           >{{ item.name }}</a>
         </div>
       </div>
