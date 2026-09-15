@@ -115,6 +115,7 @@ onBeforeUnmount(() => {
         v-for="locale in localeOptions"
         :key="locale.code"
         :href="locale.href"
+        target="_self"
         class="locale-toggle__item"
         :class="{ 'is-active': props.activeLocale === locale.code }"
         :aria-current="props.activeLocale === locale.code ? 'page' : undefined"

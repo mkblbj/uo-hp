@@ -62,6 +62,7 @@ onBeforeUnmount(() => {
         class="lang__item"
         :class="{ 'is-active': item.active }"
         :href="item.href"
+        target="_self"
         :aria-current="item.active ? 'page' : undefined"
         @click="onLocaleClick($event, item.href)"
       >{{ item.name }}</a>

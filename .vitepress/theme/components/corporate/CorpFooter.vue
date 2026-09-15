@@ -86,6 +86,7 @@ const onLocaleClick = (event: MouseEvent, href: string) => {
             class="footer__locale"
             :class="{ 'is-active': item.locale === locale }"
             :href="localeLinks[item.locale]"
+            target="_self"
             :aria-current="item.locale === locale ? 'page' : undefined"
             @click="onLocaleClick($event, localeLinks[item.locale])"
           >{{ item.name }}</a>

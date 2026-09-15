@@ -15,3 +15,11 @@ test("the footer locale links use the same hard-navigation handler", () => {
   assert.match(source, /navigateToLocale/);
   assert.match(source, /@click="onLocaleClick\(\$event, localeLinks\[item\.locale\]\)"/);
 });
+
+test("locale links carry target=_self so the VitePress router does not switch languages in place first", () => {
+  for (const file of ["corporate/CorpLangMenu.vue", "corporate/CorpFooter.vue", "LanguageToggle.vue"]) {
+    const source = readFileSync(new URL(`../../.vitepress/theme/components/${file}`, import.meta.url), "utf8");
+    const localeLink = source.match(/<a\b[^>]*@click="onLocaleClick[^>]*>/)?.[0] ?? "";
+    assert.match(localeLink, /target="_self"/, file);
+  }
+});
