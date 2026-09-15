@@ -3,9 +3,11 @@ import type { MarkdownRenderer } from "vitepress";
 
 type Token = ReturnType<MarkdownRenderer["parse"]>[number];
 
-/** 日文内页：不在 zh/、en/ 下，也不是首页（index.md） */
-export const isJaInnerPage = (relativePath?: string): boolean =>
-  typeof relativePath === "string" && relativePath !== "index.md" && !/^(zh|en)\//.test(relativePath);
+/** 三语企业内页；首页和其他 Markdown 不参与正文分节。 */
+export const isCorpInnerPage = (relativePath?: string): boolean =>
+  typeof relativePath === "string" && /^(?:(?:zh|en)\/)?(?:about|services)\//.test(relativePath);
+/** @deprecated 保留旧测试和插件调用的兼容别名。 */
+export const isJaInnerPage = isCorpInnerPage;
 
 const INTRO_OPEN = '<div class="corp-intro">\n';
 const INTRO_CLOSE = "</div>\n";
@@ -25,7 +27,7 @@ const isCommentOnly = (token: Token) => token.type === "html_block" && /^\s*<!--
 export const corpSections = (md: MarkdownRenderer): void => {
   md.core.ruler.push("corp_sections", (state) => {
     // renderInline（行内渲染，例如 eyebrow、卡片说明文字）也会跑 core 规则；行内模式下不拆结构
-    if (state.inlineMode || !isJaInnerPage(state.env?.relativePath)) return;
+    if (state.inlineMode || !isCorpInnerPage(state.env?.relativePath)) return;
 
     const html = (content: string) => {
       const token = new state.Token("html_block", "", 0);
@@ -90,7 +92,7 @@ export const corpContainers = (md: MarkdownRenderer): void => {
     md.renderer.rules[rule] = (tokens, idx, options, env, self) => {
       const token = tokens[idx];
       const title = token.info.trim().slice(type.length).trim();
-      if (title || !isJaInnerPage(env?.relativePath)) return original(tokens, idx, options, env, self);
+      if (title || !isCorpInnerPage(env?.relativePath)) return original(tokens, idx, options, env, self);
       return `<div class="${type} custom-block"${self.renderAttrs(token)}>\n`;
     };
   }

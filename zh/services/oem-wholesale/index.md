@@ -1,27 +1,21 @@
 ---
 title: OEM、批发 / 跨境协同
 description: 涵盖 OEM、加工、批发、直采进口及面向中国上架支持的企业服务领域
+eyebrow: OEM / WHOLESALE
 pageClass: service-doc-page
 ---
 
-# OEM、批发 / 跨境协同
 
-![OEM、批发与跨境协同示意图](https://pic.x-yue.top/i/2026/03/31/qz4xfy.png)
+![OEM、批发与跨境协同示意图](/uploads/pages/services/oem-wholesale.webp)
 
 <!--
 生成画像プロンプト:
 A premium corporate website visual for a Japanese B2B business service page, showing OEM manufacturing, product processing, packaging, logistics, e-commerce coordination, and cross-border trade between Japan and China, elegant deep navy and silver tone, refined and modern, minimal corporate style, no text, no logo, no watermark, 16:9
 -->
 
-株式会社UO 基于自营 EC 运营积累的经验，也支持 **面向企业的 OEM、加工、批发销售与跨境协同**。  
+株式会社UO 基于自营 EC 运营积累的经验，也支持 **面向企业的 OEM、加工、批发销售与跨境协同**。
 作为拥有销售一线经验的经营者，我们的优势在于能够从 **贴近实际运营** 的视角，对商品企划、加工、交付以及后续销售运营进行设计。
 
-::: info 本页内容
-- OEM、批发 / 跨境协同的服务范围
-- 对应体制与基本条件
-- 株式会社UO 可提供的支持内容
-- 适合咨询的合作场景
-:::
 
 ## 服务范围
 
@@ -52,9 +46,3 @@ A premium corporate website visual for a Japanese B2B business service page, sho
 - 希望从小批量开始，根据市场反应逐步导入
 - 面向日本市场推进多机型适配与新机型跟进
 - 希望咨询包含中国侧协作与商品上架在内的运营方式
-
-## 相关页面
-
-- [主要产品](../products/)
-- [手机配件业务](../mobile-accessories/)
-- [业务介绍](../)

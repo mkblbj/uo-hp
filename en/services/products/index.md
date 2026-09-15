@@ -1,23 +1,18 @@
 ---
 title: Key Products
 description: Main smartphone accessory products and support conditions
+eyebrow: PRODUCTS
 pageClass: service-doc-page
 ---
 
-# Key Products
 
-UO Co., Ltd. develops smartphone accessories with strengths in **multi-device support**, **small-lot handling**, and **OEM support**.  
+UO Co., Ltd. develops smartphone accessories with strengths in **multi-device support**, **small-lot handling**, and **OEM support**.
 This page clearly organizes the features and support conditions of our main product lines.
 
-::: info What you'll find on this page
-- The types and features of our main product lines
-- Whether OEM and small-lot handling are available
-- Supported languages, logistics, and basic transaction conditions
-:::
 
 ## PU Leather Folio Smartphone Cases
 
-![PU leather folio smartphone case image](https://image.rakuten.co.jp/matsutake1816/cabinet/11368032/11754759/11754933/ca4605stp1001.jpg)
+![PU leather folio smartphone case image](/uploads/pages/services/product-pu-leather.webp)
 
 <!--
 生成画像プロンプト:
@@ -47,7 +42,7 @@ A premium product visual for a Japanese smartphone accessories company, featurin
 
 ## Genuine Leather Folio Smartphone Cases
 
-![Genuine leather folio smartphone case image](https://image.rakuten.co.jp/matsutake1816/cabinet/07312756/08319175/antiquen01-4.jpg)
+![Genuine leather folio smartphone case image](/uploads/pages/services/product-genuine-leather.webp)
 
 <!--
 生成画像プロンプト:
@@ -77,7 +72,7 @@ A premium product visual for a Japanese smartphone accessories company, featurin
 
 ## TPU Smartphone Cases
 
-![TPU smartphone case image](https://image.rakuten.co.jp/matsutake1816/cabinet/07312756/11563407/cta.jpg)
+![TPU smartphone case image](/uploads/pages/services/product-tpu.webp)
 
 <!--
 生成画像プロンプト:
@@ -110,9 +105,3 @@ A premium product visual for a Japanese smartphone accessories company, featurin
 - Support available in **Japanese / Chinese / English**
 - Logistics through **Japan Post / Sagawa Express**
 - In the event of defects, our basic policy is **reshipment or discount**
-
-## Related Pages
-
-- [Smartphone Accessories Business](../mobile-accessories/)
-- [OEM / Wholesale / Cross-border Coordination](../oem-wholesale/)
-- [Sales Performance](../performance/)

@@ -44,9 +44,9 @@ test("pages without diagrams do not load the diagram library up front", () => {
   }
 });
 
-test("pages with diagrams still render the diagram container", () => {
+test("localized profile pages omit the legacy diagram", () => {
   for (const page of ["zh/about/profile/index.html", "en/about/profile/index.html"]) {
-    assert.match(read(page), /<div[^>]*class="mermaid"/, page);
+    assert.ok(!read(page).includes('class="mermaid"'), page);
   }
 });
 

@@ -13,6 +13,7 @@ import { getHomeContent } from "../content/homeContent";
 import { getHomeUi } from "../content/homeUi";
 import { getPageNav, innerNavItems, normalizePath, pageCrumbs } from "../content/pageNav";
 import { accessMapUrl } from "../utils/accessMap";
+import { getLocalePath } from "../utils/localePath";
 
 const { frontmatter } = useData();
 const route = useRoute();
@@ -22,6 +23,7 @@ const { locale, localeLinks } = useLocale();
 const content = computed(() => getHomeContent(locale.value));
 const ui = computed(() => getHomeUi(locale.value));
 const path = computed(() => normalizePath(route.path));
+const homePath = computed(() => getLocalePath("/", locale.value));
 const nav = computed(() => getPageNav(path.value));
 const navItems = computed(() => innerNavItems(content.value.nav, path.value));
 const title = computed(() => String(frontmatter.value.title ?? ""));
@@ -30,7 +32,7 @@ const lead = computed(() => String(frontmatter.value.description ?? ""));
 const eyebrow = computed(() => String(frontmatter.value.eyebrow || nav.value?.section.eyebrow || ""));
 // 不在页面清单里的日文页面（以后新增的）只显示「ホーム / 标题」
 const crumbs = computed(() =>
-  nav.value ? pageCrumbs(nav.value, ui.value.home, title.value) : [{ label: ui.value.home, path: "/" }, { label: title.value }],
+  nav.value ? pageCrumbs(nav.value, ui.value.home, title.value) : [{ label: ui.value.home, path: homePath.value }, { label: title.value }],
 );
 const withSection = (template: string) => template.replace("{section}", nav.value?.section.label ?? "");
 const mapUrl = computed(() => accessMapUrl(content.value.access));
@@ -43,8 +45,8 @@ const mapUrl = computed(() => accessMapUrl(content.value.access));
       :brand="content.brand"
       :nav-items="navItems"
       :contact-label="content.nav.contact"
-      home-href="/"
-      contact-href="/#contact"
+      :home-href="homePath"
+      :contact-href="`${homePath}#contact`"
       :ui="ui"
       :locale="locale"
       :locale-links="localeLinks"
@@ -78,7 +80,7 @@ const mapUrl = computed(() => accessMapUrl(content.value.access));
       :map-url="mapUrl"
       :locale="locale"
       :locale-links="localeLinks"
-      home-href="/"
+      :home-href="homePath"
       :current-path="path"
     />
   </div>

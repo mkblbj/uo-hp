@@ -49,9 +49,9 @@ test("isSamePage compares hrefs after normalising, so a missing slash or a hash 
   assert.equal(isSamePage("https://example.com/about/profile/", "/about/profile/"), false);
 });
 
-test("pages outside the site map have no page navigation", () => {
+test("pages outside the localized site maps have no page navigation", () => {
   assert.equal(getPageNav("/"), null);
-  assert.equal(getPageNav("/zh/about/"), null);
+  assert.ok(getPageNav("/zh/about/"));
   assert.equal(getPageNav("/unknown/"), null);
 });
 

@@ -98,6 +98,31 @@ export const JA_SECTIONS: NavSection[] = [
   },
 ];
 
+const localizedSections = (locale: "ja" | "zh" | "en"): NavSection[] => {
+  if (locale === "ja") return JA_SECTIONS;
+  const prefix = `/${locale}`;
+  const zh: [string, string[]][] = [
+    ["公司信息", ["公司信息首页", "公司概要", "代表致辞"]],
+    ["业务介绍", ["业务概览", "手机配件业务", "日本国产食品业务", "OEM、批发 / 跨境协同", "主要产品", "销售业绩", "选择我们的理由", "未来发展"]],
+  ];
+  const en: [string, string[]][] = [
+    ["Company", ["Company Overview", "Company Profile", "Message from the Representative"]],
+    ["Services", ["Services Overview", "Smartphone Accessories Business", "Domestic Foods Business", "OEM / Wholesale / Cross-border Coordination", "Key Products", "Sales Performance", "Why Customers Choose Us", "Future Development"]],
+  ];
+  const labels = locale === "zh" ? zh : en;
+  const paths = [
+    ["/about/", ["/about/", "/about/profile/", "/about/message/"]],
+    ["/services/", ["/services/", "/services/mobile-accessories/", "/services/domestic-foods/", "/services/oem-wholesale/", "/services/products/", "/services/performance/", "/services/strengths/", "/services/future/"]],
+  ] as const;
+  return paths.map(([sectionPath, pagePaths], sectionIndex) => ({
+    key: sectionIndex === 0 ? "about" : "services",
+    label: labels[sectionIndex][0],
+    eyebrow: sectionIndex === 0 ? "COMPANY" : "BUSINESS",
+    path: `${prefix}${sectionPath}`,
+    groups: [pagePaths.slice(0, sectionIndex === 0 ? 3 : 4).map((path, i) => ({ path: `${prefix}${path}`, label: labels[sectionIndex][1][i] })), ...(sectionIndex === 0 ? [] : [pagePaths.slice(4).map((path, i) => ({ path: `${prefix}${path}`, label: labels[sectionIndex][1][i + 4] }))])],
+  }));
+};
+
 const toNo = (index: number) => String(index + 1).padStart(2, "0");
 
 const numbered = (section: NavSection): PageLink[] =>
@@ -119,29 +144,32 @@ export const isSamePage = (href: string | undefined, currentPath: string | undef
 /** 按路径算出内页导航；不在清单里的页面（首页、中英文页面等）返回 null */
 export const getPageNav = (rawPath: string): PageNav | null => {
   const path = normalizePath(rawPath);
-  const section = JA_SECTIONS.find((item) => item.groups.flat().some((page) => page.path === path));
+  const locale = path.startsWith("/zh/") ? "zh" : path.startsWith("/en/") ? "en" : "ja";
+  const sections = localizedSections(locale);
+  const siteOrder = sections.flatMap(numbered);
+  const section = sections.find((item) => item.groups.flat().some((page) => page.path === path));
   if (!section) return null;
 
   const pages = numbered(section);
   // 每组（最后一组除外）结束的位置，就是下一组第一个页签的下标
   let end = 0;
   const groupStarts = new Set(section.groups.slice(0, -1).map((group) => (end += group.length)));
-  const order = SITE_ORDER.findIndex((page) => page.path === path);
+  const order = siteOrder.findIndex((page) => page.path === path);
 
   return {
     section,
     isSectionTop: path === section.path,
-    headerKey: section.key === "about" ? "company" : path === "/services/performance/" ? "performance" : "business",
+    headerKey: section.key === "about" ? "company" : path.endsWith("/services/performance/") ? "performance" : "business",
     tabs: pages.map((page, index) => ({ ...page, current: page.path === path, groupStart: groupStarts.has(index) })),
     sectionPages: pages.filter((page) => page.path !== section.path),
-    prev: SITE_ORDER[order - 1] ?? null,
-    next: SITE_ORDER[order + 1] ?? null,
+    prev: siteOrder[order - 1] ?? null,
+    next: siteOrder[order + 1] ?? null,
   };
 };
 
 /** 面包屑：ホーム / 栏目 / 当前页；栏目首页只有两级 */
 export const pageCrumbs = (nav: PageNav, homeLabel: string, title: string): Crumb[] => [
-  { label: homeLabel, path: "/" },
+  { label: homeLabel, path: nav.section.path.startsWith("/zh/") ? "/zh/" : nav.section.path.startsWith("/en/") ? "/en/" : "/" },
   ...(nav.isSectionTop ? [] : [{ label: nav.section.label, path: nav.section.path }]),
   { label: title },
 ];
@@ -157,16 +185,17 @@ export const homeNavItems = (labels: NavLabels): NavItem[] => [
 /** 内页页头：前三项链接到内页；技術・AI 没有内页，回到首页的对应区块 */
 export const innerNavItems = (labels: NavLabels, rawPath: string): NavItem[] => {
   const path = normalizePath(rawPath);
+  const prefix = path.startsWith("/zh/") ? "/zh" : path.startsWith("/en/") ? "/en" : "";
   const headerKey = getPageNav(path)?.headerKey;
   return [
-    { href: "/about/", label: labels.company, active: headerKey === "company", current: path === "/about/" },
-    { href: "/services/", label: labels.business, active: headerKey === "business", current: path === "/services/" },
+    { href: `${prefix}/about/`, label: labels.company, active: headerKey === "company", current: path === `${prefix}/about/` },
+    { href: `${prefix}/services/`, label: labels.business, active: headerKey === "business", current: path === `${prefix}/services/` },
     {
-      href: "/services/performance/",
+      href: `${prefix}/services/performance/`,
       label: labels.performance,
       active: headerKey === "performance",
-      current: path === "/services/performance/",
+      current: path === `${prefix}/services/performance/`,
     },
-    { href: "/#tech", label: labels.tech, active: false, current: false },
+    { href: `${prefix}/#tech`, label: labels.tech, active: false, current: false },
   ];
 };

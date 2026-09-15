@@ -54,6 +54,20 @@ const ja: HomeUi = {
   profileHead: { label: "項目", value: "内容" },
 };
 
-const uiByLocale: Partial<Record<Locale, HomeUi>> = { ja };
+const zh: HomeUi = {
+  skipToContent: "跳转到正文", mainNavLabel: "主导航", menuLabel: "页面导航", langLabel: "切换语言",
+  more: "了解更多", contactLabels: { tel: "TEL", email: "EMAIL", hours: "HOURS" },
+  home: "首页", breadcrumbLabel: "面包屑导航", tabsLabel: "{section}页面", pagerLabel: "前后页面",
+  prev: "PREV", next: "NEXT", pagesEyebrow: "PAGES", pagesTitle: "{section}的各页面",
+  profileHead: { label: "项目", value: "内容" },
+};
+const en: HomeUi = {
+  skipToContent: "Skip to content", mainNavLabel: "Main navigation", menuLabel: "Page navigation", langLabel: "Change language",
+  more: "Learn more", contactLabels: { tel: "TEL", email: "EMAIL", hours: "HOURS" },
+  home: "Home", breadcrumbLabel: "Breadcrumbs", tabsLabel: "{section} pages", pagerLabel: "Previous and next pages",
+  prev: "PREV", next: "NEXT", pagesEyebrow: "PAGES", pagesTitle: "Explore {section}",
+  profileHead: { label: "Item", value: "Details" },
+};
+const uiByLocale: Record<Locale, HomeUi> = { ja, zh, en };
 
-export const getHomeUi = (locale: Locale): HomeUi => uiByLocale[locale] ?? ja;
+export const getHomeUi = (locale: Locale): HomeUi => uiByLocale[locale];

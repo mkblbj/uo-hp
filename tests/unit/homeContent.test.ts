@@ -30,10 +30,11 @@ const collect = (matches: (key: string) => boolean): string[] => {
 
 const isLinkKey = (key: string) => /href$/i.test(key) || key === "url" || /Url$/.test(key);
 
-test("zh and en fall back to the Japanese content until translated", () => {
-  assert.equal(getHomeContent("zh"), ja);
-  assert.equal(getHomeContent("en"), ja);
-  assert.equal(getHomeUi("en").skipToContent, getHomeUi("ja").skipToContent);
+test("zh and en use their own translated content", () => {
+  assert.notEqual(getHomeContent("zh"), ja);
+  assert.notEqual(getHomeContent("en"), ja);
+  assert.equal(getHomeUi("en").skipToContent, "Skip to content");
+  assert.equal(getHomeUi("zh").skipToContent, "跳转到正文");
 });
 
 test("content never contains placeholder text", () => {

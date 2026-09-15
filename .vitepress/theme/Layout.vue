@@ -49,6 +49,6 @@ onMounted(() => {
   <CorporateLayout v-if="frontmatter.layout === 'corporate'" />
   <HeroLayout v-else-if="frontmatter.layout === 'hero'" />
   <!-- 404.html 只构建一次、却会用于任何不存在的网址（包括 /zh/…），所以 404 不按语言选布局，保持 VitePress 默认样式 -->
-  <CorporatePageLayout v-else-if="locale === 'ja' && !page.isNotFound" />
+  <CorporatePageLayout v-else-if="!page.isNotFound" />
   <DefaultTheme.Layout v-else />
 </template>

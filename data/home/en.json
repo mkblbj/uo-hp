@@ -1,0 +1,534 @@
+{
+  "brand": {
+    "name": "UO Co., Ltd.",
+    "sub": "UO CO., LTD."
+  },
+  "nav": {
+    "company": "Company",
+    "business": "Services",
+    "performance": "Sales Performance",
+    "tech": "Technology & AI",
+    "contact": "Contact"
+  },
+  "hero": {
+    "kicker": "KOBE, JAPAN",
+    "kickerSub": "EST. 2018",
+    "titleLine": "Closer to everyday life",
+    "titleAccent": "Bringing value.",
+    "lead": "Drawing on our e-commerce operations and product development expertise, we bring new color to everyday life. We combine over 10 years of hands-on e-commerce know-how with in-house AI technology and a strong supply-chain foundation.",
+    "primaryCta": "Contact",
+    "secondaryCta": "View Services",
+    "stats": [
+      {
+        "value": "JPY 300 million",
+        "label": "Annual revenue (FY2025)"
+      },
+      {
+        "value": "JPY 100 million",
+        "label": "2021 single-store sales"
+      },
+      {
+        "value": "2015→2018",
+        "label": "Founded / Incorporated"
+      }
+    ],
+    "panelTitle": "BUSINESS AREAS",
+    "channelsTitle": "SALES CHANNELS",
+    "channels": [
+      "Rakuten Ichiba",
+      "Amazon",
+      "Mercari",
+      "Qoo10",
+      "au PAY Market",
+      "Temu",
+      "Alibaba (China)"
+    ]
+  },
+  "trust": {
+    "items": [
+      {
+        "value": "1 million",
+        "label": "Managed inventory scale (SKU)"
+      },
+      {
+        "value": "20",
+        "label": "Employees"
+      },
+      {
+        "value": "4.59",
+        "label": "Average review rating"
+      },
+      {
+        "value": "16,755",
+        "label": "Number of reviews"
+      },
+      {
+        "value": "31st",
+        "label": "Rakuten Ichiba among all stores (past result)"
+      },
+      {
+        "value": "7",
+        "label": "Main e-commerce channels (Rakuten, Amazon, Mercari, and more)"
+      }
+    ],
+    "notes": [
+      "Average review rating and review count are based on public information for Rakuten Ichiba stores as of March 31, 2026.",
+      "The 2021 sales and Rakuten Ichiba ranking reflect past achievements."
+    ]
+  },
+  "business": {
+    "eyebrow": "BUSINESS AREAS",
+    "title": "Four pillars,\nexpanding across business areas.",
+    "intro": "We operate across four core business pillars, expanding from smartphone accessories into foods, technology, and B2B trade.",
+    "pillars": [
+      {
+        "no": "01",
+        "tag": "CORE BUSINESS",
+        "title": "Smartphone Accessories Business",
+        "summary": "A strong supply chain and in-house warehouse and logistics foundation supporting all device models.",
+        "body": "We develop multiple in-house brands, including “3911”, around customer needs. Our integrated system covers planning, development, precision processing, inventory management at our Kobe warehouse, and logistics, enabling fast and stable delivery.",
+        "chips": [
+          "Multi-device support",
+          "1 million SKU inventory",
+          "Large Kobe warehouse",
+          "Small lots from one unit"
+        ],
+        "href": "/en/services/mobile-accessories/"
+      },
+      {
+        "no": "02",
+        "tag": "SINCE 2024",
+        "title": "Foods & Global Specialty Products (国内産屋)",
+        "summary": "Discovering agricultural products and specialties in Japan and abroad, then distributing them through our supply chain.",
+        "body": "Since 2024, we have developed a new foods business. We discover valuable agricultural products and specialties in Japan and abroad, building a strong independent supply chain across Europe, Australia, China, and Taiwan.",
+        "chips": [
+          "国内産屋",
+          "Launched in 2024",
+          "Trademark registered Jul 2024 / acquired Feb 2025"
+        ],
+        "href": "/en/services/domestic-foods/"
+      },
+      {
+        "no": "03",
+        "tag": "SINCE 2025",
+        "title": "AI & Systems Development",
+        "summary": "Development and operation of software for office management, WMS, and e-commerce automation.",
+        "body": "We develop and operate AI-enabled software for office management, WMS, and e-commerce automation. After validating it through our own operations, we plan to offer practical solutions that improve productivity across e-commerce and trade.",
+        "chips": [
+          "Office Management",
+          "WMS",
+          "E-commerce automation"
+        ],
+        "href": "/en/services/future/"
+      },
+      {
+        "no": "04",
+        "tag": "SINCE 2026",
+        "title": "B2B Wholesale & Japan-China Trade",
+        "summary": "Wholesale for major Kanto variety stores and two-way Japan-China trade and agency services.",
+        "body": "Since 2026, we have expanded wholesale to major Kanto variety stores while promoting two-way Japan-China trade. We also support overseas brands entering Japan and Japanese brands expanding abroad as a general agency.",
+        "chips": [
+          "Wholesale to major Kanto variety stores",
+          "Two-way trade",
+          "General agency"
+        ],
+        "href": "/en/services/oem-wholesale/"
+      }
+    ]
+  },
+  "tech": {
+    "eyebrow": "TECHNOLOGY",
+    "title": "Cutting-edge AI solutions\nborn from real operations.",
+    "body": "We develop and operate AI-enabled software for office management, WMS, and e-commerce automation, with future external deployment in mind.",
+    "note": "In 2025, we completed implementation of in-house AI software integrating office, warehouse, and e-commerce operations, and launched a dedicated AI development division.",
+    "linkLabel": "View Future Development",
+    "linkHref": "/en/services/future/",
+    "items": [
+      {
+        "code": "OF",
+        "title": "Office Management",
+        "desc": "In-house software integrating internal operations, implemented in the field."
+      },
+      {
+        "code": "WMS",
+        "title": "Warehouse Management System",
+        "desc": "The foundation supporting inventory and logistics operations at our Kobe warehouse."
+      },
+      {
+        "code": "EC",
+        "title": "E-commerce Operations自動化",
+        "desc": "Organizing product information, improving pages, assisting customer support, and streamlining operations."
+      },
+      {
+        "code": "AGT",
+        "title": "Business Support Agent Development",
+        "desc": "Building systems that support product understanding, inquiries, and workflow organization."
+      }
+    ]
+  },
+  "strengths": {
+    "eyebrow": "WHY UO",
+    "title": "Why UO.",
+    "intro": "UO Co., Ltd. is chosen because product support capability, quality, and customer care work together. We have built trust through broad model support, careful processing, and long-term relationships.",
+    "reasons": [
+      {
+        "no": "REASON 01",
+        "title": "Support for a wide range of models",
+        "body": "We maintain our lineup and processing system to support a wide range of smartphone models, connecting material sourcing to processing so we can respond to diverse needs."
+      },
+      {
+        "no": "REASON 02",
+        "title": "Quality for custom-made products",
+        "body": "Skilled craftspeople carefully finish each item by hand, including detailed camera-hole processing. We balance ease of use with dependable quality."
+      },
+      {
+        "no": "REASON 03",
+        "title": "Thoughtful customer care",
+        "body": "We include handwritten letters and small gifts at shipment, creating an experience beyond fulfillment. This care leads to repeat purchases and high ratings."
+      }
+    ],
+    "coreTitle": "CORE STRENGTHS / UO Co., Ltd.",
+    "core": [
+      {
+        "text": "Strong in-house supply chain and advanced quality management",
+        "category": "Product strength"
+      },
+      {
+        "text": "Cutting-edge AI solutions born from real operations",
+        "category": "Technology strength"
+      },
+      {
+        "text": "Outstanding online performance and OMO strategy",
+        "category": "Sales channel strength"
+      },
+      {
+        "text": "Global professionals with diverse backgrounds",
+        "category": "People strength"
+      },
+      {
+        "text": "Hospitality-driven customer experience (CRM)",
+        "category": "Customer care strength"
+      },
+      {
+        "text": "Integrated e-commerce, product planning, processing, and wholesale structure",
+        "category": "Business structure strength"
+      }
+    ]
+  },
+  "performance": {
+    "eyebrow": "PERFORMANCE & CHANNELS",
+    "title": "Sales performance and\noperating foundation.",
+    "intro": "Since opening on Rakuten Ichiba in 2019, our stores have served many customers. We have built a foundation across multiple e-commerce channels in Japan and overseas.",
+    "resultsTitle": "MAIN RESULTS ／ Main Results",
+    "results": [
+      {
+        "label": "Store launch",
+        "value": "Rakuten Ichiba, 2019"
+      },
+      {
+        "label": "2021 sales (actual)",
+        "value": "JPY 100 million"
+      },
+      {
+        "label": "Average review rating",
+        "value": "4.59"
+      },
+      {
+        "label": "Number of reviews",
+        "value": "16,755"
+      },
+      {
+        "label": "Rakuten Ichiba ranking (past result)",
+        "value": "31st among all stores"
+      }
+    ],
+    "note": "Average review rating and review count are based on public information for Rakuten Ichiba stores as of March 31, 2026.",
+    "linkLabel": "View sales performance details",
+    "linkHref": "/en/services/performance/",
+    "channelGroups": [
+      {
+        "platform": "Rakuten Ichiba",
+        "shops": [
+          "3911",
+          "十色生活"
+        ]
+      },
+      {
+        "platform": "Amazon",
+        "shops": [
+          "UOWORLD"
+        ]
+      },
+      {
+        "platform": "Mercari / Qoo10 / au PAY Market",
+        "shops": [
+          "All operated under the 3911 name"
+        ]
+      },
+      {
+        "platform": "越境連携",
+        "shops": [
+          "Product listings for China",
+          "Production coordination with China",
+          "Temu",
+          "Alibaba (China)"
+        ]
+      }
+    ],
+    "partnersTitle": "Trading brands / partners",
+    "partners": []
+  },
+  "company": {
+    "eyebrow": "COMPANY",
+    "title": "Company。",
+    "intro": "UO Co., Ltd. began its e-commerce business in 2015 with the aim of bringing a touch of the extraordinary to everyday items. Today, we have evolved beyond retail into an e-commerce solutions provider connecting Japan and China.",
+    "profileTitle": "PROFILE ／ Basic Information",
+    "profile": [
+      {
+        "label": "Company Name",
+        "value": "UO Co., Ltd."
+      },
+      {
+        "label": "Representative Director",
+        "value": "Wang Kejing"
+      },
+      {
+        "label": "Established",
+        "value": "2018"
+      },
+      {
+        "label": "Address",
+        "value": "No.88 Building 2F, 2-23 Sugawara-dori, Nagata-ku, Kobe, Hyogo, Japan"
+      },
+      {
+        "label": "Employees",
+        "value": "20"
+      },
+      {
+        "label": "Annual Revenue",
+        "value": "JPY 300 million (FY2025)"
+      },
+      {
+        "label": "Headquarters / Factory",
+        "value": "Kobe"
+      },
+      {
+        "label": "Main Sales Channels",
+        "value": "Rakuten Ichiba / Mercari / Amazon / au PAY Market / Qoo10 / Temu / Alibaba (China)"
+      }
+    ],
+    "profileLinkLabel": "View Company Profile",
+    "profileLinkHref": "/en/about/profile/",
+    "structureImage": "/uploads/home/company-structure.webp",
+    "structureAlt": "UO Co., Ltd. Business structure image",
+    "structureCaption": "We integrate e-commerce operations with product planning, processing, wholesale sales, and cross-border coordination.",
+    "photos": [],
+    "historyTitle": "HISTORY ／ History",
+    "historyHint": "← Scroll horizontally →",
+    "history": [
+      {
+        "year": "2012",
+        "title": "Starting point",
+        "desc": "The founder joined a smartphone accessories trading company and built the foundation of the Japan-China supply chain."
+      },
+      {
+        "year": "2013",
+        "title": "Accumulation",
+        "desc": "Joined a major Rakuten Ichiba store and accumulated deep know-how in search algorithms and store operations."
+      },
+      {
+        "year": "2015",
+        "title": "Market entry",
+        "desc": "Opened an online store and began selling fashionable custom-made smartphone cases."
+      },
+      {
+        "year": "2018",
+        "title": "Incorporation",
+        "desc": "Established UO Co., Ltd. and began organized business expansion."
+      },
+      {
+        "year": "2019",
+        "title": "Multi-store expansion",
+        "desc": "Opened 3911, 十色生活, and other stores on Rakuten Ichiba, forming a brand matrix."
+      },
+      {
+        "year": "2021",
+        "title": "Breakthrough",
+        "desc": "A single store exceeded JPY 100 million in sales and reached 31st among all Rakuten stores."
+      },
+      {
+        "year": "2024",
+        "title": "Diversification",
+        "desc": "Entered the foods business and launched the 国内産屋 project, strengthening supplier development in Japan and China."
+      },
+      {
+        "year": "2025",
+        "title": "Year of technology",
+        "desc": "Completed in-house development and field implementation of AI software integrating office, warehouse, and e-commerce operations."
+      },
+      {
+        "year": "2026",
+        "title": "All-channel expansion",
+        "desc": "Officially began B2B wholesale to major variety stores in Kanto, establishing an all-channel e-commerce solutions business."
+      }
+    ]
+  },
+  "message": {
+    "eyebrow": "MESSAGE",
+    "quote": "We want to bring a touch of the extraordinary\nto the items people use every day.",
+    "paragraphs": [
+      "From joining the e-commerce world in 2012 to launching a small online store in 2015, this idea has remained our unwavering starting point.",
+      "Even as technology makes e-commerce more efficient, we value human communication such as handwritten letters because customer smiles and better quality of life are the true purpose of our business."
+    ],
+    "role": "Representative Director",
+    "signature": "/uploads/home/signature.png",
+    "signatureAlt": "王克兢 署",
+    "linkLabel": "Read the full message",
+    "linkHref": "/en/about/message/",
+    "image": "/uploads/home/message.webp",
+    "imageAlt": "Representative message image",
+    "valuesTitle": "What We Value",
+    "values": [
+      "Add the joy of choosing and a small sense of uniqueness to familiar products",
+      "Build long-term customer relationships beyond product delivery",
+      "Connect knowledge from real sales operations to future product development and business expansion."
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "We welcome consultations on\nOEM, wholesale, and cross-border coordination.",
+    "body": "Our main products are available from lots of one unit. We support Japanese, Chinese, and English, and propose a step-by-step approach from small-lot trials to ongoing deployment.",
+    "tel": "",
+    "email": "",
+    "hours": "",
+    "formUrl": "",
+    "formLabel": "Inquiry form",
+    "secondaryLabel": "OEM / wholesale scope",
+    "secondaryHref": "/en/services/oem-wholesale/"
+  },
+  "access": {
+    "eyebrow": "ACCESS",
+    "title": "Access",
+    "address": "No.88 Building 2F, 2-23 Sugawara-dori, Nagata-ku, Kobe, Hyogo, Japan",
+    "note": "- About 10 minutes on foot from JR Sanyo Main Line “Hyogo Station”\n- About 10 minutes on foot from Kobe Rapid Railway “Kosoku-Nagata Station”\n- By car: via National Route 2 from the Yanagihara exit of the Hanshin Expressway Kobe Line",
+    "coordinates": "34.665003, 135.1580635",
+    "mapLabel": "Open in Google Maps",
+    "routeLabel": "Get directions"
+  },
+  "footer": {
+    "info": [
+      {
+        "label": "Address",
+        "value": "No.88 Building 2F, 2-23 Sugawara-dori, Nagata-ku, Kobe, Hyogo, Japan"
+      },
+      {
+        "label": "Representative Director",
+        "value": "Wang Kejing"
+      },
+      {
+        "label": "Established",
+        "value": "2018"
+      },
+      {
+        "label": "Headquarters / Factory",
+        "value": "Kobe"
+      }
+    ],
+    "mapLabel": "View map",
+    "columns": [
+      {
+        "title": "COMPANY",
+        "links": [
+          {
+            "label": "Company",
+            "href": "/en/about/"
+          },
+          {
+            "label": "会社概要",
+            "href": "/en/about/profile/"
+          },
+          {
+            "label": "Message from the Representative",
+            "href": "/en/about/message/"
+          }
+        ]
+      },
+      {
+        "title": "BUSINESS",
+        "links": [
+          {
+            "label": "Services",
+            "href": "/en/services/"
+          },
+          {
+            "label": "Smartphone Accessories Business",
+            "href": "/en/services/mobile-accessories/"
+          },
+          {
+            "label": "Domestic Foods Business",
+            "href": "/en/services/domestic-foods/"
+          },
+          {
+            "label": "OEM / Wholesale / Cross-border Coordination",
+            "href": "/en/services/oem-wholesale/"
+          }
+        ]
+      },
+      {
+        "title": "PRODUCTS & RESULTS",
+        "links": [
+          {
+            "label": "Key Products",
+            "href": "/en/services/products/"
+          },
+          {
+            "label": "Sales Performance",
+            "href": "/en/services/performance/"
+          },
+          {
+            "label": "Why Customers Choose Us",
+            "href": "/en/services/strengths/"
+          },
+          {
+            "label": "Future Development",
+            "href": "/en/services/future/"
+          }
+        ]
+      }
+    ],
+    "shopsTitle": "EC SHOPS / STORES",
+    "shops": [
+      {
+        "label": "3911（Rakuten Ichiba）",
+        "url": "https://www.rakuten.co.jp/uo3911/"
+      },
+      {
+        "label": "3911（Mercari）",
+        "url": "https://jp.mercari.com/shops/profile/DKnSGBVY6VP22ckTF3h444"
+      },
+      {
+        "label": "十色生活（Rakuten Ichiba）",
+        "url": ""
+      },
+      {
+        "label": "UOWORLD（Amazon）",
+        "url": ""
+      },
+      {
+        "label": "国内産屋",
+        "url": "/en/services/domestic-foods/"
+      },
+      {
+        "label": "Qoo10 / au PAY Market",
+        "url": ""
+      },
+      {
+        "label": "Temu / Alibaba (China)",
+        "url": ""
+      }
+    ],
+    "copyright": "© 2026 UO Co., Ltd.",
+    "privacyUrl": "",
+    "privacyLabel": "Privacy Policy"
+  }
+}

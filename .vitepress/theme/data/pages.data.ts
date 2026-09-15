@@ -11,7 +11,7 @@ export interface PageMeta {
 declare const data: PageMeta[];
 export { data };
 
-export default createContentLoader(["about/**/*.md", "services/**/*.md"], {
+export default createContentLoader(["about/**/*.md", "services/**/*.md", "zh/about/**/*.md", "zh/services/**/*.md", "en/about/**/*.md", "en/services/**/*.md"], {
   transform: (raw): PageMeta[] =>
     raw.map(({ url, frontmatter }) => ({
       url,

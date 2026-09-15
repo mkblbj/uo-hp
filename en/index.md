@@ -1,11 +1,7 @@
 ---
-layout: hero
+layout: corporate
 title: Bringing value closer to everyday life.
 description: UO Co., Ltd. English home page
-navbar: false
-sidebar: false
-aside: false
-footer: false
 head:
   - - link
     - rel: preconnect

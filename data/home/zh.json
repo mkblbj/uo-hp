@@ -1,0 +1,534 @@
+{
+  "brand": {
+    "name": "株式会社UO",
+    "sub": "UO CO., LTD."
+  },
+  "nav": {
+    "company": "公司信息",
+    "business": "业务介绍",
+    "performance": "销售业绩",
+    "tech": "技术与 AI",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "kicker": "KOBE, JAPAN",
+    "kickerSub": "EST. 2018",
+    "titleLine": "贴近日常生活生活",
+    "titleAccent": "传递价值。",
+    "lead": "依托 EC 运营与商品开发经验，为日常生活带来新的色彩。我们将 10 年以上的 EC 实战经验，与自主开发的 AI 技术和强大的供应链基础相结合。",
+    "primaryCta": "联系我们",
+    "secondaryCta": "查看业务介绍",
+    "stats": [
+      {
+        "value": "3 亿日元",
+        "label": "年营业额（2025 财年）"
+      },
+      {
+        "value": "1 亿日元",
+        "label": "2021 年单店销售额"
+      },
+      {
+        "value": "2015→2018",
+        "label": "创立 / 法人设立"
+      }
+    ],
+    "panelTitle": "BUSINESS AREAS",
+    "channelsTitle": "SALES CHANNELS",
+    "channels": [
+      "乐天市场",
+      "Amazon",
+      "Mercari",
+      "Qoo10",
+      "au PAY 市场",
+      "Temu",
+      "Alibaba（中国）"
+    ]
+  },
+  "trust": {
+    "items": [
+      {
+        "value": "100 万",
+        "label": "SKU 库存管理规模"
+      },
+      {
+        "value": "20人",
+        "label": "员工人数"
+      },
+      {
+        "value": "4.59",
+        "label": "综合评分"
+      },
+      {
+        "value": "16,755",
+        "label": "评价数量"
+      },
+      {
+        "value": "31 位",
+        "label": "乐天市场 全部店铺中（历史实绩）"
+      },
+      {
+        "value": "7",
+        "label": "主要 EC 销售渠道（乐天、Amazon、Mercari 等）"
+      }
+    ],
+    "notes": [
+      "综合评分与评价数量依据乐天市场公开信息，统计截至 2026 年 3 月 31 日。",
+      "2021 年销售额与乐天市场排名为既往业绩。"
+    ]
+  },
+  "business": {
+    "eyebrow": "BUSINESS AREAS",
+    "title": "围绕四大支柱，\n拓展多元业务。",
+    "intro": "目前公司围绕四大支柱开展多元业务，在手机配件业务基础上拓展食品、技术与 B2B 贸易。",
+    "pillars": [
+      {
+        "no": "01",
+        "tag": "CORE BUSINESS",
+        "title": "手机配条业务",
+        "summary": "以强大供应链和自有仓储物流基础支撑全机型适配。",
+        "body": "我们围绕客户需求开发包括“3911”在内的多个自有品牌。从商品企划、开发到精密加工，再到神户仓库的大规模库存管理与物流，我们建立了一体化体系，持续稳定地提供商品。",
+        "chips": [
+          "全机型适配",
+          "100 万 SKU 库存",
+          "神户大型自有仓库",
+          "1 件起的小批量"
+        ],
+        "href": "/zh/services/mobile-accessories/"
+      },
+      {
+        "no": "02",
+        "tag": "SINCE 2024",
+        "title": "食品与全球特色产品业务（国内産屋）",
+        "summary": "发掘国内外农产品与特色产品，通过独有供应链流通。",
+        "body": "自 2024 年起，公司启动食品业务，持续发掘日本及海外有价值的农产品与特色产品，并在欧洲、澳大利亚、中国和台湾等地建设独有供应链。",
+        "chips": [
+          "国内産屋",
+          "2024 年启动",
+          "2024 年 7 月注册 / 2025 年 2 月取得商标"
+        ],
+        "href": "/zh/services/domestic-foods/"
+      },
+      {
+        "no": "03",
+        "tag": "SINCE 2025",
+        "title": "AI 与系统开发业务",
+        "summary": "开发与运营办公管理、WMS 和 EC 运营自动化软件。",
+        "body": "我们开发并运营用于办公管理、WMS 与 EC 运营自动化的 AI 软件。通过自有业务验证功能后，未来将向 EC 与贸易行业提供提升生产效率的实用解决方案。",
+        "chips": [
+          "办公管理",
+          "WMS",
+          "EC 运营自动化"
+        ],
+        "href": "/zh/services/future/"
+      },
+      {
+        "no": "04",
+        "tag": "SINCE 2026",
+        "title": "B2B 批发与中日贸易业务",
+        "summary": "面向关东大型杂货店的批发，以及双向中日贸易与综合代理服务。",
+        "body": "自 2026 年起，公司向关东大型杂货店开展批发业务，并积极推进双向中日贸易。同时作为综合代理，支持海外品牌进入日本市场及日本品牌拓展海外市场。",
+        "chips": [
+          "关东大型杂货店批发",
+          "双向贸易",
+          "综合代理"
+        ],
+        "href": "/zh/services/oem-wholesale/"
+      }
+    ]
+  },
+  "tech": {
+    "eyebrow": "TECHNOLOGY",
+    "title": "源于实战的\n前沿 AI 解决方案。",
+    "body": "我们开发并运营用于办公管理、WMS 与 EC 运营自动化的 AI 软件，未来计划向外部业务拓展。",
+    "note": "2025 年，公司完成整合办公、仓库与 EC 运营的 AI 软件开发及现场导入，并成立 AI 开发部门。",
+    "linkLabel": "查看未来发展",
+    "linkHref": "/zh/services/future/",
+    "items": [
+      {
+        "code": "OF",
+        "title": "办公管理",
+        "desc": "自主开发并导入现场的内部业务综合管理软件。"
+      },
+      {
+        "code": "WMS",
+        "title": "仓库管理系统",
+        "desc": "支撑神户大型仓库库存与物流运营的基础。"
+      },
+      {
+        "code": "EC",
+        "title": "EC 运营自動化",
+        "desc": "整理商品信息、优化页面、辅助客户服务并提升运营效率。"
+      },
+      {
+        "code": "AGT",
+        "title": "业务支援 Agent 开发",
+        "desc": "建设支撑商品理解、咨询应对与业务整理的机制。"
+      }
+    ]
+  },
+  "strengths": {
+    "eyebrow": "WHY UO",
+    "title": "选择我们的理由。",
+    "intro": "株式会社UO 之所以被选择，是因为商品适配能力、品质与客户服务形成一体。通过广泛机型支持、细致加工和长期客户关系，我们持续积累信赖。",
+    "reasons": [
+      {
+        "no": "REASON 01",
+        "title": "能够覆盖广泛机型",
+        "body": "我们以支持广泛手机机型为前提完善商品阵容与加工体制，打通从材料采购到加工的流程，更灵活地应对多样需求。"
+      },
+      {
+        "no": "REASON 02",
+        "title": "支持定制化的品质",
+        "body": "工匠逐件进行细致加工，包括镜头开孔在内的细节均以手工完成，兼顾易用性与可靠品质。"
+      },
+      {
+        "no": "REASON 03",
+        "title": "认真面对每一位客户",
+        "body": "发货时附上手写信件和小礼品等细致安排，持续打造超越单纯发货的体验，并带来复购与高评价。"
+      }
+    ],
+    "coreTitle": "核心优势 / 株式会社UO",
+    "core": [
+      {
+        "text": "强大的自有供应链与高水平品质管理基础",
+        "category": "产品优势"
+      },
+      {
+        "text": "源于实战的前沿 AI 解决方案",
+        "category": "技术优势"
+      },
+      {
+        "text": "突出的线上业绩与 OMO 融合战略",
+        "category": "销售渠道优势"
+      },
+      {
+        "text": "拥有多元背景的全球专业团队",
+        "category": "人才优势"
+      },
+      {
+        "text": "重视服务体验的客户关系管理（CRM）",
+        "category": "客户服务优势"
+      },
+      {
+        "text": "EC 运营、商品企划、加工与批发一体化体制",
+        "category": "业务体制优势"
+      }
+    ]
+  },
+  "performance": {
+    "eyebrow": "PERFORMANCE & CHANNELS",
+    "title": "销售业绩与\n业务基础。",
+    "intro": "自 2019 年入驻乐天市场以来，公司旗下店铺服务了众多客户，并通过多个 EC 渠道建立了日本国内及海外业务基础。",
+    "resultsTitle": "MAIN RESULTS ／ 主要实绩",
+    "results": [
+      {
+        "label": "入驻开始",
+        "value": "2019 年 乐天市场"
+      },
+      {
+        "label": "2021 年销售额（实绩）",
+        "value": "1 亿日元"
+      },
+      {
+        "label": "综合评分",
+        "value": "4.59"
+      },
+      {
+        "label": "评价数量",
+        "value": "16,755 条"
+      },
+      {
+        "label": "乐天市场排名（历史实绩）",
+        "value": "全部店铺中第 31 位"
+      }
+    ],
+    "note": "综合评分与评价数量依据乐天市场公开信息，统计截至 2026 年 3 月 31 日。",
+    "linkLabel": "查看销售业绩详情",
+    "linkHref": "/zh/services/performance/",
+    "channelGroups": [
+      {
+        "platform": "乐天市场",
+        "shops": [
+          "3911",
+          "十色生活"
+        ]
+      },
+      {
+        "platform": "Amazon",
+        "shops": [
+          "UOWORLD"
+        ]
+      },
+      {
+        "platform": "Mercari / Qoo10 / au PAY 市场",
+        "shops": [
+          "均以 3911 名义运营"
+        ]
+      },
+      {
+        "platform": "越境連携",
+        "shops": [
+          "面向中国的商品上架",
+          "与中国方面的生产协作",
+          "Temu",
+          "Alibaba（中国）"
+        ]
+      }
+    ],
+    "partnersTitle": "合作品牌 / 合作伙伴",
+    "partners": []
+  },
+  "company": {
+    "eyebrow": "COMPANY",
+    "title": "公司信息。",
+    "intro": "株式会社UO 于 2015 年以“为日常用品增添非日常感动”为理念启动 EC 业务。如今，公司已从零售经营者发展为连接日本与中国的 EC 解决方案提供商。",
+    "profileTitle": "PROFILE ／ 基本信息",
+    "profile": [
+      {
+        "label": "公司名称",
+        "value": "株式会社UO"
+      },
+      {
+        "label": "代表董事",
+        "value": "王 克兢"
+      },
+      {
+        "label": "成立时间",
+        "value": "2018 年"
+      },
+      {
+        "label": "所在地",
+        "value": "兵库县神户市长田区菅原通 2-23 No.88 大楼 2F"
+      },
+      {
+        "label": "员工人数",
+        "value": "20 人"
+      },
+      {
+        "label": "年营业额",
+        "value": "3 亿日元（2025 财年）"
+      },
+      {
+        "label": "总部与工厂",
+        "value": "神户市"
+      },
+      {
+        "label": "主要销售渠道",
+        "value": "乐天市场 / Mercari / Amazon / au PAY 市场 / Qoo10 / Temu / Alibaba（中国）"
+      }
+    ],
+    "profileLinkLabel": "查看公司概要",
+    "profileLinkHref": "/zh/about/profile/",
+    "structureImage": "/uploads/home/company-structure.webp",
+    "structureAlt": "株式会社UO 业务体制示意图",
+    "structureCaption": "我们将 EC 店铺运营、商品企划、加工、批发销售与跨境协同一体推进。",
+    "photos": [],
+    "historyTitle": "HISTORY ／ 沿革",
+    "historyHint": "← 可左右滚动查看 →",
+    "history": [
+      {
+        "year": "2012",
+        "title": "起点",
+        "desc": "创业者加入手机配件贸易公司，建立中日供应链基础。"
+      },
+      {
+        "year": "2013",
+        "title": "积累",
+        "desc": "加入乐天市场大型店铺，积累搜索算法与店铺运营经验。"
+      },
+      {
+        "year": "2015",
+        "title": "进入",
+        "desc": "开设网店，开始销售以定制为主的时尚手机壳。"
+      },
+      {
+        "year": "2018",
+        "title": "法人化",
+        "desc": "设立株式会社UO，正式推进组织化经营。"
+      },
+      {
+        "year": "2019",
+        "title": "多店铺拓展",
+        "desc": "在乐天市场开设 3911、十色生活等店铺，形成品牌矩阵。"
+      },
+      {
+        "year": "2021",
+        "title": "飞跃",
+        "desc": "单店销售额突破 1 亿日元，并取得乐天市场第 31 位的历史成绩。"
+      },
+      {
+        "year": "2024",
+        "title": "多元化",
+        "desc": "进入食品业务，启动“国内産屋”项目，加强中日供应商开发。"
+      },
+      {
+        "year": "2025",
+        "title": "技术元年",
+        "desc": "完成整合办公、仓库与 EC 运营的 AI 软件开发及现场导入。"
+      },
+      {
+        "year": "2026",
+        "title": "全渠道拓展",
+        "desc": "正式开展面向关东大型杂货店的 B2B 批发，确立全渠道 EC 解决方案业务。"
+      }
+    ]
+  },
+  "message": {
+    "eyebrow": "MESSAGE",
+    "quote": "希望为日常使用的商品\n增添一份非日常的感动。",
+    "paragraphs": [
+      "从 2012 年进入 EC 行业，到 2015 年从一家小网店起步，这一理念始终是我们坚定不变的起点。",
+      "即使科技让 EC 更高效，我们仍珍视手写信件等有温度的沟通，因为客户的笑容与生活质量的提升，才是业务真正的目的。"
+    ],
+    "role": "代表董事",
+    "signature": "/uploads/home/signature.png",
+    "signatureAlt": "王克兢 署人",
+    "linkLabel": "阅读完整致辞",
+    "linkHref": "/zh/about/message/",
+    "image": "/uploads/home/message.webp",
+    "imageAlt": "代表致辞示意图",
+    "valuesTitle": "我们重视的事情",
+    "values": [
+      "为熟悉的商品加入挑选的乐趣与一点特别感",
+      "不止于提供商品，也与客户建立长期关系",
+      "将销售一线积累的经验连接到商品开发与业务拓展。"
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "欢迎咨询\nOEM、批发与跨境协同。",
+    "body": "主要商品支持 1 件起的小批量。支持日语、中文和英语，并提供从小批量试行到持续合作的分阶段方案。",
+    "tel": "",
+    "email": "",
+    "hours": "",
+    "formUrl": "",
+    "formLabel": "咨询表单",
+    "secondaryLabel": "OEM / 批发服务范围",
+    "secondaryHref": "/zh/services/oem-wholesale/"
+  },
+  "access": {
+    "eyebrow": "ACCESS",
+    "title": "访问",
+    "address": "〒653-0015 兵库县神户市长田区菅原通 2-23 No.88 大楼 2F",
+    "note": "- 从 JR 山阳本线“兵库站”步行约 10 分钟\n- 从神户高速线“高速长田站”步行约 10 分钟\n- 驾车请从阪神高速 3 号神户线“柳原出口”经国道 2 号线前往",
+    "coordinates": "34.665003, 135.1580635",
+    "mapLabel": "在 Google 地图中打开",
+    "routeLabel": "路线搜索"
+  },
+  "footer": {
+    "info": [
+      {
+        "label": "所在地",
+        "value": "兵库县神户市长田区菅原通 2-23 No.88 大楼 2F"
+      },
+      {
+        "label": "代表董事",
+        "value": "王 克兢"
+      },
+      {
+        "label": "成立时间",
+        "value": "2018 年"
+      },
+      {
+        "label": "总部与工厂",
+        "value": "神户市"
+      }
+    ],
+    "mapLabel": "查看地图",
+    "columns": [
+      {
+        "title": "COMPANY",
+        "links": [
+          {
+            "label": "公司信息",
+            "href": "/zh/about/"
+          },
+          {
+            "label": "会社概要",
+            "href": "/zh/about/profile/"
+          },
+          {
+            "label": "代表致辞",
+            "href": "/zh/about/message/"
+          }
+        ]
+      },
+      {
+        "title": "BUSINESS",
+        "links": [
+          {
+            "label": "业务介绍",
+            "href": "/zh/services/"
+          },
+          {
+            "label": "手机配条业务",
+            "href": "/zh/services/mobile-accessories/"
+          },
+          {
+            "label": "日本国产食品业务",
+            "href": "/zh/services/domestic-foods/"
+          },
+          {
+            "label": "OEM、批发 / 跨境协同",
+            "href": "/zh/services/oem-wholesale/"
+          }
+        ]
+      },
+      {
+        "title": "PRODUCTS & RESULTS",
+        "links": [
+          {
+            "label": "主要产品",
+            "href": "/zh/services/products/"
+          },
+          {
+            "label": "销售业绩",
+            "href": "/zh/services/performance/"
+          },
+          {
+            "label": "选择我们的理由",
+            "href": "/zh/services/strengths/"
+          },
+          {
+            "label": "未来发展",
+            "href": "/zh/services/future/"
+          }
+        ]
+      }
+    ],
+    "shopsTitle": "EC 店铺 / 入驻平台",
+    "shops": [
+      {
+        "label": "3911（乐天市场）",
+        "url": "https://www.rakuten.co.jp/uo3911/"
+      },
+      {
+        "label": "3911（Mercari）",
+        "url": "https://jp.mercari.com/shops/profile/DKnSGBVY6VP22ckTF3h444"
+      },
+      {
+        "label": "十色生活（乐天市场）",
+        "url": ""
+      },
+      {
+        "label": "UOWORLD（Amazon）",
+        "url": ""
+      },
+      {
+        "label": "国内産屋",
+        "url": "/zh/services/domestic-foods/"
+      },
+      {
+        "label": "Qoo10 / au PAY 市场",
+        "url": ""
+      },
+      {
+        "label": "Temu / Alibaba（中国）",
+        "url": ""
+      }
+    ],
+    "copyright": "© 2026 株式会社UO",
+    "privacyUrl": "",
+    "privacyLabel": "隐私政策"
+  }
+}

@@ -117,13 +117,12 @@ test("the footer marks the current page and its logo goes home", () => {
   assert.ok(hasLink(footer, 'href="/"'));
 });
 
-test("Chinese and English pages keep the VitePress layout", () => {
+test("Chinese and English pages use the corporate layout", () => {
   for (const file of ["zh/about/profile/index.html", "en/services/index.html", "zh/services/performance/index.html"]) {
     const html = read(file);
-    assert.match(html, /class="VPDoc/, file);
-    assert.ok(!html.includes("corp-page"), file);
+    assert.match(html, /class="corp corp-page"/, file);
+    assert.ok(!html.includes("class=\"VPDoc"), file);
   }
-  // 404 页只在浏览器端渲染，构建产物测不到，改用浏览器检查。
 });
 
 test("section tops end with cards for the other pages of the section, described by their page descriptions", () => {
@@ -188,7 +187,7 @@ test("sales results come from the homepage data; years are not animated", () => 
   assert.ok(sales.includes(escapeHtml(performance.note)));
   assert.ok(!html.includes("performance-badges"), "the gold badges are gone");
   assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
-  assert.ok(read("zh/services/performance/index.html").includes("performance-badges"), "Chinese keeps its badges");
+  assert.ok(!read("zh/services/performance/index.html").includes("performance-badges"), "Chinese also uses the shared results block");
 });
 
 test("inner pages no longer show external images, markdown titles or navigation-only blocks", () => {

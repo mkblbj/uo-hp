@@ -35,12 +35,12 @@ const SAMPLE = [
   "- item",
 ].join("\n");
 
-test("only Japanese inner pages are restructured", () => {
+test("all localized inner pages are restructured", () => {
   assert.equal(isJaInnerPage("about/profile/index.md"), true);
   assert.equal(isJaInnerPage("services/index.md"), true);
   assert.equal(isJaInnerPage("index.md"), false);
-  assert.equal(isJaInnerPage("zh/about/index.md"), false);
-  assert.equal(isJaInnerPage("en/services/future/index.md"), false);
+  assert.equal(isJaInnerPage("zh/about/index.md"), true);
+  assert.equal(isJaInnerPage("en/services/future/index.md"), true);
   assert.equal(isJaInnerPage(undefined), false);
 });
 
@@ -66,19 +66,20 @@ test("renderInline does not get wrapped in the section structure", () => {
   assert.ok(!html.includes("corp-sec"), "renderInline must not add the section wrapper");
 });
 
-test("pages outside the Japanese inner pages are left alone", () => {
-  const html = render(SAMPLE, "zh/about/profile/index.md");
+test("pages outside localized inner pages are left alone", () => {
+  const html = render(SAMPLE, "zh/index.md");
   assert.ok(!html.includes("corp-sec") && !html.includes("corp-intro"));
   assert.match(html, /<p class="custom-block-title">Box<\/p>/);
 });
 
-test("untitled boxes drop VitePress's default title on Japanese inner pages only", () => {
+test("untitled boxes drop VitePress's default title on localized inner pages", () => {
   const src = "::: tip\n- a\n:::\n\n::: info Titled\ntext\n:::";
   const ja = render(src, "about/message/index.md");
   assert.ok(!ja.includes(">TIP<"), "no default TIP title");
   assert.match(ja, /<div class="tip custom-block">\s*<ul>/);
   assert.match(ja, /<p class="custom-block-title">Titled<\/p>/);
-  assert.match(render(src, "zh/about/message/index.md"), /<p class="custom-block-title">TIP<\/p>/);
+  const localized = render(src, "zh/about/message/index.md");
+  assert.ok(!localized.includes(">TIP<"), "localized inner pages also hide default TIP titles");
 });
 
 test("the new blocks render their wrappers and data components", () => {

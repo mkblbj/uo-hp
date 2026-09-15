@@ -1,5 +1,7 @@
 import type { Locale } from "./siteCopy";
 import ja from "../../../data/home/ja.json" with { type: "json" };
+import zh from "../../../data/home/zh.json" with { type: "json" };
+import en from "../../../data/home/en.json" with { type: "json" };
 
 export interface LabelValue {
   label: string;
@@ -139,7 +141,7 @@ export interface HomeContent {
 // 类型标注让 JSON 结构一旦偏离接口，tsc 就会报错
 const jaContent: HomeContent = ja;
 
-const contentByLocale: Partial<Record<Locale, HomeContent>> = { ja: jaContent };
+const contentByLocale: Record<Locale, HomeContent> = { ja: jaContent, zh, en };
 
-/** 取某语言的首页内容；zh/en 还没翻译时回退到日文 */
-export const getHomeContent = (locale: Locale): HomeContent => contentByLocale[locale] ?? jaContent;
+/** 首页及内页共享同一语言的公司、业绩、联系与页脚内容。 */
+export const getHomeContent = (locale: Locale): HomeContent => contentByLocale[locale];
