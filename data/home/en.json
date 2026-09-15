@@ -156,7 +156,7 @@
       },
       {
         "code": "EC",
-        "title": "E-commerce Operations自動化",
+        "title": "E-commerce Automation",
         "desc": "Organizing product information, improving pages, assisting customer support, and streamlining operations."
       },
       {
@@ -266,7 +266,7 @@
         ]
       },
       {
-        "platform": "越境連携",
+        "platform": "Cross-border Coordination",
         "shops": [
           "Product listings for China",
           "Production coordination with China",
@@ -382,7 +382,7 @@
     ],
     "role": "Representative Director",
     "signature": "/uploads/home/signature.png",
-    "signatureAlt": "王克兢 署",
+    "signatureAlt": "Signature of Wang Kejing",
     "linkLabel": "Read the full message",
     "linkHref": "/en/about/message/",
     "image": "/uploads/home/message.webp",
@@ -444,7 +444,7 @@
             "href": "/en/about/"
           },
           {
-            "label": "会社概要",
+            "label": "Company Profile",
             "href": "/en/about/profile/"
           },
           {

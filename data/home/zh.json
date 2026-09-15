@@ -13,7 +13,7 @@
   "hero": {
     "kicker": "KOBE, JAPAN",
     "kickerSub": "EST. 2018",
-    "titleLine": "贴近日常生活生活",
+    "titleLine": "贴近日常生活",
     "titleAccent": "传递价值。",
     "lead": "依托 EC 运营与商品开发经验，为日常生活带来新的色彩。我们将 10 年以上的 EC 实战经验，与自主开发的 AI 技术和强大的供应链基础相结合。",
     "primaryCta": "联系我们",
@@ -84,7 +84,7 @@
       {
         "no": "01",
         "tag": "CORE BUSINESS",
-        "title": "手机配条业务",
+        "title": "手机配件业务",
         "summary": "以强大供应链和自有仓储物流基础支撑全机型适配。",
         "body": "我们围绕客户需求开发包括“3911”在内的多个自有品牌。从商品企划、开发到精密加工，再到神户仓库的大规模库存管理与物流，我们建立了一体化体系，持续稳定地提供商品。",
         "chips": [
@@ -156,7 +156,7 @@
       },
       {
         "code": "EC",
-        "title": "EC 运营自動化",
+        "title": "EC 运营自动化",
         "desc": "整理商品信息、优化页面、辅助客户服务并提升运营效率。"
       },
       {
@@ -266,7 +266,7 @@
         ]
       },
       {
-        "platform": "越境連携",
+        "platform": "跨境协同",
         "shops": [
           "面向中国的商品上架",
           "与中国方面的生产协作",
@@ -382,7 +382,7 @@
     ],
     "role": "代表董事",
     "signature": "/uploads/home/signature.png",
-    "signatureAlt": "王克兢 署人",
+    "signatureAlt": "王克兢签名",
     "linkLabel": "阅读完整致辞",
     "linkHref": "/zh/about/message/",
     "image": "/uploads/home/message.webp",
@@ -444,7 +444,7 @@
             "href": "/zh/about/"
           },
           {
-            "label": "会社概要",
+            "label": "公司概要",
             "href": "/zh/about/profile/"
           },
           {
@@ -461,7 +461,7 @@
             "href": "/zh/services/"
           },
           {
-            "label": "手机配条业务",
+            "label": "手机配件业务",
             "href": "/zh/services/mobile-accessories/"
           },
           {
