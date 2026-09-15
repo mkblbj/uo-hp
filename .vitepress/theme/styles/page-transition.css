@@ -1,0 +1,32 @@
+/*
+ * 换页的淡入淡出（浏览器的 View Transitions）：旧页面淡出，新页面淡入并上浮一点，页头原地不动（CorpHeader.vue 里的 view-transition-name）。
+ * - 站内换页：utils/pageTransitionClient.ts 在 VitePress 换页时启动；
+ * - 整页加载（切换语言、跳到首页某一区）：靠下面的 @view-transition，前后两页都有这条规则才会播放。
+ * 不支持的浏览器照常跳转；开了「减少动态效果」时不播放。
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+::view-transition-old(root) {
+  animation: corp-page-out 0.18s ease-in both;
+}
+
+::view-transition-new(root) {
+  animation: corp-page-in 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) 0.06s both;
+}
+
+@keyframes corp-page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes corp-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

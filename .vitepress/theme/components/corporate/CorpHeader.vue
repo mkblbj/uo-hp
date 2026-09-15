@@ -97,6 +97,8 @@ onBeforeUnmount(() => document.removeEventListener("keydown", onKeydown));
   position: sticky;
   top: 0;
   z-index: 40;
+  /* 换页动画时页头原地不动，只有文字、当前栏目的下划线渐变（styles/page-transition.css） */
+  view-transition-name: corp-header;
   border-bottom: 1px solid rgba(199, 215, 231, 0.1);
   background: rgba(3, 5, 7, 0.82);
   backdrop-filter: blur(16px);

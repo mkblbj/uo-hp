@@ -8,13 +8,14 @@ import {
   removeLegacyLocaleFromSearch,
   useLocale,
 } from "./composables/useLocale";
+import { loadRecruitJobLayout, loadRecruitLayout } from "./layouts/asyncLayouts";
 import CorporateLayout from "./layouts/CorporateLayout.vue";
 import CorporatePageLayout from "./layouts/CorporatePageLayout.vue";
 import HeroLayout from "./layouts/HeroLayout.vue";
 
 // 招聘页的布局和招聘数据按需加载：只有打开招聘页时才下载，其他页面的体积不变
-const RecruitLayout = defineAsyncComponent(() => import("./layouts/RecruitLayout.vue"));
-const RecruitJobLayout = defineAsyncComponent(() => import("./layouts/RecruitJobLayout.vue"));
+const RecruitLayout = defineAsyncComponent(loadRecruitLayout);
+const RecruitJobLayout = defineAsyncComponent(loadRecruitJobLayout);
 
 const { frontmatter, page } = useData();
 const route = useRoute();
