@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import type { Locale } from "../content/siteCopy";
+import { navigateToLocale } from "../utils/localeNavigation";
 
 interface LanguageToggleProps {
   activeLocale: Locale;
@@ -43,6 +44,11 @@ const activeOption = computed(
 
 const closeMenu = () => {
   open.value = false;
+};
+
+const onLocaleClick = (event: MouseEvent, href: string) => {
+  closeMenu();
+  navigateToLocale(event, href);
 };
 
 const toggleMenu = () => {
@@ -112,7 +118,7 @@ onBeforeUnmount(() => {
         class="locale-toggle__item"
         :class="{ 'is-active': props.activeLocale === locale.code }"
         :aria-current="props.activeLocale === locale.code ? 'page' : undefined"
-        @click="closeMenu"
+        @click="onLocaleClick($event, locale.href)"
       >
         <span class="locale-toggle__flag">{{ locale.flag }}</span>
         <span class="locale-toggle__item-label">{{ locale.label }}</span>

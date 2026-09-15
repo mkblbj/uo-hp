@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import type { Locale } from "../../content/siteCopy";
 import { LOCALE_MENU } from "../../content/homeUi";
+import { navigateToLocale } from "../../utils/localeNavigation";
 
 const props = defineProps<{ activeLocale: Locale; links: Record<Locale, string>; label: string }>();
 
@@ -15,6 +16,11 @@ const activeCode = computed(() => LOCALE_MENU.find((item) => item.locale === pro
 
 const close = () => {
   open.value = false;
+};
+
+const onLocaleClick = (event: MouseEvent, href: string) => {
+  close();
+  navigateToLocale(event, href);
 };
 
 const onPointerDown = (event: PointerEvent) => {
@@ -57,7 +63,7 @@ onBeforeUnmount(() => {
         :class="{ 'is-active': item.active }"
         :href="item.href"
         :aria-current="item.active ? 'page' : undefined"
-        @click="close"
+        @click="onLocaleClick($event, item.href)"
       >{{ item.name }}</a>
     </div>
   </div>

@@ -39,7 +39,7 @@ const mapUrl = computed(() => accessMapUrl(content.value.access));
 </script>
 
 <template>
-  <div class="corp corp-page">
+  <div class="corp corp-page" :data-locale="locale">
     <a class="corp-skip" href="#main" target="_self">{{ ui.skipToContent }}</a>
     <CorpHeader
       :brand="content.brand"

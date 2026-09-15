@@ -9,6 +9,10 @@ const withSiteBase = (path: string) => `${siteBase}${path.replace(/^\//, "")}`;
 // 日文页面（首页和内页）的字体，和首页一直在用的是同一个网址
 const CORP_FONTS_URL =
   "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700&display=swap";
+const CORP_ZH_FONTS_URL =
+  "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;500;600;700&display=swap";
+const CORP_EN_FONTS_URL =
+  "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Orbitron:wght@400;500;600;700&display=swap";
 
 const config = defineConfig({
   base: siteBase,
@@ -93,6 +97,11 @@ const config = defineConfig({
       link: "/zh/",
       title: "株式会社UO",
       description: "展示株式会社UO公司介绍、业务分类与市场布局的信息站点。",
+      head: [
+        ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+        ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+        ["link", { rel: "stylesheet", href: CORP_ZH_FONTS_URL }],
+      ],
       themeConfig: {
         logo: "/uo-logo-pure.png",
         nav: [
@@ -154,6 +163,11 @@ const config = defineConfig({
       link: "/en/",
       title: "株式会社UO",
       description: "An information site for UO Co., Ltd. covering company details, service categories, and market positioning.",
+      head: [
+        ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+        ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+        ["link", { rel: "stylesheet", href: CORP_EN_FONTS_URL }],
+      ],
       themeConfig: {
         logo: "/uo-logo-pure.png",
         nav: [

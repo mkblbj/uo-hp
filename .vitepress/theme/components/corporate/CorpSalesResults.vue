@@ -65,7 +65,7 @@ useCountUp(rootRef);
 }
 
 .sales__value {
-  font-family: "Orbitron", "Noto Sans JP", sans-serif;
+  font-family: "Orbitron", var(--corp-font-body);
   font-size: clamp(1.4rem, 2.2vw, 1.95rem);
   font-weight: 700;
   line-height: 1.2;

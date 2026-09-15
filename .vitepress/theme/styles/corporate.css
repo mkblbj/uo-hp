@@ -11,10 +11,19 @@ body:has(.corp) {
   overflow-x: clip;
   background: #030507;
   color: #f8f3eb;
-  font-family: "Noto Sans JP", sans-serif;
+  --corp-font-body: "Noto Sans JP", sans-serif;
+  font-family: var(--corp-font-body);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.corp[data-locale="zh"] {
+  --corp-font-body: "Noto Sans SC", sans-serif;
+}
+
+.corp[data-locale="en"] {
+  --corp-font-body: "Manrope", sans-serif;
 }
 
 .corp ::selection {
@@ -74,7 +83,7 @@ body:has(.corp) {
 }
 
 .corp-cardlabel {
-  font-family: "Orbitron", "Noto Sans JP", sans-serif;
+  font-family: "Orbitron", var(--corp-font-body);
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   color: rgba(226, 238, 249, 0.96);

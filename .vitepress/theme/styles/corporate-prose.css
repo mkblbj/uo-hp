@@ -8,6 +8,7 @@
  */
 
 .corp-prose {
+  font-family: var(--corp-font-body);
   font-size: 0.97rem;
   line-height: 2;
   color: rgba(248, 243, 235, 0.8);
@@ -441,7 +442,7 @@
 .corp-prose .timeline-dot .timeline-dot-title {
   display: inline-block;
   margin-right: 0.9rem;
-  font-family: "Orbitron", "Noto Sans JP", sans-serif;
+  font-family: "Orbitron", var(--corp-font-body);
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.04em;

@@ -63,7 +63,7 @@ const onAnchorClick = async (event: MouseEvent) => {
 </script>
 
 <template>
-  <div ref="rootRef" class="corp" @click="onAnchorClick">
+  <div ref="rootRef" class="corp" :data-locale="locale" @click="onAnchorClick">
     <a class="corp-skip" href="#main" target="_self">{{ ui.skipToContent }}</a>
     <CorpHeader
       :brand="content.brand"

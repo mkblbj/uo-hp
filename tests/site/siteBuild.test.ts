@@ -81,13 +81,12 @@ const headOf = (page: string) => {
   return html.slice(0, html.indexOf("</head>"));
 };
 
-test("Japanese pages load the corporate fonts; Chinese and English inner pages and the shared CSS do not load Google Fonts", () => {
+test("each locale loads its corporate font family and CSS stays self-contained", () => {
   for (const page of ["index.html", "about/index.html", "about/profile/index.html", "services/index.html"]) {
     for (const font of CORP_FONTS) assert.ok(headOf(page).includes(font), `${page} misses ${font}`);
   }
-  for (const page of ["zh/about/index.html", "en/services/index.html"]) {
-    assert.ok(!headOf(page).includes("fonts.googleapis.com"), page);
-  }
+  assert.ok(headOf("zh/about/index.html").includes("family=Noto+Sans+SC"), "zh misses Simplified Chinese font");
+  assert.ok(headOf("en/services/index.html").includes("family=Manrope"), "en misses Latin font");
   for (const css of filesUnder(new URL("assets/", dist), ".css")) {
     assert.ok(!readFileSync(css, "utf8").includes("fonts.googleapis.com"), css.pathname);
   }
