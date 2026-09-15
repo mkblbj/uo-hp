@@ -1,0 +1,98 @@
+{
+  "ja": {
+    "slug": "amazon-english-operations",
+    "published": true,
+    "order": 3,
+    "category": "operations",
+    "employmentTypes": ["fulltime"],
+    "datePosted": "2026-09-15",
+    "title": "Amazon英語圏向けEC運営スタッフ",
+    "summary": "英語圏向けAmazonショップの運営。英語の商品ページ作成と海外対応。",
+    "tags": ["英語を活かせる"],
+    "duties": {
+      "intro": "英語圏向けAmazonショップの運営を担当していただきます。",
+      "items": ["Amazon海外アカウントの管理", "英語の商品タイトル、説明文の作成", "商品ページの翻訳、改善", "海外向け価格、在庫、納期の管理", "海外ユーザーからの問い合わせ対応", "英語レビューの確認、返信", "Amazon広告、販売促進施策の管理", "売上、アクセス、広告データの分析", "海外市場向け商品のリサーチ", "物流、出荷、返品チームとの連携", "英語圏向けの販売戦略の立案"],
+      "note": "日本の商品を海外のお客様に販売するため、商品内容を正確かつ魅力的に英語で伝えていただきます。"
+    },
+    "requirements": {
+      "items": ["英語で文章を作成できる方", "日本語で社内コミュニケーションができる方", "Amazonの基本操作ができる方", "ECサイト運営経験者歓迎", "英語圏向けEC、越境EC経験者歓迎", "基本的なExcel操作ができる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Amazon海外販売経験", "Amazon広告の運用経験", "英語圏向け商品ページの作成経験", "ネイティブレベルの英語力", "TOEIC、英検などの資格", "海外顧客対応経験", "越境EC、輸出、国際物流の知識", "中国語ができる方"],
+      "note": "※翻訳ソフトの使用だけではなく、自然で分かりやすい英語表現を作成できる方を歓迎します。"
+    },
+    "sections": [],
+    "salary": "月給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["海外対応のため、時差により一部時間帯の調整をお願いする場合があります。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "日本の商品を英語圏のお客様へ届ける、越境ECのお仕事です。\n\n英語力だけでなく、海外市場のニーズを分析し、商品ページや販売方法を改善していくことができます。\n\nAmazon海外販売や越境ECの経験を活かしたい方、海外向けビジネスに挑戦したい方を歓迎します。"
+  },
+  "zh": {
+    "title": "亚马逊英语市场运营",
+    "summary": "负责面向英语国家的亚马逊店铺运营，撰写英文商品页并处理海外事务。",
+    "tags": ["能发挥英语能力"],
+    "duties": {
+      "intro": "负责面向英语国家的亚马逊店铺的运营。",
+      "items": ["管理亚马逊海外账户", "撰写英文商品标题和说明", "翻译、优化商品页面", "管理面向海外的价格、库存、交期", "处理海外用户的咨询", "查看、回复英文评价", "管理亚马逊广告和促销方案", "分析销售额、访问量、广告数据", "调研面向海外市场的商品", "与物流、出货、退货团队协作", "制定面向英语国家的销售策略"],
+      "note": "为了把日本商品卖给海外顾客，需要用英语准确且有吸引力地介绍商品。"
+    },
+    "requirements": {
+      "items": ["能用英语写文章", "能用日语进行内部沟通", "会亚马逊的基本操作", "欢迎有电商网站运营经验者", "欢迎有面向英语国家的电商或跨境电商经验者", "会基本Excel操作"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有亚马逊海外销售经验", "有亚马逊广告投放经验", "有制作英文商品页的经验", "母语水平的英语能力", "持有TOEIC、英检等资格", "有海外客户应对经验", "了解跨境电商、出口、国际物流", "会中文"],
+      "note": "※不只是使用翻译软件，欢迎能写出自然易懂的英文表达的人。"
+    },
+    "sections": [],
+    "salary": "月薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["因需应对海外业务，可能会因时差请您调整部分时间段。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "这是一份把日本商品送到英语国家顾客手中的跨境电商工作。\n\n不仅需要英语能力，还能分析海外市场需求，改善商品页面和销售方式。\n\n欢迎想发挥亚马逊海外销售或跨境电商经验、想挑战海外业务的人。"
+  },
+  "en": {
+    "title": "Amazon Operations Specialist (English-speaking Markets)",
+    "summary": "Running our Amazon stores for English-speaking markets, including English product pages and international customer support.",
+    "tags": ["Use your English"],
+    "duties": {
+      "intro": "You will run our Amazon stores for English-speaking markets.",
+      "items": ["Managing our international Amazon accounts", "Writing English product titles and descriptions", "Translating and improving product pages", "Managing prices, stock and delivery times for overseas markets", "Responding to inquiries from overseas customers", "Checking and replying to English reviews", "Managing Amazon Ads and promotions", "Analyzing sales, traffic and ad data", "Researching products for overseas markets", "Coordinating with the logistics, shipping and returns teams", "Planning sales strategies for English-speaking markets"],
+      "note": "Since we sell Japanese products to customers overseas, you will describe each product accurately and appealingly in English."
+    },
+    "requirements": {
+      "items": ["Able to write well in English", "Able to communicate with colleagues in Japanese", "Basic Amazon operation skills", "E-commerce site experience preferred", "Experience selling to English-speaking markets or in cross-border e-commerce preferred", "Basic Excel skills"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Experience selling on Amazon internationally", "Experience with Amazon Ads", "Experience creating product pages for English-speaking markets", "Native-level English", "Qualifications such as TOEIC or Eiken", "Experience supporting overseas customers", "Knowledge of cross-border e-commerce, exporting and international logistics", "Chinese language skills"],
+      "note": "* We especially welcome people who can write natural, easy-to-understand English rather than relying on translation software alone."
+    },
+    "sections": [],
+    "salary": "Monthly salary: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Because of time differences with overseas markets, we may occasionally ask you to adjust some of your hours."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount"],
+    "otherConditions": "",
+    "pr": "This is a cross-border e-commerce role bringing Japanese products to customers in English-speaking countries.\n\nBeyond English skills, you will analyze overseas market needs and improve our product pages and sales approach.\n\nWe welcome people who want to build on their experience selling on Amazon internationally or in cross-border e-commerce, and anyone keen to take on international business."
+  }
+}

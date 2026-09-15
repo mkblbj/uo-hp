@@ -35,6 +35,7 @@ collections:
               - { label: "事業案内", name: "business", widget: "string" }
               - { label: "販売実績", name: "performance", widget: "string" }
               - { label: "技術・AI", name: "tech", widget: "string" }
+              - { label: "採用情報", name: "recruit", widget: "string" }
               - { label: "联系按钮", name: "contact", widget: "string" }
           - label: "首屏"
             name: "hero"
@@ -425,6 +426,196 @@ collections:
           - { label: "正文内容", name: "body", widget: "markdown", hint: "以 ::: 开头和结尾的几行是特殊区块（卡片、公司资料表、实绩数字、签名、提示框、时间线），请不要删除这些行" }
 
   # ──────────────────────────────────────
+  #  採用情報（招聘）：日中英三语在同一条记录里，右上角切换语言
+  #  三语设置见文件末尾的 i18n；共用栏目（i18n: false）只在日文里填
+  # ──────────────────────────────────────
+  - name: "recruit-jobs"
+    label: "💼 招聘职位（三语）"
+    label_singular: "招聘职位"
+    description: "一个职位一条记录。先填日文，再点表单上方的「翻译」按钮填好中英文，检查后保存。暂时不招可以关掉「公开」。"
+    folder: "data/recruit/jobs"
+    format: "json"
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{fields.slug}}"
+    summary: "{{fields.order}}. {{fields.title}}{{fields.published | ternary('', '（非公開）')}}"
+    sortable_fields: ["order", "title", "datePosted"]
+    fields:
+      - label: "网址名"
+        name: "slug"
+        widget: "string"
+        i18n: false
+        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "只能用小写英文字母、数字和 -，例如 packing-staff"]
+        hint: "职位页的网址是 /recruit/网址名/。改了之后，旧链接会失效"
+      - { label: "公开", name: "published", widget: "boolean", default: true, i18n: false, hint: "关掉后，这个职位的页面和列表条目都不显示" }
+      - { label: "排序号", name: "order", widget: "number", value_type: "int", default: 1, i18n: false, hint: "同一类别里从小到大排列" }
+      - label: "类别"
+        name: "category"
+        widget: "select"
+        i18n: false
+        options:
+          - { label: "物流・倉庫", value: "logistics" }
+          - { label: "EC運営", value: "operations" }
+          - { label: "デザイン", value: "design" }
+      - label: "雇用形态（可多选）"
+        name: "employmentTypes"
+        widget: "select"
+        multiple: true
+        i18n: false
+        options:
+          - { label: "正社員", value: "fulltime" }
+          - { label: "契約社員", value: "contract" }
+          - { label: "パート・アルバイト", value: "parttime" }
+      - { label: "刊登日期", name: "datePosted", widget: "datetime", format: "YYYY-MM-DD", time_format: false, default: "{{now}}", i18n: false, hint: "Google 求职搜索要用" }
+      - { label: "职位名", name: "title", widget: "string", i18n: true }
+      - { label: "一句话简介", name: "summary", widget: "string", i18n: true, hint: "显示在职位列表和职位页标题下面" }
+      - label: "特点标签（可选）"
+        name: "tags"
+        widget: "list"
+        required: false
+        i18n: true
+        field: { label: "标签", name: "tag", widget: "string", i18n: true }
+      - label: "仕事内容"
+        name: "duties"
+        widget: "object"
+        i18n: true
+        fields:
+          - { label: "导语", name: "intro", widget: "text", i18n: true, hint: "空一行就是新的一段" }
+          - label: "条目"
+            name: "items"
+            widget: "list"
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+          - { label: "补充说明（可选）", name: "note", widget: "text", required: false, i18n: true }
+      - label: "応募条件"
+        name: "requirements"
+        widget: "object"
+        i18n: true
+        fields:
+          - label: "条目"
+            name: "items"
+            widget: "list"
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+          - { label: "补充说明（可选）", name: "note", widget: "text", required: false, i18n: true }
+      - label: "歓迎条件（可选，都空着就不显示）"
+        name: "preferred"
+        widget: "object"
+        required: false
+        i18n: true
+        fields:
+          - label: "条目"
+            name: "items"
+            widget: "list"
+            required: false
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+          - { label: "补充说明", name: "note", widget: "text", required: false, i18n: true }
+      - label: "附加小节（可选，例如「AI活用について」）"
+        name: "sections"
+        widget: "list"
+        required: false
+        i18n: true
+        summary: "{{fields.title}}"
+        fields:
+          - { label: "小节标题", name: "title", widget: "string", i18n: true }
+          - { label: "导语", name: "intro", widget: "text", required: false, i18n: true }
+          - label: "条目"
+            name: "items"
+            widget: "list"
+            required: false
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+          - { label: "补充说明", name: "note", widget: "text", required: false, i18n: true }
+      - { label: "給与", name: "salary", widget: "text", i18n: true, hint: "第一行显示在职位列表和要点条里，例如「時給：経験・能力を考慮」；可以换行补充金额等" }
+      - label: "勤務時間"
+        name: "hours"
+        widget: "object"
+        i18n: true
+        fields:
+          - { label: "时间", name: "text", widget: "string", i18n: true, hint: "例如「9:00～18:00」" }
+          - label: "补充条目（可选）"
+            name: "items"
+            widget: "list"
+            required: false
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+      - { label: "休日・休暇（可选）", name: "holidays", widget: "text", required: false, i18n: true }
+      - { label: "試用期間（可选）", name: "trialPeriod", widget: "string", required: false, i18n: true }
+      - label: "勤務地补充（地址自动读首页 ACCESS，这里只填补充说明）"
+        name: "workplace"
+        widget: "object"
+        required: false
+        i18n: true
+        fields:
+          - label: "补充条目"
+            name: "items"
+            widget: "list"
+            required: false
+            i18n: true
+            field: { label: "条目", name: "item", widget: "string", i18n: true }
+      - label: "待遇・福利厚生"
+        name: "benefits"
+        widget: "list"
+        i18n: true
+        field: { label: "条目", name: "item", widget: "string", i18n: true }
+      - { label: "その他（可选，例如受動喫煙対策）", name: "otherConditions", widget: "text", required: false, i18n: true }
+      - { label: "求人PR", name: "pr", widget: "text", i18n: true, hint: "空一行就是新的一段" }
+
+  - name: "recruit-page"
+    label: "💼 招聘首页（三语）"
+    i18n: true
+    files:
+      - label: "招聘首页（共通内容）"
+        name: "page"
+        file: "data/recruit/page.json"
+        format: "json"
+        i18n: true
+        fields:
+          - { label: "页面描述", name: "description", widget: "text", i18n: true, hint: "给搜索引擎看的页面摘要" }
+          - { label: "导语", name: "lead", widget: "text", i18n: true }
+          - { label: "所在地（简短）", name: "locationShort", widget: "string", i18n: true, hint: "例如「神戸市長田区」，显示在标题区和职位页要点条" }
+          - label: "工作环境卡片"
+            name: "features"
+            widget: "list"
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "标题", name: "title", widget: "string", i18n: true }
+              - { label: "说明", name: "body", widget: "text", i18n: true }
+          - label: "福利标签"
+            name: "benefits"
+            widget: "list"
+            i18n: true
+            field: { label: "标签", name: "item", widget: "string", i18n: true }
+          - { label: "福利注释", name: "benefitsNote", widget: "text", required: false, i18n: true }
+          - label: "选考流程（一条都没有时整节不显示）"
+            name: "steps"
+            widget: "list"
+            required: false
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "步骤名", name: "title", widget: "string", i18n: true }
+              - { label: "说明", name: "body", widget: "text", i18n: true }
+          - label: "常见问题（一条都没有时整节不显示）"
+            name: "faq"
+            widget: "list"
+            required: false
+            i18n: true
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "问题", name: "q", widget: "string", i18n: true }
+              - { label: "回答", name: "a", widget: "text", i18n: true }
+          - { label: "应聘说明", name: "applyBody", widget: "text", i18n: true }
+          - { label: "邮件说明", name: "emailNote", widget: "text", i18n: true }
+          - { label: "微信说明", name: "wechatNote", widget: "text", i18n: true }
+          - { label: "招聘邮箱（留空则显示「準備中」）", name: "email", widget: "string", required: false, i18n: false }
+          - { label: "微信号（留空则显示「準備中」）", name: "wechatId", widget: "string", required: false, i18n: false }
+          - { label: "微信二维码图片（可选）", name: "wechatQr", widget: "image", required: false, i18n: false, media_folder: "/public/uploads/recruit", public_folder: "/uploads/recruit", hint: "请先裁成正方形，建议 PNG，宽度 600px 以内" }
+
+  # ──────────────────────────────────────
   #  中文
   # ──────────────────────────────────────
   - name: "zh-about"
@@ -639,3 +830,12 @@ collections:
           - { label: "Description", name: "description", widget: "string" }
           - { label: "Page Class", name: "pageClass", widget: "hidden", default: "service-doc-page" }
           - { label: "Body", name: "body", widget: "markdown" }
+
+# ──────────────────────────────────────
+#  三语设置：只用于标了 i18n: true 的栏目（招聘职位、招聘首页），其他栏目不受影响。
+#  三种语言存在同一个文件里，顶层是 ja / zh / en；日文是默认语言
+# ──────────────────────────────────────
+i18n:
+  structure: single_file
+  locales: [ja, zh, en]
+  default_locale: ja

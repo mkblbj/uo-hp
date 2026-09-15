@@ -1,0 +1,98 @@
+{
+  "ja": {
+    "slug": "ec-site-operations",
+    "published": true,
+    "order": 4,
+    "category": "operations",
+    "employmentTypes": ["fulltime", "parttime"],
+    "datePosted": "2026-09-15",
+    "title": "自社ECサイト運営スタッフ",
+    "summary": "自社ECサイトの運営全般。企画、マーケティング、顧客対応まで。",
+    "tags": [],
+    "duties": {
+      "intro": "自社オンラインショップの運営全般を担当していただきます。",
+      "items": ["自社ECサイトの商品登録", "商品ページの作成、更新", "商品画像、バナーの作成", "キャンペーン、セールの企画", "メールマガジン、LINE配信", "SNS、コンテンツの更新", "注文、在庫、顧客情報の管理", "お客様からの問い合わせ対応", "売上、アクセス、広告データの分析", "Google Analytics等を使用した効果測定", "SEO対策", "Web広告の運用補助", "サイト改善、購入率向上の提案", "倉庫、出荷チームとの連携"],
+      "note": "サイト運営だけでなく、企画、マーケティング、顧客対応など幅広い業務に関わることができます。"
+    },
+    "requirements": {
+      "items": ["自社ECサイトまたはネットショップ運営経験", "基本的なパソコン操作", "商品ページや文章を作成できる方", "お客様目線でサイトを改善できる方", "数字やデータを見て考えることが好きな方", "チームで協力して仕事ができる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Shopify、Makeshop、EC-CUBEなどの運営経験", "HTML、CSSの基本知識", "Photoshop、Illustrator、Canvaの使用経験", "Google Analytics、Google広告の使用経験", "SNS運用経験", "SEO、Webマーケティング経験", "メルマガ、LINE公式アカウントの運用経験", "楽天、Amazonなどモール運営経験"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月給または時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["勤務時間、勤務日数は相談可能です。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "自社ECサイトを成長させるため、商品ページ、広告、SNS、顧客対応など幅広い業務に携わっていただきます。\n\n少人数のチームだからこそ、自分のアイデアをすぐに試すことができます。\n\n「決められた作業だけでなく、サイトを自分で改善したい」「売上を伸ばす仕組みを考えたい」という方におすすめです。"
+  },
+  "zh": {
+    "title": "自营电商网站运营",
+    "summary": "负责自营电商网站的全面运营，从企划、营销到客户服务。",
+    "tags": [],
+    "duties": {
+      "intro": "负责自营网店的全面运营。",
+      "items": ["在自营电商网站上架商品", "制作、更新商品页面", "制作商品图片、横幅", "策划促销和打折活动", "发送邮件杂志、LINE消息", "更新社交媒体和内容", "管理订单、库存、客户信息", "处理顾客咨询", "分析销售额、访问量、广告数据", "使用Google Analytics等工具衡量效果", "SEO优化", "协助投放网络广告", "提出网站改善、提高购买率的建议", "与仓库、出货团队协作"],
+      "note": "不仅是网站运营，还能参与企划、营销、客户服务等广泛业务。"
+    },
+    "requirements": {
+      "items": ["有自营电商网站或网店运营经验", "会基本电脑操作", "能制作商品页面和撰写文章", "能站在顾客角度改善网站", "喜欢看数字和数据进行思考", "能与团队合作"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有Shopify、Makeshop、EC-CUBE等平台的运营经验", "具备HTML、CSS基础知识", "会使用Photoshop、Illustrator、Canva", "有使用Google Analytics、Google广告的经验", "有社交媒体运营经验", "有SEO、网络营销经验", "有邮件杂志、LINE官方账号的运营经验", "有乐天、亚马逊等电商平台的运营经验"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月薪或时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["工作时间、工作天数可以商量。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "为了让自营电商网站不断成长，您将参与商品页面、广告、社交媒体、客户服务等广泛工作。\n\n正因为是小团队，您的想法可以马上尝试。\n\n推荐给「不想只做规定的作业，想自己改善网站」「想思考提升销售额的机制」的人。"
+  },
+  "en": {
+    "title": "Own Online Store Operations Specialist",
+    "summary": "Running our own online store end to end, from planning and marketing to customer service.",
+    "tags": [],
+    "duties": {
+      "intro": "You will be responsible for all aspects of running our own online store.",
+      "items": ["Listing products on our online store", "Creating and updating product pages", "Creating product images and banners", "Planning campaigns and sales", "Sending email newsletters and LINE messages", "Updating social media and content", "Managing orders, stock and customer information", "Responding to customer inquiries", "Analyzing sales, traffic and ad data", "Measuring results with Google Analytics and similar tools", "SEO", "Supporting web advertising", "Suggesting site improvements to raise conversion rates", "Coordinating with the warehouse and shipping team"],
+      "note": "Beyond running the site, you will be involved in a wide range of work, including planning, marketing and customer service."
+    },
+    "requirements": {
+      "items": ["Experience running an online store or e-commerce site", "Basic computer skills", "Able to create product pages and write copy", "You improve the site from the customer's point of view", "You enjoy thinking with numbers and data", "You work well in a team"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Experience with Shopify, Makeshop, EC-CUBE or similar platforms", "Basic HTML and CSS", "Experience with Photoshop, Illustrator or Canva", "Experience with Google Analytics and Google Ads", "Social media experience", "SEO and web marketing experience", "Experience running email newsletters and LINE official accounts", "Experience running stores on Rakuten, Amazon or other marketplaces"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "Monthly salary or hourly wage: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Working hours and number of days can be discussed."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount"],
+    "otherConditions": "",
+    "pr": "To grow our own online store, you will work across product pages, advertising, social media, customer service and more.\n\nBecause we are a small team, you can try out your ideas right away.\n\nIt is a great fit if you want to improve the site yourself rather than just follow set tasks, or if you like designing ways to grow sales."
+  }
+}

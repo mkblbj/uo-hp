@@ -1,0 +1,98 @@
+{
+  "ja": {
+    "slug": "rakuten-operations",
+    "published": true,
+    "order": 2,
+    "category": "operations",
+    "employmentTypes": ["fulltime", "parttime"],
+    "datePosted": "2026-09-15",
+    "title": "楽天市場運営スタッフ",
+    "summary": "楽天市場店舗の運営全般。ページ改善、イベント対応、販促企画まで。",
+    "tags": [],
+    "duties": {
+      "intro": "楽天市場店舗の運営、ページ改善、販促企画などを担当していただきます。",
+      "items": ["楽天RMSの管理", "商品登録、商品情報の更新", "商品ページの作成、改善", "楽天市場のイベント対応", "クーポン、ポイント、セール設定", "メルマガ、商品紹介文の作成", "売上、アクセス、転換率の分析", "在庫、価格、納期の管理", "お客様からの問い合わせ対応", "レビュー、注文、返品対応", "画像制作やページ更新", "出荷チームとの連携"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["楽天RMSの操作経験", "楽天市場運営経験", "ECサイト運営経験", "基本的なパソコン操作", "日本語での文章作成ができる方", "商品やお客様のことを考えて改善できる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["楽天市場のイベント運営経験", "楽天広告の運用経験", "Photoshop、Illustrator、Canvaの使用経験", "HTML、CSSの基本知識", "Excelでの売上分析経験", "AmazonやYahoo!ショッピングの運営経験", "中国語、英語ができる方"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月給または時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["勤務時間、勤務日数は相談可能です。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "楽天市場のイベントやセールを活用しながら、商品ページとショップを成長させていく仕事です。\n\n「楽天市場の運営経験を活かしたい」「自分の企画を売上につなげたい」という方に向いています。\n\n少人数のチームで、商品企画、ページ改善、販促まで幅広く経験できます。"
+  },
+  "zh": {
+    "title": "乐天市场运营",
+    "summary": "负责乐天市场店铺的全面运营，从页面优化、活动应对到促销企划。",
+    "tags": [],
+    "duties": {
+      "intro": "负责乐天市场店铺的运营、页面优化和促销企划等工作。",
+      "items": ["管理乐天RMS", "商品上架、更新商品信息", "制作和优化商品页面", "应对乐天市场的活动", "设置优惠券、积分、促销", "撰写邮件杂志和商品介绍文案", "分析销售额、访问量、转化率", "管理库存、价格、交期", "处理顾客咨询", "处理评价、订单、退货", "制作图片、更新页面", "与出货团队协作"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["有乐天RMS操作经验", "有乐天市场运营经验", "有电商网站运营经验", "会基本电脑操作", "能用日语撰写文章", "能站在商品和顾客角度思考改善"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有乐天市场活动运营经验", "有乐天广告投放经验", "会使用Photoshop、Illustrator、Canva", "具备HTML、CSS基础知识", "有用Excel分析销售额的经验", "有亚马逊或雅虎购物的运营经验", "会中文、英文"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月薪或时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["工作时间、工作天数可以商量。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "这是一份利用乐天市场的活动和促销，让商品页面和店铺不断成长的工作。\n\n适合「想发挥乐天市场运营经验」「想把自己的企划转化为销售额」的人。\n\n在小团队中，可以广泛体验从商品企划、页面优化到促销的各项工作。"
+  },
+  "en": {
+    "title": "Rakuten Ichiba Operations Specialist",
+    "summary": "Running our Rakuten Ichiba store end to end, from page improvements and sale events to promotion planning.",
+    "tags": [],
+    "duties": {
+      "intro": "You will handle store operations, page improvements and promotion planning for our Rakuten Ichiba store.",
+      "items": ["Managing Rakuten RMS", "Listing products and updating product information", "Creating and improving product pages", "Preparing for Rakuten Ichiba sale events", "Setting up coupons, points and sales", "Writing newsletters and product descriptions", "Analyzing sales, traffic and conversion rates", "Managing stock, prices and delivery times", "Responding to customer inquiries", "Handling reviews, orders and returns", "Creating images and updating pages", "Coordinating with the shipping team"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["Experience operating Rakuten RMS", "Experience running a Rakuten Ichiba store", "Experience running an e-commerce site", "Basic computer skills", "Able to write in Japanese", "You improve things with products and customers in mind"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Experience running Rakuten Ichiba sale events", "Experience with Rakuten advertising", "Experience with Photoshop, Illustrator or Canva", "Basic HTML and CSS", "Experience analyzing sales in Excel", "Experience running stores on Amazon or Yahoo! Shopping", "Chinese or English skills"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "Monthly salary or hourly wage: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Working hours and number of days can be discussed."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount"],
+    "otherConditions": "",
+    "pr": "In this role, you will grow our product pages and store by making the most of Rakuten Ichiba's events and sales.\n\nIt suits people who want to use their Rakuten Ichiba experience or turn their own ideas into sales.\n\nIn our small team, you will gain broad experience across product planning, page improvements and promotions."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "ja": {
+    "slug": "warehouse-manager",
+    "published": true,
+    "order": 2,
+    "category": "logistics",
+    "employmentTypes": ["fulltime"],
+    "datePosted": "2026-09-15",
+    "title": "EC物流倉庫の在庫・出荷管理スタッフ",
+    "summary": "ネットショップ商品の入荷から出荷まで、倉庫全体の管理を担当します。",
+    "tags": [],
+    "duties": {
+      "intro": "ネットショップ商品の入荷から出荷まで、倉庫全体の管理業務をお願いします。",
+      "items": ["商品の入荷、検品、棚入れ", "在庫数量の確認", "商品の保管場所管理", "ピッキング、梱包作業の進捗管理", "出荷スケジュールの確認", "在庫差異や出荷ミスの確認", "返品商品の処理", "倉庫内の整理整頓", "パート・アルバイトスタッフとの連携", "楽天、Amazon、自社サイトの受注状況確認"],
+      "note": "日々の出荷量に応じて、作業の優先順位を決め、効率よく出荷できる体制を整えていただきます。"
+    },
+    "requirements": {
+      "items": ["倉庫管理、物流、出荷業務の経験者歓迎", "EC物流経験者歓迎", "基本的なパソコン操作ができる方", "Excelの基本操作ができる方歓迎", "責任感を持って仕事に取り組める方", "周囲と円滑にコミュニケーションできる方"],
+      "note": "未経験でも、物流現場での経験や管理能力がある方は歓迎します。"
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "月給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["業務状況により、勤務時間が変動する場合があります。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給・賞与あり", "社会保険完備", "有給休暇あり", "役職手当あり", "服装自由", "休憩スペースあり", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "楽天市場、Amazon、自社サイトなど、複数のECショップを運営する会社です。\n\n今後の事業拡大に伴い、倉庫管理体制を強化するための募集です。現場作業だけでなく、在庫管理や出荷改善にも関わることができます。"
+  },
+  "zh": {
+    "title": "电商物流仓库库存・出库管理人员",
+    "summary": "负责网店商品从入库到出库的仓库整体管理。",
+    "tags": [],
+    "duties": {
+      "intro": "负责网店商品从入库到出库的仓库整体管理工作。",
+      "items": ["商品入库、检验、上架", "核对库存数量", "管理商品存放位置", "管理拣货、打包作业进度", "确认出货计划", "核查库存差异和出货错误", "处理退货商品", "仓库内整理整顿", "与兼职员工协作", "确认乐天、亚马逊、自营网站的订单情况"],
+      "note": "根据每天的出货量安排作业的优先顺序，建立高效出货的体制。"
+    },
+    "requirements": {
+      "items": ["欢迎有仓库管理、物流、出货经验者", "欢迎有电商物流经验者", "会基本电脑操作", "欢迎会Excel基本操作者", "工作有责任心", "能与周围顺畅沟通"],
+      "note": "即使没有相关经验，有物流现场经验或管理能力的人也欢迎。"
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "月薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["工作时间可能因业务情况有所变动。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪和奖金", "社会保险齐全", "带薪休假", "职务津贴", "服装自由", "有休息区", "员工折扣"],
+    "otherConditions": "",
+    "pr": "我们运营乐天市场、亚马逊、自营网站等多家网店。\n\n随着业务扩大，此次招聘是为了加强仓库管理体制。不仅是现场作业，还能参与库存管理和出货流程的改善。"
+  },
+  "en": {
+    "title": "E-commerce Warehouse Inventory & Shipping Coordinator",
+    "summary": "Overseeing the whole warehouse, from receiving online-store products to shipping them out.",
+    "tags": [],
+    "duties": {
+      "intro": "You will manage the whole warehouse operation for our online-store products, from receiving to shipping.",
+      "items": ["Receiving, inspecting and shelving products", "Checking stock quantities", "Managing storage locations", "Tracking the progress of picking and packing", "Checking shipping schedules", "Investigating stock discrepancies and shipping errors", "Processing returns", "Keeping the warehouse clean and organized", "Coordinating with part-time staff", "Checking order status on Rakuten, Amazon and our own site"],
+      "note": "You will set work priorities based on each day's shipping volume and build a system that ships orders efficiently."
+    },
+    "requirements": {
+      "items": ["Experience in warehouse management, logistics or shipping preferred", "E-commerce logistics experience preferred", "Basic computer skills", "Basic Excel skills preferred", "A strong sense of responsibility", "Good communication with the people around you"],
+      "note": "Even without direct experience, we welcome people with hands-on logistics experience or management skills."
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "Monthly salary: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Working hours may vary depending on business needs."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises and bonuses", "Full social insurance", "Paid leave", "Position allowance", "Casual dress", "Break room", "Employee discount"],
+    "otherConditions": "",
+    "pr": "We run several online stores, including on Rakuten Ichiba, Amazon and our own website.\n\nAs our business grows, we are hiring to strengthen our warehouse management. Beyond day-to-day operations, you will be involved in inventory management and in improving how we ship."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "ja": {
+    "slug": "packing-leader",
+    "published": true,
+    "order": 3,
+    "category": "logistics",
+    "employmentTypes": ["fulltime", "parttime"],
+    "datePosted": "2026-09-15",
+    "title": "梱包・出荷チームのリーダー候補",
+    "summary": "梱包・出荷チームのリーダーとして、作業の管理とスタッフのサポートを担当します。",
+    "tags": ["リーダー手当"],
+    "duties": {
+      "intro": "梱包・出荷チームのリーダーとして、日々の作業管理とスタッフのサポートをお願いします。",
+      "items": ["当日の出荷予定数の確認", "ピッキング、検品、梱包作業の割り振り", "スタッフへの作業指示", "新人スタッフの教育", "梱包品質の確認", "出荷ミス、破損、数量違いの防止", "作業の進捗管理", "作業場の整理整頓", "倉庫管理担当者との連携", "作業効率改善の提案"],
+      "note": "最初は実際の梱包作業を覚えていただき、その後、チーム管理を担当していただきます。"
+    },
+    "requirements": {
+      "items": ["梱包、ピッキング、倉庫作業経験者歓迎", "リーダー、班長、店舗責任者経験者歓迎", "未経験でも、人をまとめることが得意な方歓迎", "周囲に気を配れる方", "責任感があり、正確に作業できる方", "基本的なパソコン操作ができる方歓迎"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "月給または時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["業務状況により残業をお願いする場合があります。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["リーダー手当あり", "交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "スタッフ同士で協力しながら、効率よく商品をお客様へ届ける仕事です。\n\n「人に教えることが好き」「チームをまとめることが得意」「将来は管理職を目指したい」という方に向いています。\n\n将来的には、出荷チーム全体を管理する責任者として活躍していただけます。"
+  },
+  "zh": {
+    "title": "打包・出库团队组长候选",
+    "summary": "作为打包・出库团队的组长，负责作业管理和支持团队成员。",
+    "tags": ["组长津贴"],
+    "duties": {
+      "intro": "作为打包・出库团队的组长，负责日常作业管理和支持团队成员。",
+      "items": ["确认当天的预计出货量", "分配拣货、检验、打包作业", "向员工下达作业指示", "培训新员工", "检查打包质量", "防止出货错误、破损、数量差错", "管理作业进度", "作业场所整理整顿", "与仓库管理负责人协作", "提出提高作业效率的建议"],
+      "note": "首先请熟悉实际的打包作业，之后再负责团队管理。"
+    },
+    "requirements": {
+      "items": ["欢迎有打包、拣货、仓库作业经验者", "欢迎有组长、班长、店长经验者", "即使没有经验，也欢迎擅长带领团队的人", "能照顾到周围的人", "有责任心、作业准确的人", "欢迎会基本电脑操作者"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "月薪或时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["可能因业务情况需要加班。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["组长津贴", "交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "这是一份与同事互相配合、高效地把商品送到顾客手中的工作。\n\n适合「喜欢教别人」「擅长带团队」「将来想做管理职位」的人。\n\n将来可以作为管理整个出货团队的负责人发挥作用。"
+  },
+  "en": {
+    "title": "Packing & Shipping Team Leader Candidate",
+    "summary": "Leading the packing and shipping team: managing daily work and supporting team members.",
+    "tags": ["Leader allowance"],
+    "duties": {
+      "intro": "As leader of the packing and shipping team, you will manage daily operations and support your team members.",
+      "items": ["Checking the day's planned shipments", "Assigning picking, inspection and packing tasks", "Giving staff work instructions", "Training new staff", "Checking packing quality", "Preventing shipping errors, damage and quantity mistakes", "Tracking work progress", "Keeping the work area organized", "Coordinating with the warehouse manager", "Suggesting ways to work more efficiently"],
+      "note": "You will start by learning the packing work hands-on, then take on team management."
+    },
+    "requirements": {
+      "items": ["Experience in packing, picking or warehouse work preferred", "Experience as a leader, supervisor or store manager preferred", "No experience is fine if you are good at bringing people together", "You pay attention to the people around you", "Responsible and accurate in your work", "Basic computer skills preferred"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "Monthly salary or hourly wage: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Overtime may occasionally be required depending on business needs."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Leader allowance", "Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress", "Employee discount"],
+    "otherConditions": "",
+    "pr": "This job is about working together as a team to get products to customers efficiently.\n\nIt suits people who enjoy teaching others, are good at leading a team, or want to move into management.\n\nIn the future, you can grow into the person responsible for the entire shipping team."
+  }
+}

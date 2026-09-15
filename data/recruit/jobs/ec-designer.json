@@ -1,0 +1,119 @@
+{
+  "ja": {
+    "slug": "ec-designer",
+    "published": true,
+    "order": 1,
+    "category": "design",
+    "employmentTypes": ["fulltime", "parttime"],
+    "datePosted": "2026-09-15",
+    "title": "ECサイト・商品ページのデザイナー",
+    "summary": "日本国内・イギリス向けECショップの商品画像とページ素材のデザイン。",
+    "tags": ["AI活用"],
+    "duties": {
+      "intro": "日本国内およびイギリス向けのECショップで使用する、商品画像やページ素材のデザインを担当していただきます。",
+      "items": ["楽天市場、Amazon、自社ECサイトの商品画像制作", "日本国内向け商品ページのデザイン", "イギリス向けECサイトの商品ページ制作", "商品画像、バナー、キャンペーン画像の作成", "セール、イベント、広告用クリエイティブの制作", "商品の特徴や使用方法が伝わる画像の制作", "画像の加工、切り抜き、色調整", "商品ページ全体のレイアウト設計", "ブランドイメージに合わせたデザイン制作", "撮影画像の補正、合成、加工", "デザイン素材の管理", "EC運営担当者との打ち合わせ", "AIツールを活用した画像制作、アイデア出し、作業効率化"],
+      "note": "日本向けとイギリス向けでは、好まれる色、文字量、写真の見せ方、訴求方法などが異なります。各市場に合ったデザインを考えながら制作していただきます。"
+    },
+    "requirements": {
+      "items": ["Photoshopを使用した実務経験", "Illustrator、Canvaなどの使用経験", "ECサイト用画像、バナー、広告画像などの制作経験", "基本的なデザイン知識がある方", "商品の魅力を画像で分かりやすく表現できる方", "AIツールを活用してデザイン業務を効率化できる方", "チームで円滑にコミュニケーションできる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["楽天市場、Amazon、自社ECサイトのデザイン経験", "ShopifyなどのECサイトデザイン経験", "HTML、CSSの基本知識", "Webデザイン、UIデザインの経験", "Illustrator、Figma、Canvaの使用経験", "AI画像生成ツール、画像編集ツールの使用経験", "英語圏向けECサイトのデザイン経験", "英語の読み書きができる方", "越境EC、海外向け商品ページの制作経験"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "AI活用について",
+        "intro": "当社では、AIツールをデザイン業務の補助として積極的に活用しています。",
+        "items": ["デザイン案の作成", "構成やキャッチコピーのアイデア出し", "背景、素材、イメージ画像の制作", "画像加工の効率化", "市場ごとのデザイン案の比較", "作業時間の短縮"],
+        "note": "ただし、AIが作成した画像をそのまま使用するのではなく、商品の正確性、著作権、商標、広告表現などを確認し、最終的な品質を管理できる方を歓迎します。"
+      }
+    ],
+    "salary": "月給または時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["勤務時間、勤務日数は相談可能です。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度あり", "使用ソフト、機材については相談可"],
+    "otherConditions": "",
+    "pr": "日本国内とイギリス向けのECショップを運営しているため、国内向けと海外向けのデザインを幅広く経験できます。\n\n決められた素材を加工するだけではなく、商品ページの構成や訴求方法を考えながら、売上につながるデザインを制作していただきます。\n\nPhotoshopなどのデザインスキルを活かしたい方、AIを活用して新しいデザイン表現に挑戦したい方を歓迎します。"
+  },
+  "zh": {
+    "title": "电商网站・商品页设计师",
+    "summary": "为面向日本国内和英国的网店设计商品图片和页面素材。",
+    "tags": ["活用AI"],
+    "duties": {
+      "intro": "负责面向日本国内及英国的网店所使用的商品图片和页面素材的设计。",
+      "items": ["制作乐天市场、亚马逊、自营电商网站的商品图片", "设计面向日本国内的商品页面", "制作面向英国电商网站的商品页面", "制作商品图片、横幅、活动图片", "制作促销、活动、广告用的创意素材", "制作能传达商品特点和使用方法的图片", "图片加工、抠图、调色", "设计商品页面的整体布局", "按照品牌形象进行设计", "修正、合成、加工拍摄的图片", "管理设计素材", "与电商运营负责人沟通", "使用AI工具制作图片、构思创意、提高效率"],
+      "note": "面向日本和面向英国的设计，在受欢迎的颜色、文字量、照片呈现方式和诉求方式等方面都有所不同。需要一边考虑适合各市场的设计一边制作。"
+    },
+    "requirements": {
+      "items": ["有使用Photoshop的实际工作经验", "会使用Illustrator、Canva等工具", "有制作电商网站图片、横幅、广告图片等的经验", "具备基本的设计知识", "能用图片把商品魅力表达得通俗易懂", "能利用AI工具提高设计工作效率", "能与团队顺畅沟通"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有乐天市场、亚马逊、自营电商网站的设计经验", "有Shopify等电商网站设计经验", "具备HTML、CSS基础知识", "有网页设计、UI设计经验", "会使用Illustrator、Figma、Canva", "有使用AI图片生成、图片编辑工具的经验", "有面向英语国家的电商网站设计经验", "能读写英文", "有跨境电商、面向海外商品页面的制作经验"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "关于AI的活用",
+        "intro": "我们在设计工作中积极使用AI工具作为辅助。",
+        "items": ["制作设计方案", "构思结构和宣传文案", "制作背景、素材、意象图", "提高图片加工效率", "比较各市场的设计方案", "缩短作业时间"],
+        "note": "不过，AI生成的图片不会直接使用。欢迎能确认商品准确性、著作权、商标、广告表达等，并把控最终质量的人。"
+      }
+    ],
+    "salary": "月薪或时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["工作时间、工作天数可以商量。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣", "使用的软件和设备可以商量"],
+    "otherConditions": "",
+    "pr": "我们运营面向日本国内和英国的网店，因此可以广泛体验面向国内和海外的设计。\n\n不只是加工给定的素材，还要一边思考商品页面的结构和诉求方式，一边制作能带来销售额的设计。\n\n欢迎想发挥Photoshop等设计技能的人，以及想利用AI挑战新设计表现的人。"
+  },
+  "en": {
+    "title": "E-commerce & Product Page Designer",
+    "summary": "Designing product images and page assets for our online stores in Japan and the UK.",
+    "tags": ["AI-powered"],
+    "duties": {
+      "intro": "You will design product images and page assets for our online stores serving Japan and the UK.",
+      "items": ["Creating product images for Rakuten Ichiba, Amazon and our own online store", "Designing product pages for the Japanese market", "Creating product pages for our UK online store", "Creating product images, banners and campaign visuals", "Producing creatives for sales, events and ads", "Creating images that show product features and how to use them", "Retouching, cutting out and color-correcting images", "Designing the overall layout of product pages", "Creating designs that fit our brand image", "Retouching, compositing and editing product photos", "Managing design assets", "Meeting with the e-commerce team", "Using AI tools for image creation, ideation and efficiency"],
+      "note": "Preferred colors, amount of text, photo styles and messaging differ between Japan and the UK. You will create designs tailored to each market."
+    },
+    "requirements": {
+      "items": ["Professional experience with Photoshop", "Experience with Illustrator, Canva or similar tools", "Experience creating images, banners and ads for e-commerce sites", "Basic design knowledge", "Able to show a product's appeal clearly through images", "Able to use AI tools to work more efficiently", "Good communication within a team"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Design experience for Rakuten Ichiba, Amazon or brand-owned online stores", "Design experience with Shopify or other e-commerce platforms", "Basic HTML and CSS", "Web or UI design experience", "Experience with Illustrator, Figma or Canva", "Experience with AI image generation and image editing tools", "Design experience for English-speaking e-commerce sites", "Able to read and write English", "Experience creating product pages for cross-border or overseas markets"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "How We Use AI",
+        "intro": "We actively use AI tools to support our design work.",
+        "items": ["Creating design drafts", "Brainstorming layouts and taglines", "Creating backgrounds, assets and mood images", "Speeding up image editing", "Comparing design options for each market", "Reducing production time"],
+        "note": "That said, we do not use AI-generated images as they are. We welcome people who can check product accuracy, copyright, trademarks and advertising rules, and take ownership of the final quality."
+      }
+    ],
+    "salary": "Monthly salary or hourly wage: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Working hours and number of days can be discussed."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount", "Software and equipment can be discussed"],
+    "otherConditions": "",
+    "pr": "Because we run online stores for both Japan and the UK, you will gain broad experience designing for domestic and international markets.\n\nRather than just editing assets you are given, you will think through page structure and messaging to create designs that drive sales.\n\nWe welcome people who want to use their Photoshop and design skills, and anyone eager to explore new kinds of design with AI."
+  }
+}

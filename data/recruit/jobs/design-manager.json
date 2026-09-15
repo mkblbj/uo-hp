@@ -1,0 +1,119 @@
+{
+  "ja": {
+    "slug": "design-manager",
+    "published": true,
+    "order": 2,
+    "category": "design",
+    "employmentTypes": ["fulltime"],
+    "datePosted": "2026-09-15",
+    "title": "ECデザイン責任者・デザインマネージャー",
+    "summary": "日本・イギリス向けECデザイン全体の方針づくり、品質管理、チーム育成。",
+    "tags": ["役職手当"],
+    "duties": {
+      "intro": "日本国内およびイギリス向けECショップのデザイン業務全体を管理していただきます。\n\nデザイン制作だけでなく、ブランドイメージの統一、制作スケジュールの管理、デザインチームの育成なども担当していただきます。",
+      "items": ["日本国内向けECサイトのデザイン方針策定", "イギリス向けECサイトのデザイン方針策定", "楽天、Amazon、自社ECサイトの商品ページ監修", "商品画像、バナー、広告素材の品質管理", "ブランドイメージ、デザインルールの整備", "デザインテンプレートの作成、管理", "デザインチームの業務分担", "制作スケジュール、納期管理", "デザイナーへの指示、レビュー、育成", "商品ページの改善提案", "売上、クリック率、購入率などを意識したデザイン改善", "EC運営チーム、商品企画チームとの連携", "外部デザイナー、制作会社の管理", "AIツールを活用した制作フローの構築", "デザイン業務の効率化、標準化", "日本市場とイギリス市場のデザイン表現の最適化"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["Photoshopを使用した実務経験", "ECサイト、Webサイト、広告クリエイティブの制作経験", "デザイン制作物のディレクション経験", "デザイナーへの指示、レビュー経験", "制作スケジュールを管理した経験", "商品の魅力や販売目的を理解してデザインできる方", "AIツールを実務で活用できる方", "日本語で社内コミュニケーションができる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["ECサイトのデザイン責任者、リーダー経験", "楽天市場、Amazon、自社ECサイトの運営経験", "ShopifyなどのECサイト制作経験", "Illustrator、Figma、Canvaの使用経験", "HTML、CSSの基本知識", "Web広告、LP、SNSクリエイティブの制作経験", "英国、欧米向けECサイトのデザイン経験", "英語の読み書きができる方", "データ分析に基づくページ改善経験", "デザインガイドライン、ブランドガイドラインの作成経験", "外部制作会社やフリーランサーの管理経験"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "AI活用について",
+        "intro": "当社では、AIをデザイン業務に積極的に取り入れています。",
+        "items": ["商品画像や広告素材の制作補助", "デザイン案、構成案の作成", "キャッチコピーや訴求内容のアイデア出し", "背景、素材、イメージ画像の制作", "画像加工、レタッチ作業の効率化", "日本向け、イギリス向けデザイン案の比較", "デザインチームの制作時間短縮"],
+        "note": "AIを単なる画像生成ツールとしてではなく、企画、制作、改善の各工程で活用し、効率と品質を両立できる方を歓迎します。\n\n一方で、AI生成物については、著作権、商標、肖像権、商品内容との整合性、広告表示の適切性を確認する必要があります。チーム全体の品質管理ができる方を求めています。"
+      }
+    ],
+    "salary": "月給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["業務状況により、納期対応のため残業をお願いする場合があります。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["役職手当あり", "交通費支給", "昇給あり", "賞与あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "日本国内とイギリスの2つの市場に向けてEC事業を展開しています。\n\n日本向けの分かりやすく情報量のある商品ページと、イギリス向けのシンプルでライフスタイルを重視したデザインを使い分けながら、各市場に合ったクリエイティブを制作していただきます。\n\n将来的には、デザイン部門の中心メンバーとして、制作方針、チームづくり、業務フローの改善まで幅広くお任せします。\n\nデザイン制作だけでなく、売上につながるクリエイティブを考えられる方、AIを活用してチームの制作力を高められる方を歓迎します。"
+  },
+  "zh": {
+    "title": "电商设计负责人・设计经理",
+    "summary": "负责面向日本和英国的电商设计整体方针制定、质量管理和团队培养。",
+    "tags": ["职务津贴"],
+    "duties": {
+      "intro": "负责管理面向日本国内及英国网店的全部设计工作。\n\n不仅是设计制作，还负责统一品牌形象、管理制作进度、培养设计团队等。",
+      "items": ["制定面向日本国内电商网站的设计方针", "制定面向英国电商网站的设计方针", "审核乐天、亚马逊、自营电商网站的商品页面", "管理商品图片、横幅、广告素材的质量", "完善品牌形象和设计规范", "制作、管理设计模板", "分配设计团队的工作", "管理制作进度和交期", "指导、审核、培养设计师", "提出商品页面的改善建议", "以销售额、点击率、购买率等为目标改善设计", "与电商运营团队、商品企划团队协作", "管理外部设计师和制作公司", "构建利用AI工具的制作流程", "推进设计工作的效率化、标准化", "优化面向日本市场和英国市场的设计表现"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["有使用Photoshop的实际工作经验", "有电商网站、网站、广告创意的制作经验", "有设计作品的指导经验", "有向设计师下达指示、审核作品的经验", "有管理制作进度的经验", "能理解商品魅力和销售目的进行设计", "能在实际工作中活用AI工具", "能用日语进行内部沟通"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有电商网站设计负责人、组长经验", "有乐天市场、亚马逊、自营电商网站的运营经验", "有Shopify等电商网站制作经验", "会使用Illustrator、Figma、Canva", "具备HTML、CSS基础知识", "有网络广告、落地页、社交媒体创意的制作经验", "有面向英国、欧美的电商网站设计经验", "能读写英文", "有基于数据分析改善页面的经验", "有制作设计规范、品牌规范的经验", "有管理外部制作公司或自由职业者的经验"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "关于AI的活用",
+        "intro": "我们在设计工作中积极引入AI。",
+        "items": ["协助制作商品图片和广告素材", "制作设计方案、结构方案", "构思宣传文案和诉求内容", "制作背景、素材、意象图", "提高图片加工、修图的效率", "比较面向日本和英国的设计方案", "缩短设计团队的制作时间"],
+        "note": "欢迎不只把AI当作图片生成工具，而是能在企划、制作、改善各环节活用AI，兼顾效率与质量的人。\n\n另一方面，对于AI生成物，需要确认著作权、商标、肖像权、与商品内容的一致性以及广告表述是否恰当。我们需要能管理整个团队质量的人。"
+      }
+    ],
+    "salary": "月薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["可能因业务情况、为赶交期需要加班。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["职务津贴", "交通费补贴", "有加薪", "有奖金", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "我们面向日本国内和英国两个市场开展电商业务。\n\n您将在面向日本、信息量丰富且通俗易懂的商品页面，与面向英国、简洁且注重生活方式的设计之间灵活切换，为各市场制作合适的创意。\n\n将来会作为设计部门的核心成员，把制作方针、团队建设、业务流程改善等广泛工作交给您。\n\n欢迎不只做设计，还能思考带来销售额的创意，以及能利用AI提升团队制作能力的人。"
+  },
+  "en": {
+    "title": "E-commerce Design Lead / Design Manager",
+    "summary": "Setting design direction, managing quality and developing the team for our e-commerce in Japan and the UK.",
+    "tags": ["Position allowance"],
+    "duties": {
+      "intro": "You will oversee all design work for our online stores serving Japan and the UK.\n\nBeyond creating designs, you will keep our brand image consistent, manage production schedules and develop the design team.",
+      "items": ["Setting design direction for our Japanese e-commerce sites", "Setting design direction for our UK e-commerce site", "Reviewing product pages on Rakuten, Amazon and our own online store", "Managing the quality of product images, banners and ad assets", "Establishing brand image and design guidelines", "Creating and managing design templates", "Assigning work across the design team", "Managing production schedules and deadlines", "Directing, reviewing and developing designers", "Proposing product page improvements", "Improving designs with sales, click-through and conversion rates in mind", "Coordinating with the e-commerce and product planning teams", "Managing external designers and agencies", "Building production workflows that use AI tools", "Making design work more efficient and standardized", "Optimizing design for the Japanese and UK markets"],
+      "note": ""
+    },
+    "requirements": {
+      "items": ["Professional experience with Photoshop", "Experience creating e-commerce sites, websites or ad creatives", "Experience directing design work", "Experience giving designers direction and reviewing their work", "Experience managing production schedules", "Able to design with a clear understanding of product appeal and sales goals", "Able to use AI tools in daily work", "Able to communicate with colleagues in Japanese"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Experience as an e-commerce design lead or team leader", "Experience running stores on Rakuten Ichiba, Amazon or a brand-owned online store", "Experience building e-commerce sites on Shopify or similar platforms", "Experience with Illustrator, Figma or Canva", "Basic HTML and CSS", "Experience creating web ads, landing pages and social media creatives", "Design experience for UK, European or US e-commerce sites", "Able to read and write English", "Experience improving pages based on data analysis", "Experience creating design or brand guidelines", "Experience managing external agencies or freelancers"],
+      "note": ""
+    },
+    "sections": [
+      {
+        "title": "How We Use AI",
+        "intro": "We actively bring AI into our design work.",
+        "items": ["Supporting the creation of product images and ad assets", "Creating design and layout drafts", "Brainstorming taglines and messaging", "Creating backgrounds, assets and mood images", "Speeding up image editing and retouching", "Comparing design options for Japan and the UK", "Reducing the design team's production time"],
+        "note": "We welcome people who use AI not just as an image generator, but across planning, production and improvement, balancing efficiency and quality.\n\nAt the same time, AI-generated work must be checked for copyright, trademarks, portrait rights, consistency with the actual product and appropriate advertising claims. We are looking for someone who can manage quality across the whole team."
+      }
+    ],
+    "salary": "Monthly salary: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Overtime may occasionally be required to meet deadlines."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Position allowance", "Commuting allowance", "Pay raises", "Bonuses", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount"],
+    "otherConditions": "",
+    "pr": "We run e-commerce businesses for two markets: Japan and the UK.\n\nYou will switch between clear, information-rich product pages for Japan and simple, lifestyle-focused designs for the UK, creating work that fits each market.\n\nOver time, we will entrust you with a broad role at the core of our design department, from setting production direction to building the team and improving workflows.\n\nWe welcome people who think beyond design about creative work that drives sales, and who can use AI to raise the whole team's capabilities."
+  }
+}

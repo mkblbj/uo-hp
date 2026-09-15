@@ -1,0 +1,98 @@
+{
+  "ja": {
+    "slug": "amazon-operations",
+    "published": true,
+    "order": 1,
+    "category": "operations",
+    "employmentTypes": ["fulltime", "parttime"],
+    "datePosted": "2026-09-15",
+    "title": "Amazon運営スタッフ",
+    "summary": "Amazon店舗の運営全般。商品ページ改善、広告運用、売上分析まで。",
+    "tags": [],
+    "duties": {
+      "intro": "Amazon店舗の運営全般を担当していただきます。",
+      "items": ["Amazonセラーセントラルの管理", "商品登録、商品情報の更新", "商品ページの改善", "価格、在庫、納期の管理", "販売状況、売上データの確認", "広告運用、キャンペーン設定", "注文、返品、返金対応", "カスタマーレビューの確認", "Amazonからの問い合わせ対応", "倉庫、出荷チームとの連携", "売上向上のための施策立案"],
+      "note": "経験や能力に応じて、担当範囲を決定します。"
+    },
+    "requirements": {
+      "items": ["Amazonセラーセントラルの運営経験", "ECショップ運営経験", "基本的なExcel操作", "数字やデータを見ることが好きな方", "自分で課題を見つけて改善できる方", "日本語でのメール、チャット対応ができる方"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Amazon広告の運用経験", "商品ページ改善の経験", "FBA、自己発送の知識", "Excel関数やデータ集計の経験", "Photoshop、Canvaなどの使用経験", "中国語、英語対応ができる方"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月給または時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["勤務時間、曜日は相談可能です。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装自由", "髪型自由", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "Amazonの売上や商品ページを実際の数字で確認しながら、ショップを成長させていく仕事です。\n\n少人数のチームなので、自分のアイデアをすぐに実行できます。Amazon運営の経験を活かして、さらに幅広い業務に挑戦したい方を歓迎します。"
+  },
+  "zh": {
+    "title": "亚马逊运营",
+    "summary": "负责亚马逊店铺的全面运营，从商品页优化、广告投放到销售分析。",
+    "tags": [],
+    "duties": {
+      "intro": "负责亚马逊店铺的全面运营。",
+      "items": ["管理亚马逊卖家后台", "商品上架、更新商品信息", "优化商品页面", "管理价格、库存、交期", "查看销售情况和销售数据", "投放广告、设置促销活动", "处理订单、退货、退款", "查看顾客评价", "处理来自亚马逊的咨询", "与仓库、出货团队协作", "制定提升销售额的方案"],
+      "note": "根据经验和能力决定负责范围。"
+    },
+    "requirements": {
+      "items": ["有亚马逊卖家后台运营经验", "有网店运营经验", "会基本Excel操作", "喜欢看数字和数据", "能自己发现问题并加以改善", "能用日语处理邮件和聊天"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["有亚马逊广告投放经验", "有商品页优化经验", "了解FBA和自配送", "有Excel函数和数据汇总经验", "会使用Photoshop、Canva等工具", "能用中文、英文沟通"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "月薪或时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00",
+      "items": ["工作时间、工作日可以商量。"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装自由", "发型自由", "员工折扣"],
+    "otherConditions": "",
+    "pr": "这是一份一边用真实数字查看亚马逊销售额和商品页，一边让店铺成长的工作。\n\n团队规模小，你的想法可以马上付诸实践。欢迎想发挥亚马逊运营经验、挑战更广泛业务的人。"
+  },
+  "en": {
+    "title": "Amazon Operations Specialist",
+    "summary": "Running our Amazon store end to end, from product page improvements and advertising to sales analysis.",
+    "tags": [],
+    "duties": {
+      "intro": "You will be responsible for all aspects of running our Amazon store.",
+      "items": ["Managing Amazon Seller Central", "Listing products and updating product information", "Improving product pages", "Managing prices, stock and delivery times", "Reviewing sales performance and data", "Running ads and setting up promotions", "Handling orders, returns and refunds", "Monitoring customer reviews", "Responding to inquiries from Amazon", "Coordinating with the warehouse and shipping team", "Planning initiatives to grow sales"],
+      "note": "Your scope of work will be decided based on your experience and skills."
+    },
+    "requirements": {
+      "items": ["Experience running a store on Amazon Seller Central", "Experience running an online store", "Basic Excel skills", "You enjoy working with numbers and data", "You can spot problems and fix them on your own", "You can handle email and chat in Japanese"],
+      "note": ""
+    },
+    "preferred": {
+      "items": ["Experience with Amazon Ads", "Experience improving product pages", "Knowledge of FBA and merchant fulfillment", "Experience with Excel functions and data analysis", "Experience with Photoshop, Canva or similar tools", "Able to communicate in Chinese or English"],
+      "note": ""
+    },
+    "sections": [],
+    "salary": "Monthly salary or hourly wage: based on experience and skills",
+    "hours": {
+      "text": "9:00–18:00",
+      "items": ["Working hours and days can be discussed."]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress", "Any hairstyle", "Employee discount"],
+    "otherConditions": "",
+    "pr": "In this role, you will grow our store by working with real numbers on Amazon sales and product pages.\n\nOur team is small, so you can put your ideas into action right away. We welcome people who want to build on their Amazon experience and take on a wider range of work."
+  }
+}

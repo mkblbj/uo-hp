@@ -1,0 +1,89 @@
+{
+  "ja": {
+    "slug": "packing-staff",
+    "published": true,
+    "order": 1,
+    "category": "logistics",
+    "employmentTypes": ["parttime"],
+    "datePosted": "2026-09-15",
+    "title": "ネットショップ商品の梱包・軽作業スタッフ",
+    "summary": "楽天市場・Amazon・自社サイトで販売する商品の、ピッキングから梱包・発送準備まで。",
+    "tags": ["未経験歓迎"],
+    "duties": {
+      "intro": "楽天市場、Amazon、自社オンラインショップなどで販売する商品の出荷作業をお願いします。",
+      "items": ["商品のピッキング", "商品の検品", "商品の梱包", "宛名ラベルの貼付", "発送準備", "商品の整理、在庫確認", "返品商品の確認"],
+      "note": "取り扱う商品は、スマートフォンアクセサリー、生活雑貨などが中心です。\n\n未経験の方でも、作業手順を丁寧に説明しますので安心して始められます。重い荷物ばかりではなく、台車を使用して作業します。"
+    },
+    "requirements": {
+      "items": ["未経験歓迎", "学歴・年齢不問", "コツコツ作業が好きな方", "チームで協力して働ける方", "長期勤務できる方歓迎", "主婦・主夫、フリーター、学生歓迎", "外国籍の方は就労可能な在留資格が必要です"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "時給：経験・能力を考慮",
+    "hours": {
+      "text": "9:00～18:00の間でシフト制",
+      "items": ["1日3時間から相談可", "週2日から勤務可", "午前のみ、午後のみ可", "扶養内勤務可", "学校や家庭との両立も可能"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["自転車・バイク通勤相談可"] },
+    "benefits": ["交通費支給", "昇給あり", "雇用保険、社会保険あり", "有給休暇あり", "服装自由", "髪型・髪色相談可", "ネイル相談可", "社員割引制度あり"],
+    "otherConditions": "",
+    "pr": "普段から目にするネットショップの商品を扱う、EC物流のお仕事です。\n\n作業はシンプルですが、正確さを大切にしています。新人スタッフには先輩スタッフが丁寧に教えますので、倉庫作業が初めての方も歓迎します。"
+  },
+  "zh": {
+    "title": "网店商品打包・轻作业人员",
+    "summary": "负责乐天市场、亚马逊、自营网站所售商品的拣货、打包和发货准备。",
+    "tags": ["欢迎零经验"],
+    "duties": {
+      "intro": "负责在乐天市场、亚马逊、自营网店等平台销售的商品的出货作业。",
+      "items": ["商品拣货", "商品检验", "商品打包", "粘贴收件人标签", "发货准备", "商品整理、库存确认", "退货商品检查"],
+      "note": "经手的商品以手机配件、生活杂货为主。\n\n即使没有经验，我们也会仔细讲解作业步骤，可以放心上手。不全是重物，搬运时使用推车。"
+    },
+    "requirements": {
+      "items": ["欢迎零经验", "学历、年龄不限", "喜欢踏实细致工作的人", "能与团队合作的人", "欢迎能长期工作的人", "欢迎家庭主妇（主夫）、自由职业者、学生", "外国籍人士需持有允许就业的在留资格"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "时薪：根据经验和能力决定",
+    "hours": {
+      "text": "9:00～18:00之间轮班",
+      "items": ["每天3小时起可商量", "每周2天起即可", "可只上午或只下午", "可在扶养范围内工作", "可兼顾学业和家庭"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["可商量骑自行车、摩托车通勤"] },
+    "benefits": ["交通费补贴", "有加薪", "雇佣保险、社会保险", "带薪休假", "服装自由", "发型、发色可商量", "美甲可商量", "员工折扣"],
+    "otherConditions": "",
+    "pr": "这是一份处理日常生活中常见的网店商品的电商物流工作。\n\n作业内容简单，但我们重视准确性。新员工会由前辈耐心指导，第一次做仓库工作的人也欢迎。"
+  },
+  "en": {
+    "title": "E-commerce Packing & Light Work Staff",
+    "summary": "Picking, packing and shipping preparation for products sold on Rakuten Ichiba, Amazon and our own online store.",
+    "tags": ["No experience needed"],
+    "duties": {
+      "intro": "You will handle outbound shipping for products sold on Rakuten Ichiba, Amazon, our own online store and other channels.",
+      "items": ["Picking products", "Inspecting products", "Packing products", "Attaching shipping labels", "Preparing shipments", "Organizing products and checking stock", "Checking returned items"],
+      "note": "Most of the products we handle are smartphone accessories and everyday household goods.\n\nIf you are new to this kind of work, we will walk you through every step, so you can start with confidence. Not everything is heavy, and we use carts to move items."
+    },
+    "requirements": {
+      "items": ["No experience needed", "No education or age requirements", "You enjoy steady, careful work", "You work well in a team", "Long-term applicants welcome", "Homemakers, part-timers and students welcome", "Foreign nationals need a residence status that permits work in Japan"],
+      "note": ""
+    },
+    "preferred": { "items": [], "note": "" },
+    "sections": [],
+    "salary": "Hourly wage: based on experience and skills",
+    "hours": {
+      "text": "Shifts between 9:00 and 18:00",
+      "items": ["From 3 hours a day (negotiable)", "From 2 days a week", "Mornings only or afternoons only is fine", "Hours can be kept within dependent-spouse income limits", "Easy to balance with school or family"]
+    },
+    "holidays": "",
+    "trialPeriod": "",
+    "workplace": { "items": ["Commuting by bicycle or motorbike can be arranged"] },
+    "benefits": ["Commuting allowance", "Pay raises", "Employment and social insurance", "Paid leave", "Casual dress", "Flexible hairstyle and hair color", "Nail art on request", "Employee discount"],
+    "otherConditions": "",
+    "pr": "This is an e-commerce logistics job handling the kinds of online-store products you see every day.\n\nThe work is simple, but we value accuracy. Experienced colleagues train every new team member carefully, so people new to warehouse work are very welcome."
+  }
+}
