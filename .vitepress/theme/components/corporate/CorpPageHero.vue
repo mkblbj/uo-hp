@@ -2,7 +2,8 @@
 import { withBase } from "vitepress";
 import type { Crumb } from "../../content/pageNav";
 
-defineProps<{ crumbs: Crumb[]; crumbsLabel: string; eyebrow: string; title: string; lead?: string }>();
+// compact：标题字号小一档（职位名比较长）。两个插槽给招聘页用：before-title 放标签，默认插槽放导语下面的信息或按钮
+defineProps<{ crumbs: Crumb[]; crumbsLabel: string; eyebrow: string; title: string; lead?: string; compact?: boolean }>();
 </script>
 
 <template>
@@ -19,8 +20,10 @@ defineProps<{ crumbs: Crumb[]; crumbsLabel: string; eyebrow: string; title: stri
         </ol>
       </nav>
       <p v-if="eyebrow" class="corp-eyebrow"><span class="corp-eyebrow__line" aria-hidden="true" />{{ eyebrow }}</p>
-      <h1 class="page-hero__title">{{ title }}</h1>
+      <slot name="before-title" />
+      <h1 class="page-hero__title" :class="{ 'page-hero__title--compact': compact }">{{ title }}</h1>
       <p v-if="lead" class="page-hero__lead">{{ lead }}</p>
+      <slot />
     </div>
   </section>
 </template>
@@ -102,6 +105,12 @@ defineProps<{ crumbs: Crumb[]; crumbsLabel: string; eyebrow: string; title: stri
   letter-spacing: 0.03em;
   color: #fff;
   text-wrap: balance;
+}
+
+.page-hero__title--compact {
+  max-width: 22em;
+  font-size: clamp(1.75rem, 3.4vw, 2.9rem);
+  line-height: 1.35;
 }
 
 .page-hero__lead {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { defineAsyncComponent, onMounted } from "vue";
 import { inBrowser, useData, useRoute, withBase } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import {
@@ -11,6 +11,10 @@ import {
 import CorporateLayout from "./layouts/CorporateLayout.vue";
 import CorporatePageLayout from "./layouts/CorporatePageLayout.vue";
 import HeroLayout from "./layouts/HeroLayout.vue";
+
+// 招聘页的布局和招聘数据按需加载：只有打开招聘页时才下载，其他页面的体积不变
+const RecruitLayout = defineAsyncComponent(() => import("./layouts/RecruitLayout.vue"));
+const RecruitJobLayout = defineAsyncComponent(() => import("./layouts/RecruitJobLayout.vue"));
 
 const { frontmatter, page } = useData();
 const route = useRoute();
@@ -48,6 +52,8 @@ onMounted(() => {
 <template>
   <CorporateLayout v-if="frontmatter.layout === 'corporate'" />
   <HeroLayout v-else-if="frontmatter.layout === 'hero'" />
+  <RecruitLayout v-else-if="frontmatter.layout === 'recruit'" />
+  <RecruitJobLayout v-else-if="frontmatter.layout === 'recruit-job'" />
   <!-- 404.html 只构建一次、却会用于任何不存在的网址（包括 /zh/…），所以 404 不按语言选布局，保持 VitePress 默认样式 -->
   <CorporatePageLayout v-else-if="!page.isNotFound" />
   <DefaultTheme.Layout v-else />

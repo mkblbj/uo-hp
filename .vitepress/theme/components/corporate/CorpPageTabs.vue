@@ -26,6 +26,7 @@ watch(() => props.tabs.find((tab) => tab.current)?.path, revealCurrent, { flush:
           class="page-tabs__tab"
           :class="{ 'is-current': tab.current }"
           :href="withBase(tab.path)"
+          :target="tab.path.startsWith('#') ? '_self' : undefined"
           :aria-current="tab.current ? 'page' : undefined"
         ><span class="page-tabs__no" aria-hidden="true">{{ tab.no }}</span>{{ tab.label }}</a>
       </template>
