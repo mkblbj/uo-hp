@@ -4,24 +4,65 @@
     "lead": "株式会社UOでは、EC物流・EC運営・デザインの3つの分野で、一緒に働く仲間を募集しています。楽天市場、Amazon、自社サイトなど、複数のECショップを運営する少人数のチームです。",
     "locationShort": "神戸市長田区",
     "features": [
-      { "title": "少人数のチーム", "body": "少人数のチームなので、自分のアイデアをすぐに実行できます。商品企画、ページ改善、販促まで幅広く経験できます。" },
-      { "title": "未経験から始められる職種も", "body": "梱包・軽作業スタッフは未経験歓迎。作業手順は先輩スタッフが丁寧に教えます。" },
-      { "title": "日本とイギリス、AIも活用", "body": "日本国内とイギリス向けのECショップを運営。デザイン業務ではAIツールを積極的に活用しています。" }
+      {
+        "title": "少人数のチーム",
+        "body": "少人数のチームなので、自分のアイデアをすぐに実行できます。商品企画、ページ改善、販促まで幅広く経験できます。"
+      },
+      {
+        "title": "未経験から始められる職種も",
+        "body": "梱包・軽作業スタッフは未経験歓迎。作業手順は先輩スタッフが丁寧に教えます。"
+      },
+      {
+        "title": "日本とイギリス、AIも活用",
+        "body": "日本国内とイギリス向けのECショップを運営。デザイン業務ではAIツールを積極的に活用しています。"
+      }
     ],
-    "benefits": ["交通費支給", "昇給あり", "社会保険完備", "有給休暇あり", "服装・髪型自由", "社員割引制度", "自転車・バイク通勤相談可", "賞与・役職手当（職種による）"],
+    "benefits": [
+      "交通費支給",
+      "昇給あり",
+      "社会保険完備",
+      "有給休暇あり",
+      "服装・髪型自由",
+      "社員割引制度",
+      "自転車・バイク通勤相談可",
+      "賞与・役職手当（職種による）"
+    ],
     "benefitsNote": "※ 待遇は職種によって異なります。詳しくは各職種の募集要項をご覧ください。",
     "steps": [
-      { "title": "応募", "body": "メールまたはWeChatで、希望職種・お名前・ご連絡先をお送りください。" },
-      { "title": "書類選考", "body": "内容を確認し、担当者からご連絡します。" },
-      { "title": "面接", "body": "日程を調整のうえ、面接を行います。" },
-      { "title": "内定", "body": "面接の結果をご連絡します。" }
+      {
+        "title": "応募",
+        "body": "メールまたはWeChatで、希望職種・お名前・ご連絡先をお送りください。"
+      },
+      {
+        "title": "面接",
+        "body": "日程を調整のうえ、面接を行います。"
+      },
+      {
+        "title": "内定",
+        "body": "面接の結果をご連絡します。"
+      }
     ],
     "faq": [
-      { "q": "未経験でも応募できますか？", "a": "梱包・軽作業スタッフは、未経験の方も歓迎しています。作業手順は先輩スタッフが丁寧に説明します。その他の職種は、各職種の「応募条件」をご確認ください。" },
-      { "q": "外国籍でも応募できますか？", "a": "就労可能な在留資格をお持ちの方はご応募いただけます。職種によっては、日本語での社内コミュニケーションが必要です。" },
-      { "q": "勤務時間や日数は相談できますか？", "a": "梱包・軽作業スタッフは1日3時間から、週2日から相談できます。運営・デザインの職種にも、勤務時間や日数を相談できるものがあります。" },
-      { "q": "自転車やバイクで通勤できますか？", "a": "自転車・バイクでの通勤も相談できます。交通費は支給します。" },
-      { "q": "服装や髪型に決まりはありますか？", "a": "服装は自由です。髪型・髪色なども相談できます。" }
+      {
+        "q": "未経験でも応募できますか？",
+        "a": "梱包・軽作業スタッフは、未経験の方も歓迎しています。作業手順は先輩スタッフが丁寧に説明します。その他の職種は、各職種の「応募条件」をご確認ください。"
+      },
+      {
+        "q": "外国籍でも応募できますか？",
+        "a": "就労可能な在留資格をお持ちの方はご応募いただけます。職種によっては、日本語での社内コミュニケーションが必要です。"
+      },
+      {
+        "q": "勤務時間や日数は相談できますか？",
+        "a": "梱包・軽作業スタッフは1日3時間から、週2日から相談できます。運営・デザインの職種にも、勤務時間や日数を相談できるものがあります。"
+      },
+      {
+        "q": "自転車やバイクで通勤できますか？",
+        "a": "自転車・バイクでの通勤も相談できます。交通費は支給します。"
+      },
+      {
+        "q": "服装や髪型に決まりはありますか？",
+        "a": "服装は自由です。髪型・髪色なども相談できます。"
+      }
     ],
     "applyBody": "気になる職種がありましたら、メールまたはWeChatでお気軽にご応募ください。応募の際は、希望職種・お名前・ご連絡先をお知らせください。",
     "emailNote": "ボタンを押すとメールソフトが開きます。職種ページから応募すると、件名に職種名が入ります。",
@@ -35,24 +76,65 @@
     "lead": "株式会社UO正在电商物流、电商运营、设计三个领域招募新伙伴。我们是一支运营乐天市场、亚马逊、自营网站等多家网店的小型团队。",
     "locationShort": "神户市长田区",
     "features": [
-      { "title": "小团队", "body": "团队规模小，你的想法可以马上付诸实践。从商品企划、页面优化到促销，都能积累广泛的经验。" },
-      { "title": "部分职位欢迎零经验", "body": "打包・轻作业人员欢迎零经验，前辈会耐心教你作业流程。" },
-      { "title": "日本与英国，积极使用AI", "body": "同时运营面向日本国内和英国的网店。设计工作中积极使用AI工具。" }
+      {
+        "title": "小团队",
+        "body": "团队规模小，你的想法可以马上付诸实践。从商品企划、页面优化到促销，都能积累广泛的经验。"
+      },
+      {
+        "title": "部分职位欢迎零经验",
+        "body": "打包・轻作业人员欢迎零经验，前辈会耐心教你作业流程。"
+      },
+      {
+        "title": "日本与英国，积极使用AI",
+        "body": "同时运营面向日本国内和英国的网店。设计工作中积极使用AI工具。"
+      }
     ],
-    "benefits": ["交通费补贴", "有加薪", "社会保险齐全", "带薪休假", "服装、发型自由", "员工折扣", "可商量骑自行车、摩托车通勤", "奖金、职务津贴（视职位而定）"],
+    "benefits": [
+      "交通费补贴",
+      "有加薪",
+      "社会保险齐全",
+      "带薪休假",
+      "服装、发型自由",
+      "员工折扣",
+      "可商量骑自行车、摩托车通勤",
+      "奖金、职务津贴（视职位而定）"
+    ],
     "benefitsNote": "※ 待遇因职位而异，详情请查看各职位的招聘要项。",
     "steps": [
-      { "title": "应聘", "body": "请通过邮件或微信，发送希望应聘的职位、姓名和联系方式。" },
-      { "title": "书面筛选", "body": "确认内容后，由负责人与您联系。" },
-      { "title": "面试", "body": "协调日程后进行面试。" },
-      { "title": "录用", "body": "通知面试结果。" }
+      {
+        "title": "应聘",
+        "body": "请通过邮件或微信，发送希望应聘的职位、姓名和联系方式。"
+      },
+      {
+        "title": "面试",
+        "body": "协调日程后进行面试。"
+      },
+      {
+        "title": "录用",
+        "body": "通知面试结果。"
+      }
     ],
     "faq": [
-      { "q": "没有经验可以应聘吗？", "a": "打包・轻作业人员欢迎零经验，前辈会耐心讲解作业流程。其他职位请查看各职位的「应聘条件」。" },
-      { "q": "外国籍人士可以应聘吗？", "a": "持有允许就业的在留资格即可应聘。部分职位需要能用日语进行内部沟通。" },
-      { "q": "工作时间和天数可以商量吗？", "a": "打包・轻作业人员每天3小时起、每周2天起均可商量。运营和设计职位中，也有可以商量工作时间和天数的职位。" },
-      { "q": "可以骑自行车或摩托车通勤吗？", "a": "可以商量骑自行车、摩托车通勤。公司支付交通费。" },
-      { "q": "对服装和发型有要求吗？", "a": "服装自由，发型、发色等也可以商量。" }
+      {
+        "q": "没有经验可以应聘吗？",
+        "a": "打包・轻作业人员欢迎零经验，前辈会耐心讲解作业流程。其他职位请查看各职位的「应聘条件」。"
+      },
+      {
+        "q": "外国籍人士可以应聘吗？",
+        "a": "持有允许就业的在留资格即可应聘。部分职位需要能用日语进行内部沟通。"
+      },
+      {
+        "q": "工作时间和天数可以商量吗？",
+        "a": "打包・轻作业人员每天3小时起、每周2天起均可商量。运营和设计职位中，也有可以商量工作时间和天数的职位。"
+      },
+      {
+        "q": "可以骑自行车或摩托车通勤吗？",
+        "a": "可以商量骑自行车、摩托车通勤。公司支付交通费。"
+      },
+      {
+        "q": "对服装和发型有要求吗？",
+        "a": "服装自由，发型、发色等也可以商量。"
+      }
     ],
     "applyBody": "如有感兴趣的职位，欢迎通过邮件或微信应聘。应聘时请告知希望应聘的职位、姓名和联系方式。",
     "emailNote": "点击按钮会打开邮件软件。从职位页面应聘时，邮件标题会自动填入职位名称。",
@@ -63,24 +145,65 @@
     "lead": "UO Co., Ltd. is hiring in three areas: e-commerce logistics, e-commerce operations and design. We are a small team running several online stores, including on Rakuten Ichiba, Amazon and our own website.",
     "locationShort": "Nagata-ku, Kobe",
     "features": [
-      { "title": "A small team", "body": "In a small team, you can put your ideas into action right away and gain broad experience, from product planning to page improvements and promotions." },
-      { "title": "Roles open to beginners", "body": "Our packing and light work staff role welcomes people with no experience. Experienced colleagues will teach you each step." },
-      { "title": "Japan and the UK, with AI", "body": "We run online stores for customers in Japan and the UK, and our design team actively uses AI tools." }
+      {
+        "title": "A small team",
+        "body": "In a small team, you can put your ideas into action right away and gain broad experience, from product planning to page improvements and promotions."
+      },
+      {
+        "title": "Roles open to beginners",
+        "body": "Our packing and light work staff role welcomes people with no experience. Experienced colleagues will teach you each step."
+      },
+      {
+        "title": "Japan and the UK, with AI",
+        "body": "We run online stores for customers in Japan and the UK, and our design team actively uses AI tools."
+      }
     ],
-    "benefits": ["Commuting allowance", "Pay raises", "Full social insurance", "Paid leave", "Casual dress and hairstyle", "Employee discount", "Bicycle or motorbike commuting on request", "Bonus and position allowance (depending on role)"],
+    "benefits": [
+      "Commuting allowance",
+      "Pay raises",
+      "Full social insurance",
+      "Paid leave",
+      "Casual dress and hairstyle",
+      "Employee discount",
+      "Bicycle or motorbike commuting on request",
+      "Bonus and position allowance (depending on role)"
+    ],
     "benefitsNote": "* Benefits vary by position. See each position's employment details.",
     "steps": [
-      { "title": "Apply", "body": "Send us the position you are interested in, your name and your contact details by email or WeChat." },
-      { "title": "Document screening", "body": "We will review your application and get back to you." },
-      { "title": "Interview", "body": "We will arrange a date and hold an interview." },
-      { "title": "Offer", "body": "We will let you know the result of the interview." }
+      {
+        "title": "Apply",
+        "body": "Send us the position you are interested in, your name and your contact details by email or WeChat."
+      },
+      {
+        "title": "Interview",
+        "body": "We will arrange a date and hold an interview."
+      },
+      {
+        "title": "Offer",
+        "body": "We will let you know the result of the interview."
+      }
     ],
     "faq": [
-      { "q": "Can I apply without experience?", "a": "Our packing and light work staff role welcomes applicants with no experience, and experienced staff will explain each task carefully. For other positions, please check each position's requirements." },
-      { "q": "Can foreign nationals apply?", "a": "Yes, if you hold a residence status that allows you to work in Japan. Some positions require Japanese for internal communication." },
-      { "q": "Can working hours and days be discussed?", "a": "For packing and light work staff, shifts from 3 hours a day and 2 days a week can be discussed. Some operations and design positions also offer flexible hours and days." },
-      { "q": "Can I commute by bicycle or motorbike?", "a": "Yes, bicycle and motorbike commuting can be arranged. Commuting costs are covered." },
-      { "q": "Is there a dress code?", "a": "No, dress is casual. Hairstyle and hair color are also flexible." }
+      {
+        "q": "Can I apply without experience?",
+        "a": "Our packing and light work staff role welcomes applicants with no experience, and experienced staff will explain each task carefully. For other positions, please check each position's requirements."
+      },
+      {
+        "q": "Can foreign nationals apply?",
+        "a": "Yes, if you hold a residence status that allows you to work in Japan. Some positions require Japanese for internal communication."
+      },
+      {
+        "q": "Can working hours and days be discussed?",
+        "a": "For packing and light work staff, shifts from 3 hours a day and 2 days a week can be discussed. Some operations and design positions also offer flexible hours and days."
+      },
+      {
+        "q": "Can I commute by bicycle or motorbike?",
+        "a": "Yes, bicycle and motorbike commuting can be arranged. Commuting costs are covered."
+      },
+      {
+        "q": "Is there a dress code?",
+        "a": "No, dress is casual. Hairstyle and hair color are also flexible."
+      }
     ],
     "applyBody": "If you are interested in any of our positions, feel free to apply by email or WeChat. Please include the position you are applying for, your name and your contact details.",
     "emailNote": "The button opens your email app. When you apply from a position page, the position name is added to the subject line.",
