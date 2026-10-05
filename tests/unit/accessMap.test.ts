@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { accessMapUrl, directionsUrl, mapSearchUrl, noteItems, parseLatLng } from "../../.vitepress/theme/utils/accessMap.ts";
 
 const OFFICE = { lat: 34.665003, lng: 135.1580635 };
+const PLACE_ID = "ChIJzaW58wePAGAR5he93UUZocs";
 
 test("coordinates pasted from Google Maps are parsed", () => {
   assert.deepEqual(parseLatLng("34.665003, 135.1580635"), OFFICE);
@@ -54,6 +55,37 @@ test("the Google Maps link falls back to the address without coordinates", () =>
   assert.equal(url.searchParams.get("query"), "兵庫県神戸市長田区菅原通2-23");
 });
 
+test("the map and route links identify the registered business when a place ID is provided", () => {
+  assert.equal(
+    mapSearchUrl(OFFICE, "兵庫県神戸市長田区菅原通2-23", PLACE_ID),
+    "https://www.google.com/maps/search/?api=1&query=34.665003%2C135.1580635&query_place_id=ChIJzaW58wePAGAR5he93UUZocs",
+  );
+  assert.equal(
+    directionsUrl(OFFICE, "兵庫県神戸市長田区菅原通2-23", PLACE_ID),
+    "https://www.google.com/maps/dir/?api=1&destination=34.665003%2C135.1580635&destination_place_id=ChIJzaW58wePAGAR5he93UUZocs",
+  );
+});
+
+test("business links retain the address fallback when coordinates are missing", () => {
+  const map = new URL(mapSearchUrl(null, "神戸", PLACE_ID));
+  assert.equal(map.searchParams.get("query"), "神戸");
+  assert.equal(map.searchParams.get("query_place_id"), PLACE_ID);
+  const route = new URL(directionsUrl(null, "神戸", PLACE_ID));
+  assert.equal(route.searchParams.get("destination"), "神戸");
+  assert.equal(route.searchParams.get("destination_place_id"), PLACE_ID);
+});
+
+test("a registered business route uses its name so Google Maps retains the business destination", () => {
+  assert.equal(
+    directionsUrl(OFFICE, "兵庫県神戸市長田区菅原通2-23", PLACE_ID, "株式会社UO"),
+    "https://www.google.com/maps/dir/?api=1&destination=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEUO&destination_place_id=ChIJzaW58wePAGAR5he93UUZocs",
+  );
+  assert.equal(
+    directionsUrl(OFFICE, "神戸", undefined, "株式会社UO"),
+    "https://www.google.com/maps/dir/?api=1&destination=34.665003%2C135.1580635",
+  );
+});
+
 test("directions written as bullet lines become list items", () => {
   assert.deepEqual(noteItems("- JR「兵庫駅」より徒歩約10分  \n- お車の場合：国道2号線を経由\n"), [
     "JR「兵庫駅」より徒歩約10分",
@@ -72,4 +104,11 @@ test("directions without bullets on every line stay as written", () => {
 test("the footer map link opens the access coordinates, and disappears without access data", () => {
   assert.equal(accessMapUrl(undefined), undefined);
   assert.equal(accessMapUrl({ coordinates: "34.665003, 135.1580635", address: "神戸" }), mapSearchUrl(OFFICE, "神戸"));
+});
+
+test("the footer map link also opens the registered business", () => {
+  assert.equal(
+    accessMapUrl({ coordinates: "34.6650216, 135.1580398", address: "神戸", placeId: PLACE_ID }),
+    "https://www.google.com/maps/search/?api=1&query=34.6650216%2C135.1580398&query_place_id=ChIJzaW58wePAGAR5he93UUZocs",
+  );
 });

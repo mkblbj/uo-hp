@@ -208,10 +208,10 @@ test("access section renders the address card with the map and route links", () 
   expectText(ja.access.title);
   expectText(ja.access.address);
   const target = parseLatLng(ja.access.coordinates);
-  const map = mapSearchUrl(target, ja.access.address);
+  const map = mapSearchUrl(target, ja.access.address, ja.access.placeId);
   assert.match(html, new RegExp(`href="${escapeRegExp(escapeHtml(map))}"[^>]*target="_blank"`), map);
   expectText(ja.access.mapLabel);
-  const route = directionsUrl(target, ja.access.address);
+  const route = directionsUrl(target, ja.access.address, ja.access.placeId, ja.brand.name);
   assert.ok(html.includes(`href="${escapeHtml(route)}"`), route);
   expectText(ja.access.routeLabel);
 });
@@ -228,7 +228,7 @@ test("access directions render as a list when every line starts with a bullet", 
 
 test("the footer map link opens the same Google Maps location as the access card", () => {
   expectText(ja.footer.mapLabel);
-  const map = escapeHtml(mapSearchUrl(parseLatLng(ja.access.coordinates), ja.access.address));
+  const map = escapeHtml(mapSearchUrl(parseLatLng(ja.access.coordinates), ja.access.address, ja.access.placeId));
   const links = html.match(new RegExp(`href="${escapeRegExp(map)}"`, "g")) ?? [];
   assert.equal(links.length, 2, "the access card and the footer should both link to it");
 });

@@ -169,7 +169,9 @@ test("the company profile table comes from the homepage data, and the diagram is
     assert.ok(html.includes(`<td>${escapeHtml(row.label)}</td><td>${escapeHtml(row.value)}</td>`), row.label);
   }
   assert.ok(!html.includes('class="mermaid"'), "the simple timeline diagram is gone");
-  assert.equal((html.match(/class="timeline-dot"/g) ?? []).length, 9);
+  const source = readFileSync(new URL("about/profile/index.md", repo), "utf8");
+  const timelineCount = (source.match(/^::: timeline(?:\s|$)/gm) ?? []).length;
+  assert.equal((html.match(/class="timeline-dot"/g) ?? []).length, timelineCount);
   assert.ok(!html.includes("这里会自动显示"), "the editor hint stays out of the page");
 });
 

@@ -120,14 +120,16 @@ export interface HomeContent {
     address: string;
     /** 交通说明（如最近车站），留空则不显示 */
     note?: string;
-    /** 「纬度, 经度」，从 Google 地图右键复制；地图定位和 Google 地图、路线两个链接都按它生成 */
+    /** 「纬度, 经度」，用于页面地图定位，也是 Google 地图链接的备用位置 */
     coordinates: string;
+    /** Google 地图的地点 ID；填写后地图和导航链接直接指向公司记录 */
+    placeId?: string;
     mapLabel: string;
     routeLabel: string;
   };
   footer: {
     info: LabelValue[];
-    /** 链接按 access.coordinates 自动生成 */
+    /** 链接按 access 的地点 ID、坐标和地址自动生成 */
     mapLabel: string;
     columns: { title: string; links: LinkItem[] }[];
     shopsTitle: string;

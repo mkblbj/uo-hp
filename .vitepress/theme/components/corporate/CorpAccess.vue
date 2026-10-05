@@ -9,8 +9,8 @@ import { linkAttrs } from "../../utils/linkAttrs";
 const props = defineProps<{ access: HomeContent["access"]; brandName: string }>();
 
 const target = computed(() => parseLatLng(props.access.coordinates));
-const mapUrl = computed(() => mapSearchUrl(target.value, props.access.address));
-const routeUrl = computed(() => directionsUrl(target.value, props.access.address));
+const mapUrl = computed(() => mapSearchUrl(target.value, props.access.address, props.access.placeId));
+const routeUrl = computed(() => directionsUrl(target.value, props.access.address, props.access.placeId, props.brandName));
 const noteList = computed(() => noteItems(props.access.note));
 
 const section = ref<HTMLElement | null>(null);
