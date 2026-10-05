@@ -187,11 +187,31 @@ export const createAccessMap = async ({ container, target, pin, padding, signal 
   map.touchZoomRotate.disableRotation();
   map.keyboard.disableRotation();
   map.setPadding(padding());
-  // 控件都放左侧，避开右侧的地址卡片；署名始终展开（免费使用底图的条件）
+  // 控件都放左侧，避开右侧的地址卡片；保留来源署名和可展开的信息按钮。
   map.addControl(new NavigationControl({ showCompass: false }), "top-left");
-  map.addControl(new AttributionControl({ compact: false }), "bottom-left");
+  map.addControl(new AttributionControl({ compact: true }), "bottom-left");
   new Marker({ element: createPin(pin) }).setLngLat(center).addTo(map);
   await map.once("load");
+
+  // 署名完整进入视口后显示 5 秒，再通过原生控件收起；手动操作后保留用户的选择。
+  const attribution = container.querySelector<HTMLDetailsElement>("details.maplibregl-ctrl-attrib")!;
+  let attributionTimer = 0;
+  const attributionObserver = typeof IntersectionObserver === "undefined" ? undefined : new IntersectionObserver(([entry]) => {
+    if (entry.intersectionRatio < 1) return;
+    attributionObserver?.disconnect();
+    attributionTimer = window.setTimeout(() => {
+      if (attribution.classList.contains("maplibregl-compact-show") && !attribution.contains(document.activeElement)) {
+        attribution.querySelector<HTMLElement>("summary")?.click();
+      }
+    }, 5000);
+  }, { threshold: 1 });
+  const cancelAttributionCollapse = () => {
+    attributionObserver?.disconnect();
+    window.clearTimeout(attributionTimer);
+  };
+  attribution.addEventListener("toggle", cancelAttributionCollapse, { signal });
+  signal.addEventListener("abort", cancelAttributionCollapse, { once: true });
+  attributionObserver?.observe(attribution);
 
   const places = placesForOffice((routesData as AccessRoutesData).places, target);
   const routed = places.flatMap((place, index) => (place.route ? [index] : []));
